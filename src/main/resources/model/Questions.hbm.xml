@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 3, 2012 7:10:20 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.Questions" table="questions" catalog="adzappydb">
+        <id name="questionId" type="java.lang.Long">
+            <column name="question_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="model.User" fetch="select">
+            <column name="user" not-null="true" />
+        </many-to-one>
+        <property name="question" type="string">
+            <column name="question" length="500" not-null="true" />
+        </property>
+        <property name="questTime" type="timestamp">
+            <column name="quest_time" length="19" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="7" not-null="true" />
+        </property>
+        <set name="answerses" inverse="true">
+            <key>
+                <column name="question" not-null="true" />
+            </key>
+            <one-to-many class="model.Answers" />
+        </set>
+    </class>
+</hibernate-mapping>

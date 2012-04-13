@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 3, 2012 7:10:20 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.User" table="user" catalog="adzappydb">
+        <id name="userId" type="java.lang.Long">
+            <column name="user_id" />
+            <generator class="identity" />
+        </id>
+        <property name="emailId" type="string">
+            <column name="email_id" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="20" not-null="true" />
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="50" not-null="true" />
+        </property>
+        <property name="regDate" type="timestamp">
+            <column name="reg_date" length="19" not-null="true" />
+        </property>
+        <property name="userStatus" type="string">
+            <column name="user_status" length="12" not-null="true" />
+        </property>
+        <property name="confirmCode" type="long">
+            <column name="confirm_code" not-null="true" />
+        </property>
+        <set name="bookmarkses" inverse="true">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <one-to-many class="model.Bookmarks" />
+        </set>
+        <set name="scribbleses" inverse="true">
+            <key>
+                <column name="user" not-null="true" />
+            </key>
+            <one-to-many class="model.Scribbles" />
+        </set>
+        <set name="ideases" inverse="true">
+            <key>
+                <column name="user" not-null="true" />
+            </key>
+            <one-to-many class="model.Ideas" />
+        </set>
+        <set name="scribbleForwards" inverse="true">
+            <key>
+                <column name="user" not-null="true" />
+            </key>
+            <one-to-many class="model.ScribbleForward" />
+        </set>
+        <set name="questionses" inverse="true">
+            <key>
+                <column name="user" not-null="true" />
+            </key>
+            <one-to-many class="model.Questions" />
+        </set>
+        <set name="answerses" inverse="true">
+            <key>
+                <column name="user" not-null="true" />
+            </key>
+            <one-to-many class="model.Answers" />
+        </set>
+        <set name="userDetailses" inverse="true">
+            <key>
+                <column name="user" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="model.UserDetails" />
+        </set>
+        <set name="scribbleReplies" inverse="true">
+            <key>
+                <column name="user" not-null="true" />
+            </key>
+            <one-to-many class="model.ScribbleReply" />
+        </set>
+    </class>
+</hibernate-mapping>

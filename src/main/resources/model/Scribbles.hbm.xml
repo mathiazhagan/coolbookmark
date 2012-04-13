@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 3, 2012 7:10:20 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.Scribbles" table="scribbles" catalog="adzappydb">
+        <id name="scribbleId" type="java.lang.Long">
+            <column name="scribble_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="model.User" fetch="select">
+            <column name="user" not-null="true" />
+        </many-to-one>
+        <property name="scribbleDesc" type="string">
+            <column name="scribble_desc" length="500" not-null="true" />
+        </property>
+        <property name="scribbleType" type="string">
+            <column name="scribble_type" length="10" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="7" not-null="true" />
+        </property>
+        <property name="scribbleTime" type="timestamp">
+            <column name="scribble_time" length="19" not-null="true" />
+        </property>
+        <set name="scribbleReplies" inverse="true">
+            <key>
+                <column name="scribble" not-null="true" />
+            </key>
+            <one-to-many class="model.ScribbleReply" />
+        </set>
+        <set name="scribbleForwards" inverse="true">
+            <key>
+                <column name="scribble" not-null="true" />
+            </key>
+            <one-to-many class="model.ScribbleForward" />
+        </set>
+    </class>
+</hibernate-mapping>

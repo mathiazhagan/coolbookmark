@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration
+2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+    <include file="ajax.xml"/>
+    <!-- contains ajax actions. -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="default" extends="struts-default">
+        <action name="signup" class="controller.signup">
+            <result name="success" >index.jsp</result>
+            <result name="input" >signup.jsp</result>
+            <result name="error" >signup.jsp</result>
+        </action>
+        <action name="logout" class="controller.logoutaction">
+            <result name="success" >index.jsp</result>
+            <result name="input" >index.jsp</result>
+            <result name="error" >index.jsp</result>
+        </action>
+        <action name="sessionError" class="controller.sessionError">
+            <result name="success" >index.jsp</result>
+            <result name="input" >index.jsp</result>
+            <result name="error" >index.jsp</result>
+        </action>
+        <action name="forgotmail" class="controller.forgotmail">
+            <result name="success" >index.jsp</result>
+            <result name="input" >forgotpass.jsp</result>
+            <result name="error" >forgotpass.jsp</result>
+        </action> 
+        <action name="activationAccount" class="controller.activationAccount">
+            <result name="success" >index.jsp</result>
+            <result name="error" >index.jsp</result>
+        </action>
+        <action name="login" class="controller.login" >
+            <result name="success" >/dashboard.jsp</result>
+            <result name="input" >/index.jsp</result>
+            <result name="error" >/index.jsp</result>
+        </action>
+        <action name="home"  class="controller.loadlist" >
+            <result name="success" >dashboard.jsp</result>
+            <result name="error" >/dashboard.jsp</result>
+        </action>
+        <action name="seardash" class="controller.feedsearch" >
+            <result name="success" >dashboard.jsp</result>
+            <result name="error" >dashboard.jsp</result>
+        </action>
+        <action name="addscribblefeed" class="controller.addscribblefeed" >
+            <result name="success" type="chain">home</result>
+            <result name="error" >dashboard.jsp</result>
+        </action>
+        <action name="addbookmarkfeed" class="controller.addbookmarkfeed" >
+            <result name="success" type="chain">home</result>
+            <result name="error" >dashboard.jsp</result>
+        </action>
+        <action name="deletefeed" class="controller.deletefeed" >
+            <result name="success" type="chain">home</result>
+            <result name="error" >dashboard.jsp</result>
+        </action>
+        <action name="viewbookmarks" class="controller.viewbookmarks" >
+            <result name="success">bookmark.jsp</result>
+            <result name="error" >bookmark.jsp</result>
+        </action>
+        <action name="bookmarksearch" class="controller.bookmarksearch" >
+            <result name="success">bookmark.jsp</result>
+            <result name="error" >bookmark.jsp</result>
+        </action>
+    </package>
+    <package name="json" namespace="/" extends="json-default">
+        <action name="databaseJSON" 
+     		class="samp.DatabaseJSON">
+            <result type="json" >
+                <param name="root">databases</param>
+            </result>
+        </action>
+        <action name="dbs" 
+     		class="samp.feedex">
+            <result type="json" >
+                <param name="root">dbs</param>
+            </result>
+        </action>
+    </package>
+    <package name="jsam" namespace="/" extends="struts-default">
+        <action name="autoCompleterAction" 
+		class="samp.AutoCompleterAction" 
+	        method="display">
+            <result name="none">result.jsp</result>
+        </action>
+        <action name="resultAction" 
+	        class="samp.AutoCompleterAction" >
+            <result name="success">result.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://ec2-75-101-156-134.compute-1.amazonaws.com:3306/adzappydb</property>
+    <property name="hibernate.connection.username">mathi</property>
+    <property name="hibernate.connection.password">12345</property>
+    <mapping resource="model/ScribbleReply.hbm.xml"/>
+    <mapping resource="model/ScribbleForward.hbm.xml"/>
+    <mapping resource="model/Answers.hbm.xml"/>
+    <mapping resource="model/Questions.hbm.xml"/>
+    <mapping resource="model/Bookmarks.hbm.xml"/>
+    <mapping resource="model/Ideas.hbm.xml"/>
+    <mapping resource="model/User.hbm.xml"/>
+    <mapping resource="model/Scribbles.hbm.xml"/>
+    <mapping resource="model/UserDetails.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
