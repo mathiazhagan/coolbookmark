@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 29, 2012 7:55:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="model.Bookmarks" table="bookmarks" catalog="adzappydb">
+        <id name="bookmarkId" type="java.lang.Long">
+            <column name="bookmark_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="model.User" fetch="select">
+            <column name="user_id" />
+        </many-to-one>
+        <property name="bookmarkName" type="string">
+            <column name="bookmark_name" length="200" />
+        </property>
+        <property name="bookmarkUrl" type="string">
+            <column name="bookmark_url" length="100" not-null="true" />
+        </property>
+        <property name="bookmarkCategory" type="string">
+            <column name="bookmark_category" length="50" />
+        </property>
+        <property name="bookmarkCreatetime" type="timestamp">
+            <column name="bookmark_createtime" length="19" not-null="true" />
+        </property>
+        <property name="notes" type="string">
+            <column name="notes" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>
