@@ -6,7 +6,7 @@
     <%@ page import="java.util.*" %>
     <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+        <meta http-equiv="content-type" content="text/html;charset=windows-1250">
         <title>Cool Bookmark</title>
         <link href="style50.css" rel="stylesheet" type="text/css" />
         <script src="js/jquery.js"></script>

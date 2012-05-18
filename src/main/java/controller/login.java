@@ -39,7 +39,9 @@ public class login extends ActionSupport {
             Criteria ucri = getMyDao().getDbsession().createCriteria(User.class);
             ucri.add(Restrictions.eq("emailId", email));
             ucri.setMaxResults(1);
+            if(!ucri.list().isEmpty()){
             User user = (User) (ucri.list().get(0));
+            
             if (user != null) {
 
                 if (user.getPassword().equals(getPassword())) {
@@ -55,7 +57,11 @@ public class login extends ActionSupport {
             } else {
                 addActionError("Invalid Email Address Please Try Again");
             }
-        }
+            }
+            else{
+            addActionError("No Active Account with this email address please signup");
+            }
+            }
     }
 
     @Override
