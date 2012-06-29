@@ -8,6 +8,30 @@
             <param name="ConversionPattern" value="%d %-5p %c.%M:%L - %m%n"/> 
         </layout> 
     </appender>
+    <appender name="FA" class="org.apache.log4j.FileAppender">
+        <param name="File" value="src/main/webapp/logs/userlog.html"/>
+        <param name="Threshold" value="WARN"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
+        </layout>
+    </appender>
+    <appender name="CA" class="org.apache.log4j.FileAppender">
+        <param name="File" value="D:/myapp/userlog.html"/>
+        <param name="Threshold" value="WARN"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
+        </layout>
+    </appender>
+    <appender name="DE" class="org.apache.log4j.DailyRollingFileAppender">
+         <param name="File" value="src/main/webapp/logs/daily.html"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="Threshold" value="WARN"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss:SSS} - %p - %C{1} - %m%n"/>
+        </layout>
+    </appender>
+   
  
     <!-- specify the logging level for loggers from other libraries -->
     <logger name="com.opensymphony">
@@ -22,6 +46,9 @@
     <root>
         <priority value="INFO"/> 
         <appender-ref ref="STDOUT" /> 
+        <appender-ref ref="FA" /> 
+        <appender-ref ref="CA" /> 
+        <appender-ref ref="DE" /> 
     </root> 
     
 </log4j:configuration> 
