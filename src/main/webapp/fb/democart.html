@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>divcount</title>
+ <script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="list">
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+<div>7</div>
+</div>
+<div id="count"><h2></h2></div>
+  <script type="text/javascript">
+  $(document).ready(function() {
+      //document.write($('div').length);
+	  var n = $("#list div").length;
+	  if(n>0){
+	   $('div#count h2').append($('div#list div').length);
+			$('#count').css("display", "block");
+	 
+	  }
+	  else{
+	        $('div#count h2').append('List is Empty');
+	 	     $('#count').css("display", "none");
+			}
+			  });
+</script>
+<a href="javascript:void(0);" id="forgot-password">forgot password?</a>
+<div id="login-form">login form</div>
+
+<div id="recover-password" style="display:none;">recover password</div>
+
+<script type="text/javascript">
+$(function(){
+  $('#forgot-password').click(function(){
+     $('#login-form').toggle();
+     $('#recover-password').toggle(); 
+  });
+});
+</script>
+
+</body>
+</html>

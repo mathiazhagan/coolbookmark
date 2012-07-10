@@ -8,17 +8,28 @@ package bookmark.url.functions;
  *
  * @author Administrator
  */
+import java.io.IOException;
 import java.net.*;
 import java.util.Properties;
 
 public class CheckActiveUrl {
-
-//    public static void main(String s[]) {
+//
+//    public static void main(String s[]) throws IOException {
+//        String url1="http://google.com";
+//        String url2="http://speedtest.net/";
+//        String url3="http://www.yahoo.com";
 //        new CheckActiveUrl().doit();
+//         String title1 = TitleExtractor.getPageTitle(url1);
+//         String title2 = TitleExtractor.getPageTitle(url2);
+//         String title3 = TitleExtractor.getPageTitle(url3);
+//      System.out.println(title1);
+//      System.out.println(title2);
+//      System.out.println(title3);
 //    }
-
+//
 //    public void doit() {
-//        System.out.println(exists("http://edubiz.org"));
+//        System.out.println(exists("http://google.com"));
+//        System.out.println(exists("http://speedtest.net/"));
 //        System.out.println(exists("http://www.yahoo.com"));
 //    }
 
