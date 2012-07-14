@@ -136,7 +136,9 @@
                     </div></s:iterator>
                     <div>
                     <s:url id="ajax" value="/scribleAjax.action"/>
-                    <sj:div href="%{ajax}"   loadingText="Loading"  />
+                    <sj:div href="%{ajax}"  indicator="indicator" >
+                          <img id="indicator" src="images/lo.gif" alt="Loading..." style="display:none"/>
+                    </sj:div>
                 </div>   
             </div>
         </div>

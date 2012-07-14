@@ -8,6 +8,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import model.*;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -24,7 +25,7 @@ public class login extends ActionSupport {
     private long userid;
     private spDAO myDao;
     private List<Scribbles> feedlist;
-
+ static final Logger logger = Logger.getLogger(login.class);
     @Override
     public void validate() {
 
@@ -66,7 +67,9 @@ public class login extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
+           
         try {
+           
             Criteria ucri = getMyDao().getDbsession().createCriteria(User.class);
             ucri.add(Restrictions.eq("emailId", email));
             ucri.setMaxResults(1);
@@ -88,11 +91,12 @@ public class login extends ActionSupport {
 
         } catch (HibernateException he) {
             he.printStackTrace();
+              logger.debug(he.getMessage());
             addActionError("Unable to Logining you...  Error occurs  ..Try After Some times");
             return "error";
         } catch (Exception se) {
 
-            se.getMessage();
+             logger.debug(se.getMessage());
             addActionError("Unable to Logining you...  Error occurs ..Try After Some times");
             return "error";
         }
