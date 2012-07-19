@@ -87,7 +87,7 @@
                     </s:form>
                 </div>
 
-
+                <s:text name="message.disp"/>
 
                 <div class="clear"></div>
 

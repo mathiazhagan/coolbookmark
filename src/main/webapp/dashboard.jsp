@@ -35,7 +35,7 @@
         <sj:head jqueryui="true" jquerytheme="flick"/>
     </head>
     <body>
-        <%
+        <%            
             Object obj = session.getAttribute("User");
             User u1 = (User) session.getAttribute("User");
             if (obj == null) {
@@ -63,7 +63,12 @@
                 <form action="seardash.action"> <div style="float:right;" id="searchbox" ><input type="text" value="Search" name="search" size="20" onblur="if(this.value == '') { this.value = 'Search'; }" onfocus="if(this.value == 'Search') { this.value = ''; }" /><input type="submit" value="Go"/>
                     </div></form>
                 <div class="clear"></div>
-                <div class="alert"><s:actionerror theme="jquery"/>   <s:actionmessage theme="jquery"/> </div>
+                <div class="alert"><s:actionerror theme="jquery"/>   <s:actionmessage theme="jquery"/>
+                    <%List<Scribbles> feed;
+                        feed = (List<Scribbles>) request.getAttribute("feedlist");                    
+                    %>
+                    <%out.print(feed.size());    %> Results Found
+                </div>
                 <div class="clear"></div>
                 <div id="formcontainer">
                     <div class="formrow">
@@ -133,11 +138,11 @@
                         </s:url>
                         <span class="Budget"><s:a href="%{deletefeed}" cssClass="ask"><img src="images/trash.png"/></s:a></span>
 
-                    </div></s:iterator>
+                        </div></s:iterator>
                     <div>
                     <s:url id="ajax" value="/scribleAjax.action"/>
                     <sj:div href="%{ajax}"  indicator="indicator" >
-                          <img id="indicator" src="images/lo.gif" alt="Loading..." style="display:none"/>
+                        <img id="indicator" src="images/lo.gif" alt="Loading..." style="display:none"/>
                     </sj:div>
                 </div>   
             </div>
