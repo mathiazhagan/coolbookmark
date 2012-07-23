@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.model.Listings" table="listings" catalog="a_1stforbiz">
+        <id name="LId" type="java.lang.Long">
+            <column name="l_id" />
+            <generator class="identity" />
+        </id>
+        <property name="reference" type="long">
+            <column name="reference" not-null="true" />
+        </property>
+        <property name="heading" type="string">
+            <column name="heading" length="50" not-null="true" />
+        </property>
+        <property name="summery" type="string">
+            <column name="summery" length="250" not-null="true" />
+        </property>
+        <property name="businessStatus" type="string">
+            <column name="business_status" length="50" not-null="true" />
+        </property>
+        <property name="houseNo" type="string">
+            <column name="house_no" length="50" not-null="true" />
+        </property>
+        <property name="road" type="string">
+            <column name="road" length="50" not-null="true" />
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="50" not-null="true" />
+        </property>
+        <property name="town" type="string">
+            <column name="town" length="50" not-null="true" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50" not-null="true" />
+        </property>
+        <property name="postcode" type="long">
+            <column name="postcode" not-null="true" />
+        </property>
+        <property name="businessClosed" type="string">
+            <column name="business_closed" length="50" />
+        </property>
+        <property name="relocatable" type="string">
+            <column name="relocatable" length="50" not-null="true" />
+        </property>
+        <property name="franchise" type="string">
+            <column name="franchise" length="50" not-null="true" />
+        </property>
+        <property name="franchiseTerms" type="string">
+            <column name="franchise_terms" length="50" not-null="true" />
+        </property>
+        <property name="locationDetails" type="string">
+            <column name="location_details" length="250" not-null="true" />
+        </property>
+        <property name="competition" type="string">
+            <column name="competition" length="250" not-null="true" />
+        </property>
+        <property name="potential" type="string">
+            <column name="potential" length="250" not-null="true" />
+        </property>
+        <property name="accomodation" type="string">
+            <column name="accomodation" length="50" not-null="true" />
+        </property>
+        <property name="accomDescription" type="string">
+            <column name="accom_description" length="250" not-null="true" />
+        </property>
+        <property name="yearsEstablished" type="int">
+            <column name="years_established" not-null="true" />
+        </property>
+        <property name="employees" type="long">
+            <column name="employees" not-null="true" />
+        </property>
+        <property name="businessHours" type="string">
+            <column name="business_hours" length="50" not-null="true" />
+        </property>
+        <property name="supportTraining" type="string">
+            <column name="support_training" length="50" not-null="true" />
+        </property>
+        <property name="sellReason" type="string">
+            <column name="sell_reason" length="250" not-null="true" />
+        </property>
+        <property name="askingPrice" type="long">
+            <column name="asking_price" not-null="true" />
+        </property>
+        <property name="revenue" type="long">
+            <column name="revenue" not-null="true" />
+        </property>
+        <property name="netProfit" type="long">
+            <column name="net_profit" not-null="true" />
+        </property>
+        <property name="fixtureFittings" type="string">
+            <column name="fixture_fittings" length="250" not-null="true" />
+        </property>
+        <property name="fittingsValue" type="long">
+            <column name="fittings_value" not-null="true" />
+        </property>
+        <property name="inventoryStock" type="string">
+            <column name="inventory_stock" length="50" not-null="true" />
+        </property>
+        <property name="financing" type="string">
+            <column name="financing" length="50" not-null="true" />
+        </property>
+        <property name="tenure" type="string">
+            <column name="tenure" length="250" not-null="true" />
+        </property>
+        <property name="prefix" type="string">
+            <column name="prefix" length="50" not-null="true" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="10" not-null="true" />
+        </property>
+        <property name="advertisedDate" type="timestamp">
+            <column name="advertised_date" length="19" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

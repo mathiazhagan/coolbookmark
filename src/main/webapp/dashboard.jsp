@@ -5,6 +5,7 @@
     <%@page import="model.*"%>
     <%@ page import="java.util.*" %>
     <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+
     <head>
         <meta http-equiv="content-type" content="text/html;charset=windows-1250">
         <title>Cool Bookmark</title>
@@ -31,11 +32,38 @@
             
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript" src="js/easypaginate.js"></script>
+        <script type="text/javascript">
+	
+            jQuery(function($){
+	
+                $('div#tid').easyPaginate({
+                    //step value define for number of results shown on every page here 5 set for 5 items on each page
+                    step:4
+                });
+	
+            });    
+    
+        </script>
         <s:head theme="jquery"/>
         <sj:head jqueryui="true" jquerytheme="flick"/>
+        <style type="text/css">
+            ol#pagination{overflow:hidden;}
+            ol#pagination li{
+                float:left;
+                list-style:none;
+                cursor:pointer;
+                margin:0 0 0 .5em;
+                font: 1em Helvetica, Arial, Sans-Serif;
+                line-height: 1.5em;
+                color: #333;
+            }
+            ol#pagination li.current{color:#f00;font-weight:bold;}
+        </style>
     </head>
     <body>
-        <%            
+        <%
             Object obj = session.getAttribute("User");
             User u1 = (User) session.getAttribute("User");
             if (obj == null) {
@@ -65,9 +93,9 @@
                 <div class="clear"></div>
                 <div class="alert"><s:actionerror theme="jquery"/>   <s:actionmessage theme="jquery"/>
                     <%List<Scribbles> feed;
-                        feed = (List<Scribbles>) request.getAttribute("feedlist");                    
+                        feed = (List<Scribbles>) request.getAttribute("feedlist");
                     %>
-                    <%out.print(feed.size());    %> Results Found
+                    <%out.print(feed.size());%> Results Found
                 </div>
                 <div class="clear"></div>
                 <div id="formcontainer">
@@ -126,19 +154,24 @@
 
                 </div>
                 <div class="clear"></div>
-                <s:iterator  value="feedlist">
-                    <div class="tabletext"  >
-                        <span class="Compaign"><s:property value="user.userName" /></span>
-                        <span class="Compaign"><s:property value="scribbleDesc" /></span>
+                <div id="tid">
+                    <s:iterator  value="feedlist">
 
-                        <span class="Compaign"><s:property value="scribbleTime" /></span>
+                        <div class="tabletext">
+                            <span class="Compaign"><s:property value="user.userName" /></span>
+                            <span class="Compaign"><s:property value="scribbleDesc" /></span>
 
-                        <s:url action="deletefeed.action" var="deletefeed">
-                            <s:param name="feedid" value="%{scribbleId}" />
-                        </s:url>
-                        <span class="Budget"><s:a href="%{deletefeed}" cssClass="ask"><img src="images/trash.png"/></s:a></span>
+                            <span class="Compaign"><s:property value="scribbleTime" /></span>
 
-                        </div></s:iterator>
+                            <s:url action="deletefeed.action" var="deletefeed">
+                                <s:param name="feedid" value="%{scribbleId}" />
+                            </s:url>
+                            <span class="Budget"><s:a href="%{deletefeed}" cssClass="ask"><img src="images/trash.png"/></s:a></span>
+
+                            </div></s:iterator>
+                    </div>
+
+
                     <div>
                     <s:url id="ajax" value="/scribleAjax.action"/>
                     <sj:div href="%{ajax}"  indicator="indicator" >

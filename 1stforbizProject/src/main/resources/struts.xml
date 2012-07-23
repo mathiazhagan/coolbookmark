@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="Listing" class="com.controller.Listing" >
+            <result name="input">ImmediateSelling.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">success.jsp</result>
+        </action>
+        <action name="mainpage" class="com.controller.mainpage" >
+            <result name="error1" >error.jsp</result>
+            <result name="success">index.jsp</result>
+        </action>
+        
+        <action name="mailsend" class="com.controller.mailsend" >
+            <result name="error" >error.jsp</result>
+            <result name="success">success.jsp</result>
+        </action>
+       
+       
+        <action name="requestinfo" class="com.controller.requestinfo" >
+            <result name="input">fullview1.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">index2.jsp</result>
+        </action>
+        
+        
+        
+        <action name="categorysearch" class="com.controller.categorysearch" >
+            <result name="error" >error.jsp</result>
+            <result name="success">searchresults2.jsp</result>
+        </action>
+        
+        <action name="addtolist" class="com.controller.addtolist" >
+            <result name="error" >error.jsp</result>
+            <result name="success">index2.jsp</result>
+        </action>
+        
+        <action name="selectivesearch" class="com.controller.selectivesearch" >
+            <result name="input">index2.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">searchresults2.jsp</result>
+        </action>
+        <action name="requestvaluation" class="com.controller.requestvaluation" >
+            <result name="input" >businessvaluationform.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">businessvaluationform.jsp</result>
+        </action>
+        <action name="tofriend" class="com.controller.tofriend" >
+            <result name="input">fullview1.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result  type="chain" name="success">fulldetails</result>
+        </action>
+        <action name="fulldetails" class="com.controller.fulldetails" >
+            <result name="input">fullview1.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">fullview1.jsp</result>
+        </action>
+        <action name="imagefile" class="com.controller.imagefile" >
+            <result name="input">success.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">sell.jsp</result>
+        </action>
+        <action name="imageretrieve1" class="com.controller.imageretrieve" >
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">shimg1</param>
+                <param name="contentDisposition">filename="${Id}+.jpg"</param>
+                <param name="bufferSize">2024</param>
+            </result>
+        </action>
+        <action name="imageretrieve2" class="com.controller.imageretrieve" >
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">shimg2</param>
+                <param name="contentDisposition">filename="${Id}+.jpg"</param>
+                <param name="bufferSize">2024</param>
+            </result>
+        </action>
+        <action name="imageretrieve3" class="com.controller.imageretrieve" >
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">shimg3</param>
+                <param name="contentDisposition">filename="${Id}+.jpg"</param>
+                <param name="bufferSize">2024</param>
+            </result>
+        </action>
+        <action name="imageretrieve4" class="com.controller.imageretrieve" >
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">shimg4</param>
+                <param name="contentDisposition">filename="${Id}+.jpg"</param>
+                <param name="bufferSize">2024</param>
+            </result>
+        </action>
+        <action name="imageretrieve5" class="com.controller.imageretrieve" >
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">shimg5</param>
+                <param name="contentDisposition">filename="${Id}+.jpg"</param>
+                <param name="bufferSize">2024</param>
+            </result>
+        </action>
+        
+        <action name="userImage" class="com.controller.FileUploadAction">
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">2097152</param>
+                <param name="allowedTypes">
+            image/png,image/gif,image/jpeg,image/pjpeg
+                </param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="input">ImmediateSelling.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="success">ImmediateSelling.jsp</result>     
+        </action>
+        <action name="userImage1" class="com.controller.FileUploadAction1">
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">2097152</param>
+                <param name="allowedTypes">
+            image/png,image/gif,image/jpeg,image/pjpeg
+                </param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="input">ImmediateSelling.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="success">admin/adminpage.jsp</result>     
+        </action>
+        
+        <action name="searchbyref" class="com.controller.searchbyref">
+            <result name="input">index2.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">searchresults2.jsp</result>
+        </action>
+        
+        <action name="similarsearch" class="com.controller.similarsearch" >
+            <result name="error" >error.jsp</result>
+            <result name="success">searchresults2.jsp</result>
+        </action>
+        
+        <action name="login" class="com.controller.login" >
+            <result name="input">login.jsp</result>
+            <result name="error" >login.jsp</result>
+            <result name="success">adminpage.jsp</result>
+        </action>
+        <action name="updatedatabase" class="com.controller.updatedatabase" >
+            <result name="input" >adminpage.jsp</result>
+            <result name="error" >adminpage.jsp</result>
+            <result name="success">updatedata.jsp</result>
+        </action>
+        <action name="update" class="com.controller.update" >
+            <result name="input">updatedata.jsp</result>
+            <result name="error" >updatedata.jsp</result>
+            <result name="success">adminpage.jsp</result>
+        </action>
+        <action name="sampleform" class="com.controller.sampleform" >
+            <result name="input">sampleform.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">success.jsp</result>
+        </action>
+        <action name="BusinessValuation1" class="com.controller.BusinessValuation1" >
+            <result name="error" >error.jsp</result>
+            <result name="success">businessvaluationform.jsp</result>
+        </action>
+        
+        <action name="contactforsell" class="com.controller.contactforsell" >
+            <result name="input">contactus_for_selling.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">contactus_for_selling.jsp</result>
+        </action>
+        <action name="changestatus" class="com.controller.changestatus" >
+            <result name="success">immediate_sell_list.jsp</result>
+            <result name="input">immediate_sell_list.jsp</result>
+            <result name="error">immediate_sell_list.jsp</result>
+        </action>
+        <action name="mutiplestatuschange" class="com.controller.mutiplestatuschange" >
+            <result name="success">immediate_sell_list.jsp</result>
+            <result name="input">immediate_sell_list.jsp</result>
+            <result type="chain" name="success">Immediate_sell_list</result>
+        </action>
+        <action name="Immediate_sell_list" class="com.controller.Immediate_sell_list" >
+            <result name="input">admin/immediate_sell_list.jsp</result> 
+            <result name="error" >error.jsp</result>
+            <result name="success">immediate_sell_list.jsp</result>
+        </action>
+        <action name="valuationlist" class="com.controller.valuationlist" >
+            <result name="error" >error.jsp</result>
+            <result name="success">valuation_request_list.jsp</result>
+        </action>
+        <action name="request_info_list" class="com.controller.request_info_list" >
+            <result name="success">request_info_list.jsp</result>
+            <result name="error">request_info_list.jsp</result>
+        </action>
+        
+        
+        <action name="mylist_request_list" class="com.controller.mylist_request_list" >
+            <result name="error" >error.jsp</result>
+            <result name="success">mylist_request_list.jsp</result>
+        </action>
+        <action name="sell_request_list" class="com.controller.sell_request_list" >
+            <result name="error" >error.jsp</result>
+            <result name="success">sell_request_list.jsp</result>
+        </action>
+        <action name="deleteonesell" class="com.controller.deleteimmediatesell" >
+            <result name="input">Immediate_sell_list.jsp</result>
+            <result name="error">Immediate_sell_list.jsp</result>
+            <result name="success">Immediate_sell_list.jsp</result>
+        </action>
+        <action name="multiplerowdelete" class="com.controller.multiplerowdelete" >
+            <result name="error" >error.jsp</result>
+            <result type="chain" name="success">Immediate_sell_list</result>
+        </action>
+        <action name="deletevaluation" class="com.controller.deletevaluation" >
+            <result name="input">valuation_request_list.jsp</result>
+            <result name="error">valuation_request_list.jsp</result>
+            <result name="success">valuation_request_list.jsp</result>
+        </action>
+        <action name="deletemultilist" class="com.controller.deletemultilist" >
+            <result name="input">mylist_request_list.jsp</result>
+            <result name="error">mylist_request_list.jsp</result>
+            <result name="success">mylist_request_list.jsp</result>
+        </action>
+        <action name="deletesellcontact" class="com.controller.deletesellcontact" >
+            <result name="input">sell_request_list.jsp</result>
+            <result name="error">sell_request_list.jsp</result>
+            <result name="success">sell_request_list.jsp</result>
+        </action>
+        <action name="delete1sellrequest" class="com.controller.deleterow4" >
+            <result name="error" >error.jsp</result>
+            <result type="chain" name="success">request_info_list</result>
+        </action>
+        <action name="removelistitem" class="com.controller.removelistitem" >
+            <result name="error" >error.jsp</result>
+            <result name="success">mylist.jsp</result>
+        </action>
+        <action name="removeall" class="com.controller.removeall" >
+            <result name="error" >error.jsp</result>
+            <result name="success">mylist.jsp</result>
+        </action>
+        <action name="mylists" class="com.controller.mylists" >
+            <result name="input">mylist.jsp</result>
+            <result name="error" >error.jsp</result>
+            <result name="success">mylist.jsp</result>
+        </action>
+       
+        <action name="logout" class="com.controller.logout" >
+            <result name="error" >index2.jsp</result>
+            <result name="success">login.jsp</result>
+        </action>
+        <action name="FileUploadAction1" 
+	    class="com.controller.FileUploadAction1" 
+            method="display">
+            <result name="none">fileupload.jsp</result>
+        </action>
+ 
+        <action name="resultAction" class="com.controller.FileUploadAction1"  method="upload">
+            <result name="success">result.jsp</result>
+        </action>
+        
+        
+        <action name="multiplefileuploading" class="com.controller.multiplefileuploading" method="display">
+            <result name="none">multipleuploading.jsp</result>
+        </action>
+ 
+        <action name="resultAction" class="com.controller.multiplefileuploading" method="upload">
+            <result name="success">result.jsp</result>
+        </action>
+        
+        <action name="sessionError" class="com.controller.sessionError">
+            <result name="success" >login.jsp</result>
+            <result name="input" >login.jsp</result>
+            <result name="error" >login.jsp</result>
+        </action>
+        
+    </package>
+    <package name="ajax" extends="struts-default">
+        <action name="ajaxcall" class="com.controller.ajaxcall">
+            <result >ajaxcall.jsp</result>    
+        </action>    
+    </package>
+    <package name="json" namespace="/" extends="json-default">
+        <action name="refIdjson" 
+     		class="com.controller.refidlist">
+            <result type="json" >
+                <param name="root">databases</param>
+            </result>
+        </action>
+     
+    </package>
+     
+</struts>

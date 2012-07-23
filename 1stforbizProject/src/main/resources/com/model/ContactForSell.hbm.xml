@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.model.ContactForSell" table="contact_for_sell" catalog="a_1stforbiz">
+        <id name="RId" type="java.lang.Long">
+            <column name="r_id" />
+            <generator class="identity" />
+        </id>
+        <property name="RTitle" type="string">
+            <column name="r_title" length="10" not-null="true" />
+        </property>
+        <property name="RFirstName" type="string">
+            <column name="r_first_name" length="50" not-null="true" />
+        </property>
+        <property name="RSurname" type="string">
+            <column name="r_surname" length="50" not-null="true" />
+        </property>
+        <property name="RCompName" type="string">
+            <column name="r_comp_name" length="50" not-null="true" />
+        </property>
+        <property name="RCompNo" type="string">
+            <column name="r_comp_no" length="50" not-null="true" />
+        </property>
+        <property name="RRoad" type="string">
+            <column name="r_road" length="50" not-null="true" />
+        </property>
+        <property name="RTown" type="string">
+            <column name="r_town" length="50" not-null="true" />
+        </property>
+        <property name="RCountry" type="string">
+            <column name="r_country" length="50" not-null="true" />
+        </property>
+        <property name="RPostalCode" type="java.lang.Long">
+            <column name="r_postal_code" />
+        </property>
+        <property name="RPhone" type="java.lang.Long">
+            <column name="r_phone" />
+        </property>
+        <property name="RWorkPhone" type="java.lang.Long">
+            <column name="r_work_phone" />
+        </property>
+        <property name="RMobile" type="java.lang.Long">
+            <column name="r_mobile" />
+        </property>
+        <property name="RFax" type="java.lang.Long">
+            <column name="r_fax" />
+        </property>
+        <property name="REmail" type="string">
+            <column name="r_email" length="50" not-null="true" />
+        </property>
+        <property name="RContactOptions" type="string">
+            <column name="r_contact_options" length="250" not-null="true" />
+        </property>
+        <property name="RPostTime" type="timestamp">
+            <column name="r_post_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

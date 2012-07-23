@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.model.BusinessValuation" table="business_valuation" catalog="a_1stforbiz">
+        <id name="bvId" type="java.lang.Long">
+            <column name="bv_id" />
+            <generator class="identity" />
+        </id>
+        <property name="CTitle" type="string">
+            <column name="c_title" length="10" not-null="true" />
+        </property>
+        <property name="CFirstName" type="string">
+            <column name="c_first_name" length="50" not-null="true" />
+        </property>
+        <property name="CSurname" type="string">
+            <column name="c_surname" length="50" not-null="true" />
+        </property>
+        <property name="CCompName" type="string">
+            <column name="c_comp_name" length="50" not-null="true" />
+        </property>
+        <property name="CHouseNo" type="string">
+            <column name="c_house_no" length="50" not-null="true" />
+        </property>
+        <property name="CRoad" type="string">
+            <column name="c_road" length="50" not-null="true" />
+        </property>
+        <property name="CTown" type="string">
+            <column name="c_town" length="50" not-null="true" />
+        </property>
+        <property name="CCountry" type="string">
+            <column name="c_country" length="50" not-null="true" />
+        </property>
+        <property name="CPostalcode" type="java.lang.Long">
+            <column name="c_postalcode" />
+        </property>
+        <property name="CPhone" type="java.lang.Long">
+            <column name="c_phone" />
+        </property>
+        <property name="CWorkPhone" type="java.lang.Long">
+            <column name="c_work_phone" />
+        </property>
+        <property name="CFax" type="java.lang.Long">
+            <column name="c_fax" />
+        </property>
+        <property name="CMobile" type="java.lang.Long">
+            <column name="c_mobile" />
+        </property>
+        <property name="CEmail" type="string">
+            <column name="c_email" length="50" not-null="true" />
+        </property>
+        <property name="BSector" type="string">
+            <column name="b_sector" length="50" not-null="true" />
+        </property>
+        <property name="BTradeType" type="string">
+            <column name="b_trade_type" length="50" not-null="true" />
+        </property>
+        <property name="BLocaTown" type="string">
+            <column name="b_loca_town" length="50" not-null="true" />
+        </property>
+        <property name="BLocaCountry" type="string">
+            <column name="b_loca_country" length="50" not-null="true" />
+        </property>
+        <property name="BAnnualTurnover" type="java.lang.Long">
+            <column name="b_annual_turnover" />
+        </property>
+        <property name="BGrossProfit" type="java.lang.Long">
+            <column name="b_gross_profit" />
+        </property>
+        <property name="BEmployeesNo" type="java.lang.Long">
+            <column name="b_employees_no" />
+        </property>
+        <property name="BTenure" type="string">
+            <column name="b_tenure" length="10" />
+        </property>
+        <property name="BWithAccom" type="string">
+            <column name="b_with_accom" length="10" />
+        </property>
+        <property name="BRooms" type="java.lang.Long">
+            <column name="b_rooms" />
+        </property>
+        <property name="BFrachises" type="string">
+            <column name="b_frachises" length="10" />
+        </property>
+        <property name="BRent" type="string">
+            <column name="b_rent" length="50" />
+        </property>
+        <property name="BRates" type="string">
+            <column name="b_rates" length="50" />
+        </property>
+        <property name="BElectricity" type="string">
+            <column name="b_electricity" length="50" />
+        </property>
+        <property name="BOtherExpen" type="string">
+            <column name="b_other_expen" length="150" />
+        </property>
+        <property name="BComments" type="string">
+            <column name="b_comments" length="250" />
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
