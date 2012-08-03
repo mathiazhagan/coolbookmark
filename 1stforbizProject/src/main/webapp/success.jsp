@@ -1,42 +1,162 @@
-<%-- 
-    Document   : success
-    Created on : Jun 28, 2012, 4:33:12 PM
-    Author     : Naren
---%>
-
+<%@taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
     <head>
-        <s:head/>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <title>JSP Page</title>
+        <s:head theme="jquery"/>
+        <sj:head  jqueryui="true" jquerytheme="flick"/>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
+
     </head>
+
     <body>
-        <h1>---------Success-------!</h1>
-        you are successfully posted your property details for immediate sell.</br> Your Reference Id is <font color="red"> <s:iterator value="list1"> <s:property value="referenceId"/></s:iterator></font></br>
-        You can can contact us or you can check your details in our web site "www.1stforbiz.com" using this reference id in future.</br>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;You can Upload images Below.......
-    <h><b><font color="red" >Make sure the image name and file name should be same before uploading your photo,If not your photo will not be uploaded</font></b></h></br>
-    <h><b><font color="red" >Atleast 1 image you should upload</font></b></h> 
-            <s:actionerror />
-            <s:form action="imagefile" method="post" enctype="multipart/form-data">
+        <!--container start -->
+        <div id="container">
 
-        <s:iterator value="list1">
-            <s:textfield name="imagename" label="Enter file name" value="%{referenceId}" />
-        </s:iterator>
+            <div class="header">
 
-        <s:file name="userImage1" label="Image1" />    <p>Max Size : 2Mb and png,jpeg,gif format images only allowed</p>
-        <s:file name="userImage2" label="Image2" />
-        <s:file name="userImage3" label="Image3" />
-        <s:file name="userImage4" label="Image4" />
-        <s:file name="userImage5" label="Image5" />
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
+
+                    <!--navigation start -->
+                    <div class="navigation">
+                <ul>
+
+                    <li><a href="index2.jsp">Home</a></li>
+                    <li><a href="sell.jsp">Sell</a></li>
+                    <li><a href="services.jsp">Services</a></li>
+                    <li><a href="aboutus.jsp">About us</a></li>
+                    <li><a href="contactus.jsp">Contact us</a></li>
+                    <li><a href="mylist.jsp">My list</a></li>
+
+                </ul>		
 
 
-        <s:submit value="Upload" align="center" />
+<form method="post" action="searchbyref.action" >
 
-    </s:form>
-</body>
-</html>
+                            <div class="search_header">
+
+                                <input type="text" class="search_input" value="" name="referenceId" placeholder="Our ref"/> 
+
+                                <input type="submit" name="submit" class="search_submit" value="" title="Search"/>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <!--navigation end -->
+
+                </div>
+
+            </div>
+            
+            <!--content start -->
+            <div class="content" style="border:1px solid #9a9b9d;">
+
+                <!-- left side start -->
+                <div class="about_us" style="float:none; margin:auto" >
+
+                    <div class="t1"> Pegasus Business Sales:  Your Reference Id is <font color="red">  <s:property value="referenceId"/></font><br /><br />
+                        You can can contact us by using this reference id in future.
+                    </div><br />
+
+                    <img src="images/left-hr.png"/>	<br />
+                    <s:actionmessage theme="jquery"/><s:actionerror theme="jquery"/>
+                    <div class="t1"> Upload Images Below To finish </div><br />						
+
+                    <!-- form -->
+                    <div class="sell_form" style="float:none; margin:auto">
+
+                        <s:form action="imagefile" method="post" enctype="multipart/form-data" theme="simple">
+
+
+
+                            <s:hidden name="referenceNo" value="%{referenceNo}" />
+                            <s:hidden name="referenceId"    value="%{referenceId}" />
+
+
+
+                            <div class="t18">Image1 </div>
+
+                            <s:file name="userImage1" cssClass="txt_bx_1"  size="30" maxlength="20" value="" /><br />
+
+                            <div class="t18">Image2</div>
+
+                            <s:file name="userImage2" cssClass="txt_bx_1"  size="30" maxlength="20" value="" /><br />
+
+                            <div class="t18">Image3 </div>
+
+                            <s:file name="userImage3" cssClass="txt_bx_1"  size="30" maxlength="20" value="" /><br />
+                            <div class="t18">Image4</div>
+
+                            <s:file name="userImage4" cssClass="txt_bx_1"  size="30" maxlength="20" value="" /><br />
+
+                            <div class="t18">Image5 </div>
+
+                            <s:file name="userImage5" cssClass="txt_bx_1"  size="30" maxlength="20" value="" /><br />
+
+
+                            <input type="submit" value="Upload" name="type" class="sub_button button" style="margin-left:-100px;"/>
+
+                            <input type="reset" value="Reset" name="type" class="rst_button button"/>
+
+                             </s:form> <br /><br /><br />
+                        </div>
+
+                    </div>	
+                    <!-- left side end -->	
+
+
+
+                    <!-- right content start -->		
+                <div class="right" style="margin:-530px 0 0 880px">
+
+                    <div class="right1">
+                        <a href="#"> <img src="images/savemoney.gif" width="180" height="210"/></a>	
+                    </div>
+
+                    <div class="right2">
+                        <a href="search_map.jsp"> <img src="images/map.gif" width="180" height="210"/></a>
+                        <a href="search_map.jsp"> <img src="images/map-bottom.png" width="180"/></a>
+                    </div>
+
+                </div>
+                <!-- right content end -->
+
+                    <!-- footer start -->
+                <div id="footer" style="width:1100px">			
+                    <div class="bottom_link">
+                        <ul>
+                            <li><a href="index2.jsp">Home</a></li>
+                            <li><a href="sell.jsp">Sell</a></li>
+                            <li><a href="services.jsp">Services</a></li>
+                            <li><a href="aboutus.jsp">About us</a></li>
+                            <li><a href="contactus.jsp">Contact us</a></li>
+                            <li><a href="mylist.jsp">My list</a></li>
+                            <li><a href="faqs.jsp">FAQ's</a></li>
+                            <li><a href="tandc.jsp">Terms and Conditions</a></li>
+                        </ul>				
+                    </div>
+
+                    <div class="rights" style="margin:20px 0 0 256px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+                </div>		
+                <!-- footer end -->
+                </div>
+                <!-- content end -->
+            </div>
+            <!--container end -->
+        </body>
+    </html>

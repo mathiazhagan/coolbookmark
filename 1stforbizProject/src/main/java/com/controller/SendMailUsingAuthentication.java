@@ -36,8 +36,8 @@ SendMailUsingAuthentication authProg = new SendMailUsingAuthentication();
 public class SendMailUsingAuthentication {
 
     private static final String SMTP_HOST_NAME = "smtp.gmail.com";
-    private static final String SMTP_AUTH_USER = "mentor@edubiz.org";
-    private static final String SMTP_AUTH_PWD = "EduBiz_888";
+    private static final String SMTP_AUTH_USER = "8aarkay@gmail.com";
+    private static final String SMTP_AUTH_PWD = "51207205033";
     private static final int SMTP_HOST_PORT = 465;
     private static final String emailMsgTxt = "Online Order Confirmation Message. Also include the Tracking Number.";
     private static final String emailSubjectTxt = "Order Confirmation Subject";

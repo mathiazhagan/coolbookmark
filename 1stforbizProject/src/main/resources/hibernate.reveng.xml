@@ -2,13 +2,13 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="a_1stforbiz"/>
+  <table-filter match-name="sell"/>
+  <table-filter match-name="listings"/>
+  <table-filter match-name="mylists"/>
   <table-filter match-name="sample_mylist"/>
   <table-filter match-name="business_valuation"/>
-  <table-filter match-name="requestinfo_table"/>
-  <table-filter match-name="sell"/>
-  <table-filter match-name="mylists"/>
-  <table-filter match-name="contact_for_sell"/>
-  <table-filter match-name="listings"/>
   <table-filter match-name="adminlog"/>
   <table-filter match-name="imagesfile"/>
+  <table-filter match-name="requestinfo_table"/>
+  <table-filter match-name="contact_for_sell"/>
 </hibernate-reverse-engineering>

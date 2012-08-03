@@ -5,8 +5,10 @@
 package com.controller;
 
 import com.model.Sell;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
+import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
@@ -19,16 +21,21 @@ public class fulldetails extends ActionSupport {
     private spDAO myDao;
     private String referenceId;
     private List<Sell> sresult;
-   
+    private Map session;
+    private Sell onesell;
 
     @Override
     public String execute() throws Exception {
         try {
-            System.out.println("==reference id is:----"+referenceId);
+            System.out.println("==reference id is:----" + referenceId);
             Criteria crit = getMyDao().getDbsession().createCriteria(Sell.class);
             crit.add(Restrictions.like("referenceId", referenceId));
             sresult = (List<Sell>) crit.list();
+             onesell = (Sell) (crit.list().get(0));
+            session = ActionContext.getContext().getSession();
 
+
+            session.put("onesell", onesell);
 //            List<File> results = new ArrayList<File>();
 //            File[] files = new File("C:/Documents and Settings/Naren/My Documents/NetBeansProjects/1stforbizProject/src/main/webapp/MyFolder/").listFiles();
 
@@ -94,5 +101,33 @@ public class fulldetails extends ActionSupport {
      */
     public void setSresult(List<Sell> sresult) {
         this.sresult = sresult;
+    }
+
+    /**
+     * @return the session
+     */
+    public Map getSession() {
+        return session;
+    }
+
+    /**
+     * @param session the session to set
+     */
+    public void setSession(Map session) {
+        this.session = session;
+    }
+
+    /**
+     * @return the onesell
+     */
+    public Sell getOnesell() {
+        return onesell;
+    }
+
+    /**
+     * @param onesell the onesell to set
+     */
+    public void setOnesell(Sell onesell) {
+        this.onesell = onesell;
     }
 }

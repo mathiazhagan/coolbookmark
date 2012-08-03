@@ -10,9 +10,11 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
-        <link rel="stylesheet" type="text/css" href="style/table.css" />
-
+       <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="table.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
         <title>Admin</title>
         <!-- for pagination script start-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -50,37 +52,29 @@
 
         %>
 
-        <!--container start -->
+      <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
 
+                    <!--navigation start -->
+                    <div class="navigation">
                 <ul>
 
-                  <li><a href="adminpage.jsp">Home</a></li>
+                    <li><a href="adminpage.jsp">Home</a></li>
                     <li><a href="logout.action">Logout</a></li> 
-
                 </ul>
 
-
-
-
+            </div>
+                    
+                </div>
             </div>
             <!--navigation end -->
 
-            <div class="green">
-                <img src="images/green-line.png"/>	
-            </div>
-
-          
-            <div class="content1">
+            <div class="content100">
                 
                 <div class="t1" align="center" >Multiple Sell Request List View </div> <br/>
 
@@ -130,23 +124,6 @@
                 </div>
 
 
-
-
-
-
-
-                <div class="green1">
-                    <img src="images/green-line.png"/>	
-                </div>
-                <!-- footer start -->
-                <div id="footer">			
-                    <div class="bottom_link">
-
-                    </div>
-
-                    <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
-                </div>		
-                <!-- footer end -->	
             </div>
         </div>
     </body>

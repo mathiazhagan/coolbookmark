@@ -5,9 +5,12 @@
 package com.controller;
 
 import com.model.RequestinfoTable;
+import com.model.Sell;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import java.util.Date;
+import java.util.List;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -21,9 +24,9 @@ public class requestinfo extends ActionSupport {
     private String fname;
     private String sname;
     private String email;
-    private String telephone;
-    private String WTelephone;
-    private String fax;
+    private Long telephone;
+    private Long WTelephone;
+    private Long fax;
     private String houseNo;
     private String road;
     private String town;
@@ -37,81 +40,54 @@ public class requestinfo extends ActionSupport {
     @Override
     public String execute() throws Exception {
         try {
-            System.out.println("---------"+fname);
-           //Inserting data into requestinfo table
-            RequestinfoTable rinfo = new RequestinfoTable(new Date(), getTitle(), getFname(), getSname(), getEmail(), getTelephone(), getWTelephone(), getFax(),
-                    getHouseNo(), getRoad(), getTown(), getCountry(), getPostcode(), getReferenceId());
+            System.out.println("---------" + fname);
+            //Inserting data into requestinfo table
+            RequestinfoTable rinfo = new RequestinfoTable(new Date(), getTitle(), getFname(), getSname(), getEmail(), getReferenceId());
+            rinfo.setWTelephone(WTelephone);
+            rinfo.setTelephone(telephone);
+            rinfo.setFax(fax);
+            rinfo.setHouseNo(houseNo);
+            rinfo.setRoad(road);
+            rinfo.setCountry(country);
+            rinfo.setTown(town);
+            rinfo.setPostcode(postcode);
+
+
             myDao.getDbsession().save(rinfo);
             System.out.println("----------Request saved ---------");
- 
-            
+
+
             //sending conformation mail
-            subject = "Responce from Pegasus:Thank you for your request about property RefId:" + referenceId + "";
-           // content="888888888888&&*************";
-            content = ("<html><body><table size=fixed border=10><th><div id=header style=background-color:lightblue;>Responce From Pegasus Business Sales...</div></th>"
-                    + "<tr><td align=middle>Thank you for your request about the property with referenceId :" + referenceId + "We will send you the Information soon<br> for any other queries visit our web site :"
-                    + "<td><a STYLE=text-decoration:none href=www.1stforbiz.com>www.1stforbiz.com</a></td> ");
+            subject = "Response from Pegasus:Thank you for your request about property RefId:" + referenceId + "";
+            // content="888888888888&&*************";
+            content = ("Response From Pegasus Business Sales..."
+                    + "Thank you for your request about the property with referenceId :" + referenceId + "We will send you the Information soon,for any other queries visit our web site :"
+                    + "www.1stforbiz.com ");
 
-            System.out.println("----------------"+email);
+            System.out.println("----------------" + email);
             sendMail.test(getEmail(), getSubject(), getContent());
-            System.out.println("-----------------Responce mail sended successfully ");  
+            System.out.println("-----------------Response mail sended successfully ");
+            addActionMessage("Your Request Received Successfully.We will respond to you soon");
 
+            return "success";
 
         } catch (Exception e) {
             e.printStackTrace();
+
+            addActionError("Server Error Please Try Again Later");
             return "error";
 
         }
-       
-        return "success";
 
     }
-    
-    
-     @Override
+
+    @Override
     public void validate() {
-        try {
-             if(fname.isEmpty() || fname==null){
-             addActionMessage("your form submition failed check the fields and submit again....");            
-            }
-            if(sname.isEmpty() || sname==null){
-             addFieldError("sname", "please ener surname");            
-           }
-           if(email.isEmpty() || email==null){
-              addFieldError("email", "please ener email");                  
-           }
-            if(telephone.isEmpty() || telephone==null){
-             addFieldError("telephone", "please ener telephone no");                    
-            }
-            if(WTelephone.isEmpty() || WTelephone==null){
-             addFieldError("WTelephone", "please ener WTelephone no");                    
-            }
-            if(fax.isEmpty() || fax==null){
-             addFieldError("fax", "please ener fax no");                  
-           }
-            if(houseNo.isEmpty() || houseNo==null){
-             addFieldError("houseNo", "please ener houseNo ");                   
-            }
-           if(road.isEmpty() || road==null){
-             addFieldError("road", "please ener road name");                  
-            }
-           if(town.isEmpty() || town==null){
-            addFieldError("town", "please ener town name");                 
-           }
-            if(country.isEmpty() || country==null){
-           addFieldError("country", "please ener country name");                     
-           }
-           if(postcode.isEmpty() || postcode==null){
-             addFieldError("postcode", "please ener postcode");                 
-           }
-           
-                       
-             } catch (Exception e) {
-            e.printStackTrace();
-            
-             
+
+        if (fname.isEmpty() && sname.isEmpty() && email.isEmpty()) {
+            addActionError("Please Recheck All the fields and submit again.....");
         }
-       
+
     }
 
     /**
@@ -138,7 +114,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param title the title to set
      */
-   
     public void setTitle(String title) {
         this.title = title;
     }
@@ -153,7 +128,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param fname the fname to set
      */
-  
     public void setFname(String fname) {
         this.fname = fname;
     }
@@ -168,7 +142,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param sname the sname to set
      */
-  
     public void setSname(String sname) {
         this.sname = sname;
     }
@@ -183,52 +156,8 @@ public class requestinfo extends ActionSupport {
     /**
      * @param email the email to set
      */
-  
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    /**
-     * @return the telephone
-     */
-    public String getTelephone() {
-        return telephone;
-    }
-
-    /**
-     * @param telephone the telephone to set
-     */
-   
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    /**
-     * @return the WTelephone
-     */
-    public String getWTelephone() {
-        return WTelephone;
-    }
-
-    /**
-     * @param WTelephone the WTelephone to set
-     */
-    public void setWTelephone(String WTelephone) {
-        this.WTelephone = WTelephone;
-    }
-
-    /**
-     * @return the fax
-     */
-    public String getFax() {
-        return fax;
-    }
-
-    /**
-     * @param fax the fax to set
-     */
-    public void setFax(String fax) {
-        this.fax = fax;
     }
 
     /**
@@ -241,7 +170,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param houseNo the houseNo to set
      */
-  
     public void setHouseNo(String houseNo) {
         this.houseNo = houseNo;
     }
@@ -256,7 +184,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param road the road to set
      */
-   
     public void setRoad(String road) {
         this.road = road;
     }
@@ -271,7 +198,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param town the town to set
      */
-  
     public void setTown(String town) {
         this.town = town;
     }
@@ -286,7 +212,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param country the country to set
      */
-  
     public void setCountry(String country) {
         this.country = country;
     }
@@ -301,7 +226,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param postcode the postcode to set
      */
-  
     public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
@@ -316,7 +240,6 @@ public class requestinfo extends ActionSupport {
     /**
      * @param referenceId the referenceId to set
      */
-   
     public void setReferenceId(String referenceId) {
         this.referenceId = referenceId;
     }
@@ -375,5 +298,47 @@ public class requestinfo extends ActionSupport {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return the telephone
+     */
+    public Long getTelephone() {
+        return telephone;
+    }
+
+    /**
+     * @param telephone the telephone to set
+     */
+    public void setTelephone(Long telephone) {
+        this.telephone = telephone;
+    }
+
+    /**
+     * @return the WTelephone
+     */
+    public Long getWTelephone() {
+        return WTelephone;
+    }
+
+    /**
+     * @param WTelephone the WTelephone to set
+     */
+    public void setWTelephone(Long WTelephone) {
+        this.WTelephone = WTelephone;
+    }
+
+    /**
+     * @return the fax
+     */
+    public Long getFax() {
+        return fax;
+    }
+
+    /**
+     * @param fax the fax to set
+     */
+    public void setFax(Long fax) {
+        this.fax = fax;
     }
 }

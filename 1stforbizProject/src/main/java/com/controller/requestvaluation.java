@@ -6,7 +6,6 @@ package com.controller;
 
 import com.model.BusinessValuation;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import java.util.Date;
 
 /**
@@ -20,35 +19,26 @@ public class requestvaluation extends ActionSupport {
     private String CFirstName;
     private String CSurname;
     private String CCompName;
-    private String CHouseNo;
-    private String CRoad;
-    private String CTown;
-    private String CCountry;
-    private Long CPostalcode;
     private Long CPhone;
-    private Long CWorkPhone;
-    private Long CFax;
-    private Long CMobile;
     private String CEmail;
     private String BSector;
     private String BTradeType;
     private String BLocaTown;
     private String BLocaCountry;
     private Long BAnnualTurnover;
-    private Long BGrossProfit;
-    private Long BEmployeesNo;
-    private String BTenure;
-    private String BWithAccom;
-    private Long BRooms;
-    private String BFrachises;
-    private String BRent;
-    private String BRates;
-    private String BElectricity;
-    private String BOtherExpen;
     private String BComments;
     private Emailfunction sendMail;
     private String subject;
     private String content;
+
+    @Override
+    public void validate() {
+
+        if ((CFirstName.isEmpty()) && (CSurname.isEmpty()) && (CCompName.isEmpty()) && (CPhone == null && CSurname.isEmpty()) && (CEmail.isEmpty()) && ((BSector.isEmpty() || BSector.equals("invalid"))) && (BTradeType.isEmpty()) && (BLocaTown.isEmpty()) && ((BLocaCountry.isEmpty() || BLocaCountry.equals("invalid")))) {
+            addActionError("Please Recheck All fields and try again");
+        }
+
+    }
 
     @Override
     public String execute() throws Exception {
@@ -56,42 +46,38 @@ public class requestvaluation extends ActionSupport {
 
             System.out.println("=--------------Entered into listing action");
             //inserting data into BusinessValuation table and saving
-            BusinessValuation bv = new BusinessValuation(getCTitle(), getCFirstName(), getCSurname(), getCCompName(), getCHouseNo(), getCRoad(), getCTown(), getCCountry(), getCPostalcode(), getCPhone(), getCWorkPhone(), getCFax(),
-                    getCMobile(), getCEmail(), getBSector(), getBTradeType(), getBLocaTown(), getBLocaCountry(), getBAnnualTurnover(), getBGrossProfit(), getBEmployeesNo(), getBTenure(), getBWithAccom(), getBRooms(), getBFrachises(),
-                    getBRent(), getBRates(), getBElectricity(), getBOtherExpen(), getBComments(), new Date());
+            BusinessValuation bv = new BusinessValuation();
+            bv.setCreateddate(new Date());
+            bv.setCEmail(CEmail);
+            bv.setBAnnualTurnover(BAnnualTurnover);
+            bv.setBSector(BSector);
+            bv.setBComments(BComments);
+            bv.setCFirstName(CFirstName);
+            bv.setCCompName(CCompName);
+            bv.setCSurname(CSurname);
+            bv.setCTitle(CTitle);
+            bv.setCPhone(CPhone);
+            bv.setBTradeType(BTradeType);
+            bv.setBLocaTown(BLocaTown);
+            bv.setBLocaCountry(BLocaCountry);
             getMyDao().getDbsession().save(bv);
-            
+            addActionMessage("Your Request Received.We will get back to you shortly");
             System.out.println("======data saved======");
             //sending mail
-            setSubject("Respoce to ypur valuation request");
-            setContent("Thanks for your valuations request. Our employee will contact you soon.");
-            
+            setSubject("Response from 1stforbiz.com  valuation request");
+            setContent("Hi "+CFirstName+ " "+ CSurname+".<br/>Thanks for your valuations request.<br/> Our employee will contact you soon.<br/> For any other information please visit our website www.1stforbiz.com<br/>");
+
             getSendMail().test(getCEmail(), getSubject(), getContent());
             System.out.println("----------mail sended------");
-                  
+            return "success";
+
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
 
         }
-        return "success";
 
-    }
-    
-     @Override
-    public void validate() {
-        try {
-             if(CFirstName.isEmpty() || CFirstName==null){
-             addActionMessage("your form submition failed check the fields and submit again.....");            
-            }
-             
-             
-              } catch (Exception e) {
-            e.printStackTrace();
-            
-             
-        }
-       
+
     }
 
     /**
@@ -132,7 +118,6 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param CFirstName the CFirstName to set
      */
-  @RequiredStringValidator(message="First name is required")
     public void setCFirstName(String CFirstName) {
         this.CFirstName = CFirstName;
     }
@@ -147,7 +132,6 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param CSurname the CSurname to set
      */
-   @RequiredStringValidator(message="Sur name is required")
     public void setCSurname(String CSurname) {
         this.CSurname = CSurname;
     }
@@ -162,72 +146,24 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param CCompName the CCompName to set
      */
-    @RequiredStringValidator(message="Company name is required")
     public void setCCompName(String CCompName) {
         this.CCompName = CCompName;
     }
 
     /**
-     * @return the CHouseNo
+     * @return the CPhone
      */
-    public String getCHouseNo() {
-        return CHouseNo;
+    public Long getCPhone() {
+        return CPhone;
     }
 
     /**
-     * @param CHouseNo the CHouseNo to set
+     * @param CPhone the CPhone to set
      */
-    @RequiredStringValidator(message="First name is required")
-    public void setCHouseNo(String CHouseNo) {
-        this.CHouseNo = CHouseNo;
+    public void setCPhone(Long CPhone) {
+        this.CPhone = CPhone;
     }
 
-    /**
-     * @return the CRoad
-     */
-    public String getCRoad() {
-        return CRoad;
-    }
-
-    /**
-     * @param CRoad the CRoad to set
-     */
-    @RequiredStringValidator(message="First name is required")
-    public void setCRoad(String CRoad) {
-        this.CRoad = CRoad;
-    }
-
-    /**
-     * @return the CTown
-     */
-    public String getCTown() {
-        return CTown;
-    }
-
-    /**
-     * @param CTown the CTown to set
-     */
-    @RequiredStringValidator(message="First name is required")
-    public void setCTown(String CTown) {
-        this.CTown = CTown;
-    }
-
-    /**
-     * @return the CCountry
-     */
-    public String getCCountry() {
-        return CCountry;
-    }
-
-    /**
-     * @param CCountry the CCountry to set
-     */
-   
-    public void setCCountry(String CCountry) {
-        this.CCountry = CCountry;
-    }
-
-   
     /**
      * @return the CEmail
      */
@@ -238,7 +174,6 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param CEmail the CEmail to set
      */
-   @RequiredStringValidator(message="Email address is required")
     public void setCEmail(String CEmail) {
         this.CEmail = CEmail;
     }
@@ -253,7 +188,6 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param BSector the BSector to set
      */
-    
     public void setBSector(String BSector) {
         this.BSector = BSector;
     }
@@ -268,7 +202,6 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param BTradeType the BTradeType to set
      */
-   
     public void setBTradeType(String BTradeType) {
         this.BTradeType = BTradeType;
     }
@@ -283,7 +216,6 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param BLocaTown the BLocaTown to set
      */
-   
     public void setBLocaTown(String BLocaTown) {
         this.BLocaTown = BLocaTown;
     }
@@ -298,110 +230,22 @@ public class requestvaluation extends ActionSupport {
     /**
      * @param BLocaCountry the BLocaCountry to set
      */
-    
     public void setBLocaCountry(String BLocaCountry) {
         this.BLocaCountry = BLocaCountry;
     }
 
-   
     /**
-     * @return the BTenure
+     * @return the BAnnualTurnover
      */
-    public String getBTenure() {
-        return BTenure;
+    public Long getBAnnualTurnover() {
+        return BAnnualTurnover;
     }
 
     /**
-     * @param BTenure the BTenure to set
+     * @param BAnnualTurnover the BAnnualTurnover to set
      */
-    public void setBTenure(String BTenure) {
-        this.BTenure = BTenure;
-    }
-
-    /**
-     * @return the BWithAccom
-     */
-    public String getBWithAccom() {
-        return BWithAccom;
-    }
-
-    /**
-     * @param BWithAccom the BWithAccom to set
-     */
-    public void setBWithAccom(String BWithAccom) {
-        this.BWithAccom = BWithAccom;
-    }
-
-   
-
-    /**
-     * @return the BFrachises
-     */
-    public String getBFrachises() {
-        return BFrachises;
-    }
-
-    /**
-     * @param BFrachises the BFrachises to set
-     */
-    public void setBFrachises(String BFrachises) {
-        this.BFrachises = BFrachises;
-    }
-
-    /**
-     * @return the BRent
-     */
-    public String getBRent() {
-        return BRent;
-    }
-
-    /**
-     * @param BRent the BRent to set
-     */
-    public void setBRent(String BRent) {
-        this.BRent = BRent;
-    }
-
-    /**
-     * @return the BRates
-     */
-    public String getBRates() {
-        return BRates;
-    }
-
-    /**
-     * @param BRates the BRates to set
-     */
-    public void setBRates(String BRates) {
-        this.BRates = BRates;
-    }
-
-    /**
-     * @return the BElectricity
-     */
-    public String getBElectricity() {
-        return BElectricity;
-    }
-
-    /**
-     * @param BElectricity the BElectricity to set
-     */
-    public void setBElectricity(String BElectricity) {
-        this.BElectricity = BElectricity;
-    }
-
-    /**
-     * @return the BOtherExpen
-     */
-    public String getBOtherExpen() {
-        return BOtherExpen;
-    }
-
-    /**
-     * @param BOtherExpen the BOtherExpen to set
-     */
-    public void setBOtherExpen(String BOtherExpen) {
-        this.BOtherExpen = BOtherExpen;
+    public void setBAnnualTurnover(Long BAnnualTurnover) {
+        this.BAnnualTurnover = BAnnualTurnover;
     }
 
     /**
@@ -459,132 +303,4 @@ public class requestvaluation extends ActionSupport {
     public void setContent(String content) {
         this.content = content;
     }
-
-    /**
-     * @return the CPostalcode
-     */
-    public Long getCPostalcode() {
-        return CPostalcode;
-    }
-
-    /**
-     * @param CPostalcode the CPostalcode to set
-     */
-    public void setCPostalcode(Long CPostalcode) {
-        this.CPostalcode = CPostalcode;
-    }
-
-    /**
-     * @return the CPhone
-     */
-    public Long getCPhone() {
-        return CPhone;
-    }
-
-    /**
-     * @param CPhone the CPhone to set
-     */
-    public void setCPhone(Long CPhone) {
-        this.CPhone = CPhone;
-    }
-
-    /**
-     * @return the CWorkPhone
-     */
-    public Long getCWorkPhone() {
-        return CWorkPhone;
-    }
-
-    /**
-     * @param CWorkPhone the CWorkPhone to set
-     */
-    public void setCWorkPhone(Long CWorkPhone) {
-        this.CWorkPhone = CWorkPhone;
-    }
-
-    /**
-     * @return the CFax
-     */
-    public Long getCFax() {
-        return CFax;
-    }
-
-    /**
-     * @param CFax the CFax to set
-     */
-    public void setCFax(Long CFax) {
-        this.CFax = CFax;
-    }
-
-    /**
-     * @return the CMobile
-     */
-    public Long getCMobile() {
-        return CMobile;
-    }
-
-    /**
-     * @param CMobile the CMobile to set
-     */
-    public void setCMobile(Long CMobile) {
-        this.CMobile = CMobile;
-    }
-
-    /**
-     * @return the BAnnualTurnover
-     */
-    public Long getBAnnualTurnover() {
-        return BAnnualTurnover;
-    }
-
-    /**
-     * @param BAnnualTurnover the BAnnualTurnover to set
-     */
-    public void setBAnnualTurnover(Long BAnnualTurnover) {
-        this.BAnnualTurnover = BAnnualTurnover;
-    }
-
-    /**
-     * @return the BGrossProfit
-     */
-    public Long getBGrossProfit() {
-        return BGrossProfit;
-    }
-
-    /**
-     * @param BGrossProfit the BGrossProfit to set
-     */
-    public void setBGrossProfit(Long BGrossProfit) {
-        this.BGrossProfit = BGrossProfit;
-    }
-
-    /**
-     * @return the BEmployeesNo
-     */
-    public Long getBEmployeesNo() {
-        return BEmployeesNo;
-    }
-
-    /**
-     * @param BEmployeesNo the BEmployeesNo to set
-     */
-    public void setBEmployeesNo(Long BEmployeesNo) {
-        this.BEmployeesNo = BEmployeesNo;
-    }
-
-    /**
-     * @return the BRooms
-     */
-    public Long getBRooms() {
-        return BRooms;
-    }
-
-    /**
-     * @param BRooms the BRooms to set
-     */
-    public void setBRooms(Long BRooms) {
-        this.BRooms = BRooms;
-    }
-
-   
 }

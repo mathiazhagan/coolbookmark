@@ -10,9 +10,11 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
-        <link rel="stylesheet" type="text/css" href="style/table.css" />
-
+       <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="table.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
         <title>Admin</title>
         <!-- for pagination script start-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -49,36 +51,30 @@
 
         %>
 
-        <!--container start -->
+       <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
 
+                    <!--navigation start -->
+                    <div class="navigation">
                 <ul>
 
-                   <li><a href="adminpage.jsp">Home</a></li>
+                    <li><a href="adminpage.jsp">Home</a></li>
                     <li><a href="logout.action">Logout</a></li> 
                 </ul>
 
-
-
-
+            </div>
+                    
+                </div>
             </div>
             <!--navigation end -->
 
-            <div class="green">
-                <img src="images/green-line.png"/>	
-            </div>
 
-           
-            <div class="content1">
+            <div class="content100">
               
                 <div class="t1" align="center" >Business Sell Request List View </div> <br/>
 
@@ -86,15 +82,14 @@
                 <div id="containerbox">
                     <div class="tableheader" >
                         <span class="Compaign">First Name</span>
-                        <span class="Budget_1">Sur Name</span>
-                        <span class="CPC">Ref_ID</span>
-                        <span class="Impressions">Telephone</span>
+                        <span class="Budget2">Sur Name</span>
+                        <span class="Impression8">Telephone</span>
                         <span class="Created">Email</span>
-                        <span class="change">Town</span>
-                        <span class="change">Country</span>
+                        <span class="changea">Town</span>
+                        <span class="changea">County</span>
                         <span class="Cost">Delete</span>
                         <span class="response">Send Mail</span>
-                        <span class="Clicks">Posting Time</span>
+                        <span class="Clicks">Reference Ids</span>
                     </div>
 
                     <div class="clear"></div>
@@ -103,18 +98,18 @@
                         <s:iterator value="list">
                             <div class="tabletext">
                                 <span class="name"><s:property value="fname"/></span>
-                                <span class="Budget_1"><s:property value="sname"/></span>
-                                <span class="CPC"><s:property value="referenceId"/></span>
-                                <span class="Impressions"><s:property value="telephone"/></span>
+                                <span class="Budget2"><s:property value="sname"/></span>
+                               
+                                <span class="Impression8"><s:property value="telephone"/></span>
                                 <span class="Created"><s:property value="email"/></span>
-                                <span class="change"><s:property value="town"/></span>
-                                <span class="change"><s:property value="country"/></span>
+                                <span class="changea"><s:property value="town"/></span>
+                                <span class="changea"><s:property value="country"/></span>
                                 <s:url id="url" action="admin/delete1sellrequest">
                                     <s:param name="RId" value="RId"/>
                                 </s:url>
                                 <span class="Cost"> <s:a href="%{url}"><img src="images/trash.png" alt="Delete"  /></s:a></span>
                                 <span class="response"><a href="mailto:<s:property value="email"/>"><img src="images/mailicon.png" alt="Mail" height="20" width="20" /></a></span>
-                                <span class="Clicks"><s:property value="RDate"/></span>
+                                <span class="Clicks"><s:property value="referenceId"/></span>
                             </div>
 
                         </s:iterator>
@@ -122,29 +117,19 @@
 
                     <div class="tabletext1"></div>
 
-
-
-                    <div class="clear"></div>
-                </div>
-
-
-
-
-
-
-
-                <div class="green1">
-                    <img src="images/green-line.png"/>	
-                </div>
-                <!-- footer start -->
-                <div id="footer">			
+                    <!-- footer start -->
+                <div id="footer" style="width:1250px; margin-left:auto;margin-right:auto;">			
                     <div class="bottom_link">
 
                     </div>
 
-                    <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
+                    <div class="rights" style="margin:20px 0 0 450px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
                 </div>		
-                <!-- footer end -->	
+                <!-- footer end -->
+
+                    <div class="clear"></div>
+                </div>
+
             </div>
         </div>
     </body>

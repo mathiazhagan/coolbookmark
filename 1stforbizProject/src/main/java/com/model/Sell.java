@@ -1,5 +1,5 @@
 package com.model;
-// Generated Jul 21, 2012 4:41:27 PM by Hibernate Tools 3.2.1.GA
+// Generated Jul 27, 2012 5:21:52 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -21,7 +21,7 @@ public class Sell  implements java.io.Serializable {
      private String BRoadName;
      private String BTown;
      private String BCountry;
-     private Long BPostalCode;
+     private String BPostalCode;
      private Long BTelephone;
      private Long BWorkPhone;
      private Long BMobile;
@@ -32,7 +32,7 @@ public class Sell  implements java.io.Serializable {
      private String PRoadName;
      private String PTown;
      private String PCountry;
-     private Long PPostalCode;
+     private String PPostalCode;
      private String BBusinessType;
      private String BTradingHours;
      private String BLocationDesc;
@@ -44,7 +44,7 @@ public class Sell  implements java.io.Serializable {
      private String BViewArrang;
      private String BRates;
      private String BCurrentTakings;
-     private Long BSalePrice;
+     private long BSalePrice;
      private String BAdverHeading;
      private String BCategory;
      private String referenceId;
@@ -56,24 +56,20 @@ public class Sell  implements java.io.Serializable {
     }
 
 	
-    public Sell(String BTitle, String BFirstName, String BSurname, String BComapnyName, String BHouseNo, String BRoadName, String BTown, String BCountry, String BEmail, String BSiteUrl, String BAdverHeading, String BCategory, String referenceId, Date createdDate, String status) {
+    public Sell(String BTitle, String BFirstName, String BSurname, String BComapnyName, String BEmail, long BSalePrice, String BAdverHeading, String BCategory, String referenceId, Date createdDate, String status) {
         this.BTitle = BTitle;
         this.BFirstName = BFirstName;
         this.BSurname = BSurname;
         this.BComapnyName = BComapnyName;
-        this.BHouseNo = BHouseNo;
-        this.BRoadName = BRoadName;
-        this.BTown = BTown;
-        this.BCountry = BCountry;
         this.BEmail = BEmail;
-        this.BSiteUrl = BSiteUrl;
+        this.BSalePrice = BSalePrice;
         this.BAdverHeading = BAdverHeading;
         this.BCategory = BCategory;
         this.referenceId = referenceId;
         this.createdDate = createdDate;
         this.status = status;
     }
-    public Sell(String BTitle, String BFirstName, String BSurname, String BComapnyName, String BHouseNo, String BRoadName, String BTown, String BCountry, Long BPostalCode, Long BTelephone, Long BWorkPhone, Long BMobile, Long BFax, String BEmail, String BSiteUrl, String PHouseNo, String PRoadName, String PTown, String PCountry, Long PPostalCode, String BBusinessType, String BTradingHours, String BLocationDesc, String BBusinessDesc, String BBusinessDetails, String BEquipList, String BAccomDesc, String BTenure, String BViewArrang, String BRates, String BCurrentTakings, Long BSalePrice, String BAdverHeading, String BCategory, String referenceId, Date createdDate, String status, Set<Imagesfile> imagesfiles) {
+    public Sell(String BTitle, String BFirstName, String BSurname, String BComapnyName, String BHouseNo, String BRoadName, String BTown, String BCountry, String BPostalCode, Long BTelephone, Long BWorkPhone, Long BMobile, Long BFax, String BEmail, String BSiteUrl, String PHouseNo, String PRoadName, String PTown, String PCountry, String PPostalCode, String BBusinessType, String BTradingHours, String BLocationDesc, String BBusinessDesc, String BBusinessDetails, String BEquipList, String BAccomDesc, String BTenure, String BViewArrang, String BRates, String BCurrentTakings, long BSalePrice, String BAdverHeading, String BCategory, String referenceId, Date createdDate, String status, Set<Imagesfile> imagesfiles) {
        this.BTitle = BTitle;
        this.BFirstName = BFirstName;
        this.BSurname = BSurname;
@@ -177,11 +173,11 @@ public class Sell  implements java.io.Serializable {
     public void setBCountry(String BCountry) {
         this.BCountry = BCountry;
     }
-    public Long getBPostalCode() {
+    public String getBPostalCode() {
         return this.BPostalCode;
     }
     
-    public void setBPostalCode(Long BPostalCode) {
+    public void setBPostalCode(String BPostalCode) {
         this.BPostalCode = BPostalCode;
     }
     public Long getBTelephone() {
@@ -254,11 +250,11 @@ public class Sell  implements java.io.Serializable {
     public void setPCountry(String PCountry) {
         this.PCountry = PCountry;
     }
-    public Long getPPostalCode() {
+    public String getPPostalCode() {
         return this.PPostalCode;
     }
     
-    public void setPPostalCode(Long PPostalCode) {
+    public void setPPostalCode(String PPostalCode) {
         this.PPostalCode = PPostalCode;
     }
     public String getBBusinessType() {
@@ -338,11 +334,11 @@ public class Sell  implements java.io.Serializable {
     public void setBCurrentTakings(String BCurrentTakings) {
         this.BCurrentTakings = BCurrentTakings;
     }
-    public Long getBSalePrice() {
+    public long getBSalePrice() {
         return this.BSalePrice;
     }
     
-    public void setBSalePrice(Long BSalePrice) {
+    public void setBSalePrice(long BSalePrice) {
         this.BSalePrice = BSalePrice;
     }
     public String getBAdverHeading() {

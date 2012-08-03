@@ -46,7 +46,7 @@ public class imageretrieve extends ActionSupport {
             shimg5 = new ByteArrayInputStream(retadd5);
             System.out.println("-------" + shimg1);
             System.out.println("-------" + shimg2);
-
+    return "success";
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,7 +54,7 @@ public class imageretrieve extends ActionSupport {
             return "error";
 
         }
-        return "success";
+    
 
     }
 

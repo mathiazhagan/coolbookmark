@@ -11,35 +11,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
     <head>
-       
-
-
+        
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
         <title> 1stforbiz </title>
 
-        <link rel="stylesheet" type="text/css" href="admin/style/style.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
 
     </head>
 
     <body>
 
         <!--container start -->
-        <div id="container101">
+        <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
+
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />             
+
+                </div>
             </div>
-            <!--header end -->	
-
-
            
             <!--content start -->
-            <div class="content5234">
+            <div class="content1">
 
                 <!-- left side start -->
-                <div class="form343">
+                <div class="about_us" style="float:noen;margin:auto;">
 
                     <div class="t1"> </div><br />
 
@@ -57,7 +58,7 @@
                     <p> Your requested page not found on server either removed or broken link. </p>
 
                     <p>Please Go <a href="javascript:history.back()">Back</a> and try after some times</p>
-                </div>
+                </div><br /><br />
                                                  
                        
                           
@@ -65,6 +66,25 @@
                    
                 </div>	
                 <!-- left side end -->	
+                
+                <!-- footer start -->
+                <div id="footer" style="width:1000px;margin-top:-44px;">			
+                    <div class="bottom_link">
+                        <ul>
+                            <li><a href="index2.jsp">Home</a></li>
+                            <li><a href="sell.jsp">Sell</a></li>
+                            <li><a href="services.jsp">Services</a></li>
+                            <li><a href="aboutus.jsp">About us</a></li>
+                            <li><a href="contactus.jsp">Contact us</a></li>
+                            <li><a href="mylist.jsp">My list</a></li>
+                            <li><a href="faqs.jsp">FAQ's</a></li>
+                            <li><a href="tandc.jsp">Terms and Conditions</a></li>
+                        </ul>				
+                    </div>
+
+                    <div class="rights" style="margin:20px 0 0 256px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+                </div>		
+                <!-- footer end -->
 
 
             </div>

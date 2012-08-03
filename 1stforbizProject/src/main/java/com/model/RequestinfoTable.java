@@ -1,5 +1,5 @@
 package com.model;
-// Generated Jul 21, 2012 4:41:27 PM by Hibernate Tools 3.2.1.GA
+// Generated Jul 27, 2012 5:21:52 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -16,9 +16,9 @@ public class RequestinfoTable  implements java.io.Serializable {
      private String fname;
      private String sname;
      private String email;
-     private String telephone;
-     private String WTelephone;
-     private String fax;
+     private Long telephone;
+     private Long WTelephone;
+     private Long fax;
      private String houseNo;
      private String road;
      private String town;
@@ -30,21 +30,15 @@ public class RequestinfoTable  implements java.io.Serializable {
     }
 
 	
-    public RequestinfoTable(Date RDate, String title, String fname, String sname, String email, String telephone, String houseNo, String road, String town, String country, String postcode, String referenceId) {
+    public RequestinfoTable(Date RDate, String title, String fname, String sname, String email, String referenceId) {
         this.RDate = RDate;
         this.title = title;
         this.fname = fname;
         this.sname = sname;
         this.email = email;
-        this.telephone = telephone;
-        this.houseNo = houseNo;
-        this.road = road;
-        this.town = town;
-        this.country = country;
-        this.postcode = postcode;
         this.referenceId = referenceId;
     }
-    public RequestinfoTable(Date RDate, String title, String fname, String sname, String email, String telephone, String WTelephone, String fax, String houseNo, String road, String town, String country, String postcode, String referenceId) {
+    public RequestinfoTable(Date RDate, String title, String fname, String sname, String email, Long telephone, Long WTelephone, Long fax, String houseNo, String road, String town, String country, String postcode, String referenceId) {
        this.RDate = RDate;
        this.title = title;
        this.fname = fname;
@@ -103,25 +97,25 @@ public class RequestinfoTable  implements java.io.Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getTelephone() {
+    public Long getTelephone() {
         return this.telephone;
     }
     
-    public void setTelephone(String telephone) {
+    public void setTelephone(Long telephone) {
         this.telephone = telephone;
     }
-    public String getWTelephone() {
+    public Long getWTelephone() {
         return this.WTelephone;
     }
     
-    public void setWTelephone(String WTelephone) {
+    public void setWTelephone(Long WTelephone) {
         this.WTelephone = WTelephone;
     }
-    public String getFax() {
+    public Long getFax() {
         return this.fax;
     }
     
-    public void setFax(String fax) {
+    public void setFax(Long fax) {
         this.fax = fax;
     }
     public String getHouseNo() {

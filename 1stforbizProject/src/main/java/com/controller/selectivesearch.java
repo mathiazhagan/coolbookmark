@@ -22,7 +22,7 @@ public class selectivesearch extends ActionSupport {
     private String region;
     private String word;
     private List<Sell> sresult;
-     private List<Sell> sresult1;
+    private List<Sell> sresult1;
 
     @Override
     public String execute() throws Exception {
@@ -32,20 +32,21 @@ public class selectivesearch extends ActionSupport {
             System.out.println("-----------" + region);
             System.out.println("-----------" + word);
             Criteria crit = getMyDao().getDbsession().createCriteria(Sell.class);
-            //crit.add(Restrictions.lt("BSalePrice", getPrice()));
-            crit.add(Restrictions.like("BAdverHeading","%"+word+"%" ));
+
+            crit.add(Restrictions.like("BCategory", category));
             crit.add(Restrictions.like("BTown", "%" + region + "%"));
-           // crit.add(Restrictions.like("BCategory", category));
+            crit.add(Restrictions.lt("BSalePrice", getPrice()));
+            crit.add(Restrictions.like("BAdverHeading", "%" + word + "%"));
             //crit.setMaxResults(3);
             sresult = (List<Sell>) crit.list();
             System.out.println("=---------" + sresult.size());
-          
+
             if (sresult.isEmpty()) {
                 Criteria crit1 = getMyDao().getDbsession().createCriteria(Sell.class);
-                
-                 crit.add(Restrictions.like("BTown", "%" + region + "%"));
-                 crit.add(Restrictions.sqlRestriction("1=1 order by rand()"));
-               // crit.add(Restrictions.eq("BCategory", category));
+
+                crit.add(Restrictions.like("BTown", "%" + region + "%"));
+                crit.add(Restrictions.sqlRestriction("1=1 order by rand()"));
+                // crit.add(Restrictions.eq("BCategory", category));
                 //crit.add(Restrictions.like("BAdverHeading", "%" + word + "%"));
                 crit1.setMaxResults(3);
                 sresult1 = (List<Sell>) crit1.list();
@@ -62,8 +63,7 @@ public class selectivesearch extends ActionSupport {
         return "success";
 
     }
-    
-    
+
 //    
 //    @Override
 //    public void validate() {
@@ -85,9 +85,6 @@ public class selectivesearch extends ActionSupport {
 //        }
 //       
 //    }
-    
-    
-
     /**
      * @return the myDao
      */

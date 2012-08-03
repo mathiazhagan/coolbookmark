@@ -19,100 +19,82 @@
 
         <title> 1stforbiz </title>
 
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
-
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
     </head>
 
     <body>
 
+
         <!--container start -->
-        <div id="container101">
+        <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
 
+                    <!--navigation start -->
+                    <div class="navigation">
                 <ul>
 
                     <li><a href="login.jsp" class="active">Home</a></li>
-                   
-
-                </ul>		
-
-                <!--                <div class="t9">2</div>			-->
 
 
+                </ul>
 
-
+            </div>
+                    
+                </div>
             </div>
             <!--navigation end -->
 
-            <div class="green">
-                <img src="images/green-line.png"/>	
-            </div>
-
-           
-
             <!--content start -->
-            <div class="content5234">
+            <div class="content" style="border:1px solid #9a9b9d;">
 
                 <!-- left side start -->
-                <div class="form343">
+                <div class="about_us" style="float:none; margin:auto" >
 
                     <div class="t1"> Pegasus Business Sales: Admin Login From </div><br />
 
                     <img src="images/left-hr.png"/>	<br /><br />
-                    
+
                     <img src="images/left-content-top.png" width="540" height="32"/>
-                    <div class="t10"> Please Login Using your details </div>						
-
+                    <div class="t10" > Please Login Using your details </div>	<br/><br/>					
+                    <s:actionmessage theme="jquery"/>  <s:actionerror theme="jquery"/> 
                     <!-- form -->
-                    <div class="sell_form1" align="center" >
+                    <div class="form3" style="float:none;">
 
-                        
-                        <div>
+                         <div style="float:none;">
                             <form action="login.action" method="post" >
                             <div class="t100">User Name</div>
-                            <div class="txt_box"><input type="text" name="username" /></div>
+                            <input type="text" class="txt_bx1" name="username" style="margin-left:-50px;" />
                            
                             <div class="t100">Password</div>
-                            <div class="txt_box"><input type="password" name="password" /></div>
-                           
-                         
-                            <div class="txt_box" style="margin-top:20px;"> <input type="submit" value="Login" class="button_image" /></div>
+                            <input type="password" name="password"  class="txt_bx1"   style="margin-left:-50px;"/> 
+                        <div class="txt_box" style="margin:20px 0 0 150px;"> <input type="submit" value="Login" class="button_image" /></div>
                                                                        
                         </form>
-                          <s:actionmessage theme="jquery"/>  <s:actionerror theme="jquery"/> 
+                        
                         </div>
-                      
+
                     </div>
                 </div>	
                 <!-- left side end -->	
- 
 
+                <!-- footer start -->
+                <div id="footer" style="width:1100px">			
+                    <div class="bottom_link">
 
+                    </div>
+
+                    <div class="rights" style="margin:20px 0 0 380px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+                </div>		
+                <!-- footer end -->	
             </div>
             <!-- content end -->
-
-            <div class="green1">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!-- footer start -->
-            <div id="footer">			
-                <div class="bottom_link">
-                   				
-                </div>
-
-                <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
-            </div>		
-            <!-- footer end -->	
-
         </div>
         <!--container end -->
     </body>

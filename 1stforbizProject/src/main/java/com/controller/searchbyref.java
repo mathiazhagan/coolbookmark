@@ -28,7 +28,7 @@ public class searchbyref extends ActionSupport{
             //generating search list  based on referenceId
             System.out.println("-----------"+referenceId);
             Criteria crit=myDao.getDbsession().createCriteria(Sell.class);
-            System.out.println("----------"+crit.list().size());
+         //   System.out.println("----------"+crit.list().size());
             crit.add(Restrictions.eq("referenceId", referenceId));
           
             sresult=(List<Sell>)crit.list();

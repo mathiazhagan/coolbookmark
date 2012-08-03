@@ -1,0 +1,197 @@
+
+
+#containerbox{
+margin:0 auto;
+margin-top:30px;
+width:1250px;
+/* border:1px solid blue; */
+padding: 5px 0 0 0;
+}
+
+.clear{clear:both;} 
+
+.tableheader{
+margin:0px 0 0 0;
+padding:8px 0 8px 0;
+height:14px;
+background-color:#6687a8;
+color:#fff;
+text-align:left;
+font-family:Franklin Gothic Book, sans-serif;;
+font-size: 15px;
+font-weight: bold;
+}
+
+.tablefooter{
+margin:10px 0 10px 0;
+padding:8px 0 8px 0;
+height:14px;
+border:1px solid #ccc;
+color:#333;
+background: #f2f2f2;
+text-align:right;
+font-family:Franklin Gothic Book, sans-serif;;
+font-size: 15px;
+}
+
+.tabletext{
+padding:8px 0 8px 0;
+height:30px;
+background-color:#f2f2f2;
+color:#333;
+text-align:left;
+font-family:Franklin Gothic Book, sans-serif;;
+font-size: 15px;
+}
+
+.tabletext1
+{
+background-color:#f2f2f2;
+border-bottom:1px solid #ccc;
+color:#333;
+margin:0 0 5px 0;
+}
+
+.checkbox{
+margin:0 0 0 10px;
+width:30px;
+float:left;
+text-align:left;
+}
+
+.Compaign{
+width:110px;
+float:left;
+text-align:left;
+padding-right: 5px;
+}
+
+.name{
+color:#1c5180;
+width:110px;
+float:left;
+text-align:left;
+padding-right: 5px;
+}
+
+.Created{
+width:230px;
+float:left;
+padding-right: 5px;
+}
+
+.Status{
+width:70px;
+float:left;
+padding-right: 5px;
+}
+
+.Budget{
+width:110px;
+float:left;
+padding-right: 5px;
+}
+.Budget_1{
+width:90px;
+float:left;
+padding-right: 5px;
+}
+.Budget2{
+width:110px;
+float:left;
+padding-right: 5px;
+}
+
+.CPC{
+width:140px;
+float:left;
+padding-right: 5px;
+}
+
+.Impressions{
+width:80px;
+float:left;
+padding-right: 5px;
+}
+.Impression8{
+width:130px;
+float:left;
+padding-right: 5px;
+}
+
+.Impression{
+width:90px;
+float:left;
+padding-right: 5px;
+}
+.Impressions_1{
+width:110px;
+float:left;
+padding-right: 5px;
+}
+
+.Clicks{
+width:190px;
+float:left;
+padding-right: 5px;
+}
+.Clickn{
+width:120px;
+float:left;
+padding-right: 5px;
+}
+.Clicka{
+width:170px;
+float:left;
+padding-right: 5px;
+}
+.Clicks_1{
+width:190px;
+float:left;
+padding-right: 5px;
+}
+
+.CTR{
+width:70px;
+float:left;
+padding-right: 5px;
+}
+.CTR_1{
+width:140px;
+float:left;
+padding-right: 5px;
+}
+
+.Cost{
+width:70px;
+float:left;
+padding-right: 5px;
+}
+.Cost img{
+margin-left: 20px;
+}
+.response{
+width:80px;
+float:left;
+padding-right: 5px;
+}
+
+.response img{
+margin-left: 20px;
+}
+.change{
+width:80px;
+float:left;
+padding-right: 5px;
+}
+.changea{
+width:130px;
+float:left;
+padding-right: 5px;
+}
+.change_1{
+width:120px;
+float:left;
+padding-right: 5px;
+}
+

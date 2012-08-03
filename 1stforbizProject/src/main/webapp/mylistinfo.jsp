@@ -10,13 +10,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="s" uri="/struts-tags"%> 
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 
     <head>
-        <s:head/>
-        
-         <%
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+        <s:head theme="jquery"/>
+        <sj:head jqueryui="true" jquerytheme="flick"/>
+
+        <%
 
             ArrayList<String> my_list = (ArrayList<String>) session.getAttribute("my_list");
 
@@ -32,7 +35,10 @@
 
         <title> 1stforbiz </title>
 
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
 
     </head>
 
@@ -41,70 +47,62 @@
         <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
+
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
+
+                    <!--navigation start -->
+                    <div class="navigation">
+
+                        <ul>
+
+                            <li><a href="index2.jsp">Home</a></li>
+                            <li><a href="sell.jsp">Sell</a></li>
+                            <li><a href="services.jsp">Services</a></li>
+                            <li><a href="aboutus.jsp">About us</a></li>
+                            <li><a href="contactus.jsp">Contact us</a></li>
+                            <li><a href="mylist.jsp">My list</a></li>
+
+                        </ul>		
+
+                        <form method="post" action="searchbyref.action" >
+
+                            <div class="search_header">
+
+                                <input type="text" class="search_input" value="" name="referenceId" placeholder="Our ref"/> 
+
+                                <input type="submit" name="submit" class="search_submit" value="" title="Search"/>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <!--navigation end -->
+
+                </div>
+
             </div>
-            <!--header end -->	
-
-            <!--navigation start -->
-            <div class="navigation">
-
-                <ul>
-
-                    <li><a href="index2.jsp">Home</a></li>
-                    <li><a href="sell.jsp">Sell</a></li>
-                    <li><a href="services.jsp">Services</a></li>
-                    <li><a href="aboutus.jsp">About us</a></li>
-                    <li><a href="contactus.jsp">Contact us</a></li>
-                    <li><a href="mylist.jsp">My list</a></li>
-
-                </ul>		
-
-<!--                <div class="t9">2</div>			-->
-
-
-                <form method="post" action="searchbyref.action" >
-
-                    <p class="search-header">
-
-                        <input type="text" class="search-input" value="" name="referenceId" placeholder="Our ref"/> 
-
-                        <input type="submit" name="submit" class="search-submit" value="" title="Search"/>
-
-                    </p>
-
-                </form>
-
-
-            </div>
-            <!--navigation end -->
-
-            <div class="green">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!--banner start -->
-            <div class="banner1"> </div>
-            <!--banner end -->
 
             <!--content start -->
-            <div class="content5">
+            <div class="content" style="border:1px solid #9a9b9d;">
 
                 <!-- left side start -->
-                <div class="about_us2">
+                <div class="about_us"  style="width:560px;float:none">
 
                     <div class="t1"> Request Information for All Listing on your list. </div> <br />
-                    
-                    
+
+                    <s:actionmessage theme="jquery"/><s:actionerror theme="jquery"/>
 
                     <img src="images/left-hr.png"/>
 
-                    <div class="content_lt1">
-                        <font color="red"> <s:actionmessage/> </font>
+                    <div class="content_lt1" style="float:none; margin-top:50px;">
+
                         <div class="t2">Your Contact Details</div>
 
-                        <div class="list_form1">
+                        <div class="list_form1" style="float:none; margin-top:70px;">
 
                             <form  action="mylists.action" method="post">
 
@@ -126,9 +124,9 @@
 
                                 <input type="text" class="txt_bx1" name="LSurName" size="30" maxlength="20" value=""/>
 
-                                <div class="t18">Business/Company Name</div>
-
-                                <input type="text" class="txt_bx1" name="LCompanyName" size="30" maxlength="30" value=""/>
+                                <!-- <div class="t18">Business/Company Name</div>
+ 
+                                 <input type="text" class="txt_bx1" name="LCompanyName" size="30" maxlength="30" value=""/>-->
 
                                 <div class="t18">E-mail<font color="red">*</font> </div>
 
@@ -146,9 +144,9 @@
 
                                 <input type="text" name="LFax" class="txt_bx1" size="30" maxlength="30" value=""/>
 
-                                <div class="t18">Mobile</div>
-
-                                <input type="text" name="LMobile" class="txt_bx1" size="30" maxlength="30" value=""/>
+                                <!-- <div class="t18">Mobile</div>
+ 
+                                 <input type="text" name="LMobile" class="txt_bx1" size="30" maxlength="30" value=""/>-->
 
                                 <div class="t18">House No/Name<font color="red">*</font> </div>
 
@@ -270,93 +268,63 @@
                                 </select>
 
                                 <div class="t18">Postal code<font color="red">*</font> </div>
-                                
+
                                 <input type="text" class="txt_bx1" name="LPostalcode" size="30" maxlength="10" value=""/>						
 
                                 <div class="t18">Selected List<font color="red">*</font> </div>
                                 <input type="text" class="txt_bx1" name="LRefList" size="30" maxlength="10" value="<%=my_list%>"/>	
-                                
-                                <input type="submit" value="Request Information" name="type" class="sub_button1"/>
 
-                                <input type="reset" value="Reset" name="type" class="rst_button1"/>	<br /><br /><br /><br /><br />
+                                <input type="submit" value="Request Information" name="type" class="sub_button1 button"/>
 
-                                <hr />
+                                <input type="reset" value="Reset" name="type" class="rst_button1 button" style="margin-left:-20px;" />	<br /><br /><br /><br /><br />
+
+
                             </form>
                         </div>					
                     </div>
 
-<!--                    <div class="my_list1">
 
-                        <img src="images/left-content-top.png" width="700" height="32" /><br /><br />
-                        <div class="t1000"> Your Selected List </div>
-                        
-                        
-
-                        <div class="t012"><img src="images/list3.png" width="24" height="24"></div>
-
-                        <div class="t121"></div>
-
-                        <div class="list_title">..................</div>
-
-                        <div class="t051"> 
-                            <a href="fulldetails?action=fulldetails&referenceId="> View</a>
-                        </div>					
-
-                        <div class="t050"> 
-                            <a href="removelistitem?action=removelistitem&referenceId=">Remove</a>
-                        </div>
-                          
-
-                    </div>-->
-
-                         
                 </div>	
 
                 <!-- left side end -->	
 
 
-
                 <!-- right content start -->		
-                <div class="right">
+                <div class="right_01" style="margin:-920px 0 0 600px;">
 
-                    <div class="right1">
-                        <a href="#"> <img src="images/savemoney.gif" width="223" height="245"/></a>	
-                    </div>
+                    <div class="t1"> You may like this </div> <br />
 
-                    <div class="right2">
-                        <a href="search_map.jsp"> <img src="images/map.gif" width="217" height="292"/></a>
-                        <a href="search_map.jsp"> <img src="images/map-bottom.png"/></a>
-                    </div>
+                    <img src="images/hr.gif" width="170" style="margin-left:60px;"/>	
+
+                    <s:url id="ajax" value="/ajaxcallother"/>
+                    <sj:div href="%{ajax}" indicator="logo">
+                        <img id="logo" src="images/lo.gif" alt="loading" style="display:none"/>
+                    </sj:div>
+
 
                 </div>
-                <!-- right content end -->		
+                <!-- right content end -->
 
+                <!-- footer start -->
+                <div id="footer" style="width:1100px">				
+                    <div class="bottom_link">
+                        <ul>
+                            <li><a href="index2.jsp">Home</a></li>
+                            <li><a href="sell.jsp">Sell</a></li>
+                            <li><a href="services.jsp">Services</a></li>
+                            <li><a href="aboutus.jsp">About us</a></li>
+                            <li><a href="contactus.jsp">Contact us</a></li>
+                            <li><a href="mylist.jsp">My list</a></li>
+                            <li><a href="faqs.jsp">FAQ's</a></li>
+                            <li><a href="tandc.jsp">Terms and Conditions</a></li>
+                        </ul>				
+                    </div>
+
+                    <div class="rights" style="margin:20px 0 0 256px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+                </div>		
+                <!-- footer end -->	
             </div>
             <!-- content end -->
-
-            <div class="green1">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!-- footer start -->
-            <div id="footer">			
-                <div class="bottom_link">
-                    <ul>
-                        <li><a href="index2.jsp">Home</a></li>
-                        <li><a href="sell.jsp">Sell</a></li>
-                        <li><a href="services.jsp">Services</a></li>
-                        <li><a href="aboutus.jsp">About us</a></li>
-                        <li><a href="contactus.jsp">Contact us</a></li>
-                        <li><a href="mylist.jsp">My list</a></li>
-                        <li><a href="faqs.jsp">FAQ's</a></li>
-                        <li><a href="tandc.jsp">Terms and Conditions</a></li>
-                    </ul>				
-                </div>
-
-                <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
-            </div>		
-            <!-- footer end -->	
-
         </div>
         <!--container end -->
     </body>

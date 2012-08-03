@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jul 27, 2012 5:21:56 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.model.Sell" table="sell" catalog="a_1stforbiz">
         <id name="referenceNo" type="java.lang.Long">
@@ -21,19 +21,19 @@
             <column name="b_comapny_name" length="50" not-null="true" />
         </property>
         <property name="BHouseNo" type="string">
-            <column name="b_house_no" length="50" not-null="true" />
+            <column name="b_house_no" length="50" />
         </property>
         <property name="BRoadName" type="string">
-            <column name="b_road_name" length="50" not-null="true" />
+            <column name="b_road_name" length="50" />
         </property>
         <property name="BTown" type="string">
-            <column name="b_town" length="50" not-null="true" />
+            <column name="b_town" length="50" />
         </property>
         <property name="BCountry" type="string">
-            <column name="b_country" length="50" not-null="true" />
+            <column name="b_country" length="50" />
         </property>
-        <property name="BPostalCode" type="java.lang.Long">
-            <column name="b_postal_code" />
+        <property name="BPostalCode" type="string">
+            <column name="b_postal_code" length="20" />
         </property>
         <property name="BTelephone" type="java.lang.Long">
             <column name="b_telephone" />
@@ -51,7 +51,7 @@
             <column name="b_email" length="50" not-null="true" />
         </property>
         <property name="BSiteUrl" type="string">
-            <column name="b_site_url" length="100" not-null="true" />
+            <column name="b_site_url" length="100" />
         </property>
         <property name="PHouseNo" type="string">
             <column name="p_house_no" length="50" />
@@ -65,8 +65,8 @@
         <property name="PCountry" type="string">
             <column name="p_country" length="50" />
         </property>
-        <property name="PPostalCode" type="java.lang.Long">
-            <column name="p_postal_code" />
+        <property name="PPostalCode" type="string">
+            <column name="p_postal_code" length="20" />
         </property>
         <property name="BBusinessType" type="string">
             <column name="b_business_type" length="50" />
@@ -101,8 +101,8 @@
         <property name="BCurrentTakings" type="string">
             <column name="b_current_takings" length="250" />
         </property>
-        <property name="BSalePrice" type="java.lang.Long">
-            <column name="b_sale_price" />
+        <property name="BSalePrice" type="long">
+            <column name="b_sale_price" not-null="true" />
         </property>
         <property name="BAdverHeading" type="string">
             <column name="b_adver_heading" length="250" not-null="true" />

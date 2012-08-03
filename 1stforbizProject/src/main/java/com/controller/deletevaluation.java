@@ -37,14 +37,14 @@ public class deletevaluation extends ActionSupport implements SessionAware {
             crit.addOrder(Order.desc("createddate"));
             crit.setMaxResults(50);
             setList((List<BusinessValuation>) crit.list());
-            
+              return "success";
             
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
             
         }
-        return "success";
+      
         
     }
 

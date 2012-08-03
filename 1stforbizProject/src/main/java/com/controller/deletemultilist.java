@@ -29,20 +29,20 @@ public class deletemultilist extends ActionSupport implements SessionAware {
 
             Mylists s = (Mylists) getMyDao().getDbsession().get(Mylists.class, getLId());
             getMyDao().getDbsession().delete(s);
-              addActionMessage("One Sell  Request Successfully removed");
+            addActionMessage("One Sell  Request Successfully removed");
 
             System.out.println("-------row successfully deleted------");
             Criteria crit = getMyDao().getDbsession().createCriteria(Mylists.class);
             crit.addOrder(Order.desc("LId"));
             crit.setMaxResults(20);
             setList((List<Mylists>) crit.list());
-
+            return "success";
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
 
         }
-        return "success";
+
 
     }
 

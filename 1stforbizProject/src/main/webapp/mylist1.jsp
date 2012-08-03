@@ -157,7 +157,7 @@
                     </ul>				
                 </div>
 
-                <div class="rights"> copyright &copy; 2008  Pegasus Business Sales All rights reserved. </div>
+               <div class="rights" style="margin:20px 0 0 256px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
             </div>		
             <!-- footer end -->	
 

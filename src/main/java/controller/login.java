@@ -25,7 +25,10 @@ public class login extends ActionSupport {
     private long userid;
     private spDAO myDao;
     private List<Scribbles> feedlist;
- static final Logger logger = Logger.getLogger(login.class);
+    static final Logger logger = Logger.getLogger(login.class);
+   // public static final String MESSAGE = "HelloWorld.message";
+    private String message;
+
     @Override
     public void validate() {
 
@@ -40,36 +43,35 @@ public class login extends ActionSupport {
             Criteria ucri = getMyDao().getDbsession().createCriteria(User.class);
             ucri.add(Restrictions.eq("emailId", email));
             ucri.setMaxResults(1);
-            if(!ucri.list().isEmpty()){
-            User user = (User) (ucri.list().get(0));
-            
-            if (user != null) {
+            if (!ucri.list().isEmpty()) {
+                User user = (User) (ucri.list().get(0));
 
-                if (user.getPassword().equals(getPassword())) {
-                    if (user.getUserStatus().equals(userEnum.Suspend.getUserType())) {
-                        addActionError("Your Account Has Been Suspended Temporarily Please Contact Our Customer Services for More Details");
-                    }
-                    if (user.getUserStatus().equals(userEnum.Not_Activated.getUserType())) {
-                        addActionError("Your Account Not Yet Activated Please Activate your account by clicking activation link that already sent to your email ");
+                if (user != null) {
+
+                    if (user.getPassword().equals(getPassword())) {
+                        if (user.getUserStatus().equals(userEnum.Suspend.getUserType())) {
+                            addActionError("Your Account Has Been Suspended Temporarily Please Contact Our Customer Services for More Details");
+                        }
+                        if (user.getUserStatus().equals(userEnum.Not_Activated.getUserType())) {
+                            addActionError("Your Account Not Yet Activated Please Activate your account by clicking activation link that already sent to your email ");
+                        }
+                    } else {
+                        addActionError("Invalid Password Please Try Again");
                     }
                 } else {
-                    addActionError("Invalid Password Please Try Again");
+                    addActionError("Invalid Email Address Please Try Again");
                 }
             } else {
-                addActionError("Invalid Email Address Please Try Again");
+                addActionError("No Active Account with this email address please signup");
             }
-            }
-            else{
-            addActionError("No Active Account with this email address please signup");
-            }
-            }
+        }
     }
 
     @Override
     public String execute() throws Exception {
-           
+
         try {
-           
+
             Criteria ucri = getMyDao().getDbsession().createCriteria(User.class);
             ucri.add(Restrictions.eq("emailId", email));
             ucri.setMaxResults(1);
@@ -83,20 +85,20 @@ public class login extends ActionSupport {
                 feedcri.add(Restrictions.eq("user", user));
                 feedcri.setMaxResults(50);
                 feedlist = feedcri.list();
-
+               // setMessage(getText(MESSAGE));
 
             }
-            addActionMessage("Hi " + user.getEmailId() + " Welcome to Your Dashboard");
+            addActionMessage("Hi " + user.getEmailId() + " Welcome to Your Dashboard ");
             return "success";
 
         } catch (HibernateException he) {
             he.printStackTrace();
-              logger.debug(he.getMessage());
+            logger.debug(he.getMessage());
             addActionError("Unable to Logining you...  Error occurs  ..Try After Some times");
             return "error";
         } catch (Exception se) {
 
-             logger.debug(se.getMessage());
+            logger.debug(se.getMessage());
             addActionError("Unable to Logining you...  Error occurs ..Try After Some times");
             return "error";
         }
@@ -172,5 +174,19 @@ public class login extends ActionSupport {
      */
     public void setFeedlist(List<Scribbles> feedlist) {
         this.feedlist = feedlist;
+    }
+
+    /**
+     * @return the message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * @param message the message to set
+     */
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

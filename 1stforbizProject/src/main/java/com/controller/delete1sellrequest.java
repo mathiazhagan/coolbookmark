@@ -39,14 +39,14 @@ public class delete1sellrequest extends ActionSupport implements SessionAware {
             crit.addOrder(Order.desc("RDate"));
             crit.setMaxResults(20);
             setList((List<RequestinfoTable>) crit.list());
-
+ return "success";
 
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
 
         }
-        return "success";
+       
 
     }
 

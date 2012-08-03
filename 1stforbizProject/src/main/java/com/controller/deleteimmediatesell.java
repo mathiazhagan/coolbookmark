@@ -39,13 +39,13 @@ public class deleteimmediatesell extends ActionSupport implements SessionAware {
             crit.addOrder(Order.desc("createdDate"));
             crit.setMaxResults(20);
             list = (List<Sell>) crit.list();
-
+            return "success";
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
 
         }
-        return "success";
+
 
     }
 

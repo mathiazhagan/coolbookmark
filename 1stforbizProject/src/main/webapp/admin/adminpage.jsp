@@ -13,8 +13,10 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
-
+        <link rel="stylesheet" type="text/css" href="style.css" />
+ <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
         <sx:head />
         <s:head theme="jquery"/>
         <sj:head jqueryui="true" jquerytheme="flick"/>
@@ -38,15 +40,13 @@
         <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
 
+                    <!--navigation start -->
+                    <div class="navigation">
                 <ul>
 
                     <li><a href="adminpage.jsp" class="active">Home</a></li>
@@ -54,19 +54,16 @@
                 </ul>
 
             </div>
-            <!--navigation end -->
-
-            <div class="green">
-                <img src="images/green-line.png"/>	
+                    
+                </div>
             </div>
-
-
+            <!--navigation end -->    
 
             <!--content start -->
-            <div class="content999">
+            <div class="content" style="border:1px solid #9a9b9d;">
 
                 <!-- left side start -->
-                <div class="about_us">
+                <div class="about_us" style="float:none; margin:auto;">
 
                     <div class="t1"> Welcome to Admin Page </div> <br />
 
@@ -79,12 +76,12 @@
                         <ul>
                             <li><a href="valuationlist.action"> Valuation Request List </a></li>
                             <li><a href="sell_request_list.action"> Sell Request List </a></li>
-                            <li><a href="mylist_request_list.action"> List of Requests </a></li>
+                          <!--  <li><a href="mylist_request_list.action"> List of Requests </a></li>-->
                             <li><a href="Immediate_sell_list.action"> Immediate Sale List </a></li>
                             <li><a href="request_info_list.action"> Request Info List </a></li>
                             <li><a href="uploaddata.jsp"> New Property Upload </a></li>					
                         </ul>
-                    </div>		<br /> <br /> 
+                    </div> <br /> <br /> 
 
                     <img src="images/left-hr.png"/>	
 
@@ -99,45 +96,29 @@
                         <form  action="updatedatabase.action" method="post">
                             <s:url id="databaseList" action="refIdjson" />
                             <!--<input type="text" name="referenceId" label="Reference Id" class="txt_bx1_1"/>-->
-                            <sx:autocompleter  href="%{databaseList}" name="referenceId"/>
+                            <sx:autocompleter  href="%{databaseList}" name="referenceId"  />
                             <input type="submit" value="update" class="button_image"/>
-                        </form>
+                        </form><br /> <br /> 
                         <s:actionerror theme="jquery"/><s:actionmessage theme="jquery"/>
                     </div>
 
 
 
                 </div>	
-                <!-- left side end -->	
+                <!-- left side end -->         
 
+            <!-- footer start -->
+            <div id="footer" style="width:1100px">		
+                <div class="bottom_link">
+                  	
+                </div>
 
-
+                <div class="rights" style="margin:20px 0 0 380px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+            </div>		
+            <!-- footer end -->	
 
             </div>
             <!-- content end -->
-
-            <div class="green1">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!-- footer start -->
-            <div id="footer">			
-                <div class="bottom_link"><!--
-                    <ul>
-                        <li><a href="index2.jsp">Home</a></li>
-                        <li><a href="sell.jsp">Sell</a></li>
-                        <li><a href="services.jsp">Services</a></li>
-                        <li><a href="aboutus.jsp">About us</a></li>
-                        <li><a href="contactus.jsp">Contact us</a></li>
-                        <li><a href="mylist.jsp">My list</a></li>
-                        <li><a href="faqs.jsp">FAQ's</a></li>
-                        <li><a href="tandc.jsp">Terms and Conditions</a></li>
-                    </ul>	-->			
-                </div>
-
-                <div class="rights"> copyright &copy; 2008  Pegasus Business Sales All rights reserved. </div>
-            </div>		
-            <!-- footer end -->	
 
         </div>
         <!--container end -->

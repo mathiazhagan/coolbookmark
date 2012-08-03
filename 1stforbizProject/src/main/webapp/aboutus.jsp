@@ -17,7 +17,10 @@
 
         <title> 1stforbiz </title>
 
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
 
     </head>
 
@@ -26,15 +29,14 @@
         <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
 
+                    <!--navigation start -->
+                    <div class="navigation">
+                        
                 <ul>
 
                     <li><a href="index2.jsp">Home</a></li>
@@ -47,35 +49,29 @@
 
                 </ul>		
 
-<!--                <div class="t9">2</div>			-->
-
 
                 <form method="post" action="searchbyref.action" >
 
-                    <p class="search-header">
+                            <div class="search_header">
 
-                        <input type="text" class="search-input" value="" name="referenceId" placeholder="Our ref"/> 
+                                <input type="text" class="search_input" value="" name="referenceId" placeholder="Our ref"/> 
 
-                        <input type="submit" name="submit" class="search-submit" value="" title="Search"/>
+                                <input type="submit" name="submit" class="search_submit" value="" title="Search"/>
 
-                    </p>
+                            </div>
 
-                </form>
+                        </form>
 
+                    </div>
+
+                    <!--navigation end -->
+
+                </div>
 
             </div>
-            <!--navigation end -->
-
-            <div class="green">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!--banner start -->
-            <div class="banner1"> </div>
-            <!--banner end -->
 
             <!--content start -->
-            <div class="content1">
+            <div class="content" style="border:1px solid #9a9b9d;">
 
                 <!-- left side start -->
                 <div class="about_us">
@@ -93,7 +89,7 @@
                     <img src="images/left-content-top.png" width="540" height="32" />
                     <div class="t19"> Our Profile </div> <br /><br />
 
-                    <div class="t18"> <img src="images/office1.jpg" width="195" height="270" />Our Central London office has successfully handled over 3,300 transactions. Our clients range from single property owners to those with portfolios of over 200. Our office handles 600 to 800 new enquiries each week with over 23,000 applicants currently seeking to be suited for specific properties and businesses.<br /><br />
+                    <div class="t18"> <img src="images/office1.jpg" width="150" height="240" alt="" />Our Central London office has successfully handled over 3,300 transactions. Our clients range from single property owners to those with portfolios of over 200. Our office handles 600 to 800 new enquiries each week with over 23,000 applicants currently seeking to be suited for specific properties and businesses.<br /><br />
 
                         We pride ourselves in providing a personal and individual service to every client as countless letters and cards commending our service testify.<br /><br />
 
@@ -106,45 +102,42 @@
 
 
                 <!-- right content start -->		
-                <div class="right">
+                <div class="right" style="margin:-925px 0 0 860px">
 
                     <div class="right1">
-                        <a href="#"> <img src="images/savemoney.gif" width="223" height="245"/></a>	
+                        <a href="#"> <img src="images/savemoney.gif" width="200" height="245"/></a>	
                     </div>
 
                     <div class="right2">
-                        <a href="search_map.jsp"> <img src="images/map.gif" width="217" height="292"/></a>
-                        <a href="search_map.jsp"> <img src="images/map-bottom.png"/></a>
+                        <a href="search_map.jsp"> <img src="images/map.gif" width="200" height="292"/></a>
+                        <a href="search_map.jsp"> <img src="images/map-bottom.png" width="200"/></a>
                     </div>
 
                 </div>
                 <!-- right content end -->		
 
+
+                <!-- footer start -->
+                <div id="footer" style="width:1100px">			
+                    <div class="bottom_link">
+                        <ul>
+                            <li><a href="index2.jsp">Home</a></li>
+                            <li><a href="sell.jsp">Sell</a></li>
+                            <li><a href="services.jsp">Services</a></li>
+                            <li><a href="aboutus.jsp">About us</a></li>
+                            <li><a href="contactus.jsp">Contact us</a></li>
+                            <li><a href="mylist.jsp">My list</a></li>
+                            <li><a href="faqs.jsp">FAQ's</a></li>
+                            <li><a href="tandc.jsp">Terms and Conditions</a></li>
+                        </ul>				
+                    </div>
+
+                    <div class="rights" style="margin:20px 0 0 256px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+                </div>		
+                <!-- footer end -->	
             </div>
             <!-- content end -->
 
-            <div class="green1">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!-- footer start -->
-            <div id="footer">			
-                <div class="bottom_link">
-                    <ul>
-                        <li><a href="index2.jsp">Home</a></li>
-                        <li><a href="sell.jsp">Sell</a></li>
-                        <li><a href="services.jsp">Services</a></li>
-                        <li><a href="aboutus.jsp">About us</a></li>
-                        <li><a href="contactus.jsp">Contact us</a></li>
-                        <li><a href="mylist.jsp">My list</a></li>
-                        <li><a href="faqs.jsp">FAQ's</a></li>
-                        <li><a href="tandc.jsp">Terms and Conditions</a></li>
-                    </ul>				
-                </div>
-
-                <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
-            </div>		
-            <!-- footer end -->	
 
         </div>
         <!--container end -->

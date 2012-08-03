@@ -39,13 +39,13 @@ public class deletesellcontact extends ActionSupport implements SessionAware {
             crit.addOrder(Order.desc("RId"));
             crit.setMaxResults(20);
             setList((List<ContactForSell>) crit.list());
-
+            return "success";
         } catch (Exception e) {
             e.printStackTrace();
             return "error";
 
         }
-        return "success";
+
 
     }
 

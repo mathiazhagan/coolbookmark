@@ -1,0 +1,1860 @@
+@charset "utf-8";
+/* general */
+
+a{ text-decoration:none;}
+
+body {
+margin:0px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#6687a8;
+}
+
+.clear{clear:both;} 
+
+#container {
+background:url(images/bg.png) repeat-x;
+}
+
+#container01 {
+width:1280px;
+height:200px;
+background:url(images/bg.png) repeat-x;
+margin-left:33px;
+}
+
+.header {
+height:130px;
+background:url(images/header_bg.gif) repeat-x;
+}
+
+.logo {
+width:1100px;
+margin-left:auto;
+margin-right:auto;
+}
+.logo img {
+margin:auto;
+}
+
+.navigation {
+margin:auto;
+}
+.navigation ul {
+	display:block;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.navigation ul li {
+	margin:8px 0 0 15px;
+	display:inline;
+	float:left;
+	list-style:none;
+	font-size:18px;
+	}
+.navigation ul li a {
+	float:left;
+	font-family:Franklin Gothic Book, sans-serif;
+	color:#fff;
+	text-decoration:none;
+	text-align:left;
+	padding:0 5px;
+	line-height:25px;
+}
+.navigation ul li a:hover {
+	color:#fff;
+	background-color:#ff0000;
+	border-radius:5px;
+}
+.navigation ul li a.active {
+	float:left;
+	color:#fff;
+	background-color:#ff0000;
+	border-radius:5px;
+	padding:0 5px;
+	text-align:center;
+	text-decoration:none;
+	line-height:25px;
+}
+
+.navigation img {
+float:left;
+margin:2px 0 0 110px;
+}
+
+.search_header{
+float:left;
+margin:4px 0 0 360px;
+border:1px solid #000;
+border-radius:10px;
+background:#fff;
+width:225px;
+height:31px;
+}
+
+.search_input{
+
+color:#707070;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+margin-top:5px;
+margin-left:10px;
+border:1px solid #fff;
+display:block;
+float:left;
+width:150px;
+padding:0 5px;
+padding-right:25px;
+outline:none;
+}
+
+.search_submit{
+background:url(images/navi.png);
+width:20px;
+height:16px;
+margin-top:6px;
+border:0;
+cursor:pointer;
+}
+
+.rfsearch {
+float:left;
+width:311px;
+height:304px;
+background:url(images/refine-bg.png);
+margin:10px 0 0 10px;
+}
+
+.box1 {
+width:199px;
+height:32px;
+background:url(images/refine-box1.png);
+margin:-25px 0 0 84px;
+}
+
+.box2 {
+width:201;
+height:34px;
+background:url(images/refine-box2.png) no-repeat;
+margin:-25px 0 0 83px;
+}
+
+.box3{
+width:201;
+height:34px;
+background:url(images/refine-box2.png) no-repeat;
+margin:-25px 0 0 83px;
+}
+
+.box4 {
+width:199px;
+height:32px;
+background:url(images/refine-box1.png);
+margin:-25px 0 0 83px;
+}
+
+.search {
+width:84px;
+height:33px;
+background:url(images/refine-seach-button.png);
+margin:10px 0 0 83px;
+}
+
+.search:hover {
+width:84px;
+height:33px;
+background:url(images/search1.png);
+margin:10px 0 0 83px;
+}
+
+.reset {
+width:82px;
+height:31px;
+background:url(images/refine-reset-button.png);
+margin:-32px 0 0 170px;
+}
+
+.reset:hover {
+width:82px;
+height:31px;
+background:url(images/reset1.png);
+margin:-32px 0 0 170px;
+}
+
+.content {
+width:1100px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.contnt {
+float:left;
+height:auto;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.content0 {
+float:left;
+width:1240px;
+height:803px;
+margin-left:65px;
+}
+
+.left {
+float:left;
+margin-top:-20px;
+width:540px;
+}
+
+.left_01 {
+float:left;
+margin-left:30px;
+width:540px;
+}
+
+.left1 {
+float:left;
+width:540px;
+margin:30px 0 0 100px;
+border-left:1px solid #9a9b9d;
+border-right:1px solid #9a9b9d;
+border-bottom:1px solid #9a9b9d;
+}
+
+.left1 img {
+float:left;
+}
+
+.leftnw1 {
+float:left;
+width:400px;
+height:240px;
+margin-top:36px;
+margin-left:55px;
+border-left:1px solid #9a9b9d;
+border-right:1px solid #9a9b9d;
+border-bottom:1px solid #9a9b9d;
+}
+
+.leftnw1 img {
+float:left;
+}
+
+.leftnw2 {
+float:left;
+width:400px;
+height:220px;
+margin-top:30px;
+margin-left:55px;
+border-left:1px solid #9a9b9d;
+border-right:1px solid #9a9b9d;
+border-bottom:1px solid #9a9b9d;
+}
+
+.leftnw2 img {
+float:left;
+}
+
+.left2{
+float:left;
+margin-top:35px;
+width:540px;
+height:220px;
+border-left:1px solid #9a9b9d;
+border-right:1px solid #9a9b9d;
+border-bottom:1px solid #9a9b9d;
+}
+
+.left2 img {
+float:left;
+}
+
+.left3{
+float:left;
+margin-top:35px;
+width:540px;
+height:350px;
+border-left:1px solid #9a9b9d;
+border-right:1px solid #9a9b9d;
+border-bottom:1px solid #9a9b9d;
+}
+
+.left3 img {
+float:left;
+}
+
+.rig1{
+float:left;
+margin-left:5px;
+margin-top:-230px;
+width:540px;
+
+
+}
+
+.rig1 img {
+float:left;
+}
+
+.rig2{
+float:left;
+margin-left:5px;
+margin-top:-35px;
+margin-bottom: 44px;
+width:540px;
+height:220px;
+border-left:1px solid #9a9b9d;
+border-right:1px solid #9a9b9d;
+border-bottom:1px solid #9a9b9d;
+}
+
+.rig2 img {
+float:left;
+}
+
+.view_more {
+width:101px;
+height:30px;
+float:left;
+background:url(images/view-more-info.png);
+margin:8px 0 0 161px;;
+}
+
+.view_more:hover{
+width:101px;
+height:30px;
+float:left;
+background:url(images/view-more-info2.png);
+margin:8px 0 0 161px;;
+}
+
+.add_list {
+width:81px;
+height:30px;
+float:left;
+background:url(images/add-to-list.png);
+margin:10px 0 0 191px;;
+}
+
+.add_list:hover {
+width:81px;
+height:30px;
+float:left;
+background:url(images/add-to-list1.png);
+margin:10px 0 0 191px;;
+}
+
+.search-header{
+
+position:absolute;
+left:911px;
+top:69px;
+border:1px solid #000;
+border-radius: 11px;
+width:225px;
+height:31px;
+background:#fff url(images/navi.png) no-repeat 200px 6px;
+}
+
+.search-header:after{
+
+clear:both;
+content:'.';
+display:block;
+visibility:hidden;
+height:0
+}
+
+.search-input{
+
+color:#707070;
+font-size:12px;
+font-family:'Segoe UI',Tahoma,Arial,Helvetica,sans-serif;
+margin-top:5px;
+margin-left:10px;
+border:1px solid #fff;
+display:block;
+float:left;
+width:150px;
+padding:0 5px;
+padding-right:25px;
+outline:none;
+}
+
+.search-submit{
+
+width:22px;
+height:22px;
+background:none;
+border:0;
+cursor:pointer;
+position:absolute;
+top:3px;
+right:3px
+}
+
+.middle {
+float:left;
+margin:0px 0 0 10px;
+width:215px;
+height:auto;
+background-color:#d2dfef;
+border-left:1px solid #9a9b9d;
+border-right:1px solid #9a9b9d;
+border-bottom:1px solid #9a9b9d;
+}
+
+.gap {
+float:left;
+margin-left:20px;
+width:225px;
+height:680px;
+background-color:#fff;
+}
+
+.list {
+}
+
+.list ul {
+list-style-type:none;
+padding:0px;
+margin:2px 0 0 5px;
+}
+.list ul li {
+background-image:url(images/list-arrow.png);
+background-repeat:no-repeat;
+background-position:0 5px; 
+padding-left:15px;
+}
+
+
+.list ul li a {
+font-family:Franklin Gothic Book, sans-serif;
+font-size:12px;
+color:#012f60;
+text-decoration:none;
+}
+.list ul li a:hover {
+font-family:Franklin Gothic Book, sans-serif;
+font-size:12px;
+color:#6e99d4;
+text-decoration:underline;
+}
+
+.index_right {
+float:left;
+margin:20px 0 0 10px;
+width:300px;
+height:565px;
+}
+
+.index_right1 {
+float:left;
+margin:0px;
+}
+
+.index_right2 {
+float:left;
+margin-left:160px;
+margin-top:-250px;
+}
+
+.right {
+float:left;
+margin:60px 0 0 15px;
+width:223px;
+}
+
+.right_01 {
+float:left;
+width:223px;
+}
+
+.right1 {
+float:left;
+margin:0px;
+}
+
+.right2 {
+float:left;
+margin-top:40px;
+}
+
+.right0 {
+float:left;
+margin:60px 0 0 35px;
+width:223px;
+height:557px;
+}
+
+#footer {
+float:left;
+margin-top:35px;
+height:45px;
+background:url(images/footer_bg.gif) repeat-x;
+}
+
+.bottom_link {
+float:left;
+}
+
+.bottom_link ul {
+	display:block;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.bottom_link ul li {
+	float:left;
+	position:relative;
+	top:20px;
+	display:inline;
+	float:left;
+	list-style:none;
+	font-size:11px;
+}
+
+.bottom_link a{
+	padding:0 5px;
+	font-family:Franklin Gothic Book, sans-serif;;
+	float:left;
+	color:#afafaf;
+	text-decoration:none;
+	text-align:left;
+}
+
+.bottom_link a:hover{
+	padding:0 5px;
+	font-family:Franklin Gothic Book, sans-serif;
+	float:left;
+	color:#fff;
+	text-decoration:none;
+	text-align:left;
+}
+
+.rights {
+margin:20px 0 0 793px;
+color:#afafaf;
+font-size:11px;
+font-family:Franklin Gothic Book, sans-serif;
+}
+
+.t01 {
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#012f60;
+margin: 20px 0 0 75px;
+}
+
+h6 {
+font-size:11px;
+font-family:Arial, sans-serif;
+color:#6c6f70;
+}
+
+h5 {
+font-size:12px;
+font-family:Arial, sans-serif;
+color:#6c6f70;
+}
+
+h5 a:hover {
+text-decoration:underline;
+}
+
+.t1 {
+font-size:15px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#012f60;
+margin: 40px 0 0 75px;
+font-weight:bold;
+}
+
+.t101 {
+font-size:13px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#012f60;
+margin: 40px 0 0 75px;
+font-weight:bold;
+}
+
+.t2 {
+font-size:15px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#012f60;
+margin: 20px 0 0 45px;
+font-weight:bold;
+}
+
+.t2 a:hover {
+text-decoration:underline;
+}
+
+.t3 {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#698092;
+padding:6px 0 0 15px;
+font-style:italic;
+}
+
+.t4 {
+font-size:17px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#010101;
+margin: 25px 0 0 65px;
+font-weight:bold
+}
+
+.t5 {
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#010101;
+margin: 18px 0 0 15px;
+font-weight:bold;
+}
+
+.t6 {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#698092;
+padding:8px 0 0 15px;
+}
+
+.t7{
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#fff;
+padding:6px 0 0 18px;
+font-weight:bold;
+}
+
+.t7 a {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#fff;
+font-weight:bold;
+}
+
+.t8 {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000;
+padding:5px 0 0 20px;
+font-weight:bold;
+}
+
+.t9 {
+background:url(images/cart-count2.png) no-repeat;
+width:27px;
+height:24px;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#fff;
+margin:2px 0 0 598px;
+padding:5px 0 0 4px;
+font-weight:bold;
+}
+
+.t09 {
+position:absolute;
+top:103px;
+left:226px;
+}
+
+.t10 {
+float:left;
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#fff;
+position:relative;
+margin-top:-26px;
+padding:0 10px;
+font-weight:bold;
+}
+
+.t1000 {
+float:left;
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#ffffff;
+position:relative;
+top:-45px;
+padding:0 10px;
+font-weight:bold;
+}
+.t100 {
+    padding:10px 0 0 10px;
+    font-size:16px;
+    font-family:Franklin Gothic Book, sans-serif;
+    color:#6687a8;
+    text-align:justify;
+    margin-right:20px;
+    font-weight: bold;
+}
+.sell_form1 {
+    position:absolute;
+    top:300px;
+    left:180px;
+}
+.form343 {
+    float:left;
+    margin-left:130px;
+    width:785px;
+    height:200px;
+}
+
+.t11 {
+float:left;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#fff;
+position:relative;
+margin:-26px 0 0 345px;
+padding:0 10px;
+font-weight:bold;
+}
+
+.t12 {
+float:left;
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#426988;
+font-weight:bold;
+margin: 5px 0 0 290px;
+}
+
+.t121 {
+float:left;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#426988;
+font-weight:bold;
+margin:-4px 0 0 -140px;
+}
+
+.t120 {
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#ffffff;
+font-weight:bold;
+margin:30px 0 0 -535px;
+}
+
+.t012 {
+position:relative;
+float:left;
+top:-5px;
+left:-150px;
+}
+
+.t021 {
+float:left;
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#426988;
+font-weight:bold;
+margin:-20px 0 0 100px;
+}
+
+.t13 {
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000;
+position:relative;
+margin:-95px 0 0 165px;
+}
+
+.t14 {
+float:left;
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+font-weight:bold;
+margin: -15px 0 0 425px;
+}
+
+.t15 {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#ffffff;
+padding:5px 0 0 8px;
+}
+
+.t15 a {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#ffffff;
+}
+
+.t151 {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#ffffff;
+margin:5px 0 0 33px;
+}
+
+.t151 a {
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#ffffff;
+}
+
+
+.t16 {
+float:left;
+position:relative;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#123e6d;
+margin:-25px 0 0 275px;
+}
+
+.t16 a {
+float:left;
+position:relative;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#123e6d;
+}
+
+.t16 a:hover {
+float:left;
+position:relative;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#91a1be;
+}
+
+.address {
+position:relative;
+top:30px;
+margin:20px 0 0 70px;
+font-size:15px;
+font-family:Franklin Gothic Book, sans-serif;
+color: #6687a8;
+font-weight: bold;
+}
+
+.address  a{
+color:#0000ff;
+}
+
+.content1 {
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.content2 {
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.content3 {
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.content4 {
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.content04 {
+float:left;
+width:1280px;
+height:1103px;
+}
+
+.form2 {
+float:left;
+margin-left:30px;
+width:785px;
+}
+
+.content5 {
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.form02 {
+float:left;
+margin-left:130px;
+width:785px;
+height:1103px;
+}
+
+.form3 {
+float:left;
+margin-left:30px;
+width:785px;
+}
+
+.content6{
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.form6 {
+float:left;
+margin-left:30px;
+width:785px;
+
+}
+
+.content7{
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.form7 {
+float:left;
+margin-left:30px;
+width:785px;
+}
+
+.content8{
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+}
+
+.form8 {
+float:left;
+margin-left:30px;
+width:785px;
+}
+
+.buy{
+float:left;
+margin-left:30px;
+margin-right:250px;
+}
+
+.about_us {
+float:left;
+width:785px;
+margin-left:30px;
+}
+
+.about_us1{
+float:left;
+margin-left:130px;
+width:765px;
+height:1100px;
+}
+
+.about_us2{
+float:left;
+margin-left:30px;
+width:765px;
+}
+
+.sell {
+float:left;
+margin-left:30px;
+width:765px;
+}
+
+.t17 {
+padding:10px 0 0 10px;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+}
+
+.t17 a:hover{
+text-decoration:underline
+}
+
+.t17 img {
+float:right;
+margin:10px 20px 20px 20px;
+}
+
+.t18 {
+padding:10px 0 0 10px;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+text-align:justify;
+margin-right:20px;
+}
+
+.t18 a:hover {
+text-decoration:underline;
+}
+
+.t18 img {
+float:left;
+margin:10px 20px 20px 20px;
+}
+
+.t181 {
+padding:10px 0 0 10px;
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+}
+
+.t181 a:hover{
+text-decoration:underline;
+}
+
+.t19 {
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#ffffff;
+position:relative;
+top:-27px;
+padding:0 10px;
+font-weight:bold;
+
+}
+
+.list2 {
+margin:30px 0 0 20px;
+}
+
+.list2 ul {
+list-style-type:none;
+padding:0px;
+margin:30px 0 0 5px;
+}
+.list2 ul li {
+background-image:url(images/list-arrow.png);
+background-repeat:no-repeat;
+background-position:0 5px; 
+padding-left:15px;
+padding-right:400px;
+font-family:Franklin Gothic Book, sans-serif;
+font-size:15px;
+color:#012f60;
+margin-right:20px;
+text-align:justify;
+}
+
+
+.list2 ul li a {
+font-family:Franklin Gothic Book, sans-serif;
+font-size:15px;
+color:#012f60;
+text-decoration:none;
+}
+.list2 ul li a:hover {
+font-family:Franklin Gothic Book, sans-serif;
+font-size:15px;
+color:#6e99d4;
+text-decoration:underline;
+}
+
+.list02 {
+margin:30px 0 0 20px;
+}
+
+.list02 ul {
+list-style-type:none;
+padding:0px;
+margin:30px 0 0 5px;
+}
+.list02 ul li {
+background-image:url(images/list-arrow.png);
+background-repeat:no-repeat;
+background-position:0 5px; 
+padding-left:15px;
+font-family:Franklin Gothic Book, sans-serif;
+font-size:15px;
+color:#012f60;
+margin-right:20px;
+text-align:justify;
+}
+
+.list02 ul li a {
+font-family:Franklin Gothic Book, sans-serif;
+font-size:15px;
+color:#012f60;
+text-decoration:none;
+}
+.list02 ul li a:hover {
+font-family:Franklin Gothic Book, sans-serif;
+font-size:15px;
+color:#6e99d4;
+text-decoration:underline;
+}
+
+.t21 {
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+margin:10px 0 0 20px;
+}
+
+.t22 {
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#6c6f70;
+margin:10px 0 0 20px;
+font-weight:bold;
+}
+
+.t22 a:hover {
+text-decoration:underline;
+}
+
+.t23 {
+float:left;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#6c6f70;
+margin:20px 0 0 10px;
+text-align:justify;
+padding-right:10px;
+font-weight:bold;
+}
+
+.t231 {
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#6c6f70;
+margin:20px 0 0 10px;
+padding-right:150px;
+font-weight:bold;
+}
+
+.t023 {
+float:left;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#6c6f70;
+margin:20px 0 0 10px;
+padding-right:150px;
+}
+
+.t24 {
+float:left;
+margin:40px 0 0 400px;
+font-size:16px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#6c6f70;
+text-align:center;
+}
+
+.t24 a:hover {
+text-decoration:underline;
+}
+
+.partner {
+float:left;
+width:930px;
+margin-left:45px;
+}
+
+.partner img {
+float:left;
+padding:5px;
+}
+
+.sell_content {
+float:left;
+text-align:left;
+width:540px;
+margin-left:30px;
+}
+
+.t05 a {
+font-size:16px;
+font-family: Franklin Gothic Book, sans-serif;
+margin-left:380px;
+position:relative;
+top:350px;
+}
+
+.t05 a:hover {
+text-decoration:underline;
+}
+
+.t005 a {
+font-size:16px;
+font-family: Franklin Gothic Book, sans-serif;
+margin-left:540px;
+position:relative;
+top:329px;
+}
+
+.t005 a:hover {
+text-decoration:underline;
+}
+
+.t051 a {
+float:left;
+font-size:16px;
+font-family: Franklin Gothic Book, sans-serif;
+margin-left:200px;
+margin-top:-5px;
+}
+
+
+
+.t052 a {
+font-size:16px;
+font-family: Franklin Gothic Book, sans-serif;
+margin-left:535px;
+position:relative;
+top:-350px;
+}
+
+.t052 a:hover {
+text-decoration:underline;
+}
+
+.t050 a {
+float:left;
+font-size:16px;
+font-family: Franklin Gothic Book, sans-serif;
+margin-left:400px;
+margin-top:-27px;
+
+}
+
+
+
+.t053 a {
+font-size:16px;
+font-family: Franklin Gothic Book, sans-serif;
+margin-left:585px;
+position:relative;
+top:-370px;
+}
+
+.t053 a:hover {
+text-decoration:underline;
+}
+
+
+form input#text_box {
+width: 199px; 
+height: 32px; 
+border: 0;
+color: #000;
+margin:-26px 0 0 90px;
+outline-color:#c99900;
+border-radius:8px;
+}
+
+#search_button {
+position:relative;
+background: url(images/refine-seach-button.png) no-repeat; 
+width: 84px; 
+height: 33px; 
+border: 0;
+padding: 0 0 0 0px; 
+color: #ffffff;
+margin:27px 0 0 30px;
+}
+
+#search_button:hover {
+position:relative;
+background: url(images/search1.png) no-repeat; 
+width: 84px; 
+height: 33px; 
+border: 0;
+padding: 0 0 0 0px; 
+color: #ffffff;
+margin:25px 0 0 30px;
+cursor:pointer;
+}
+
+#reset_button {
+position:relative;
+background: url(images/refine-reset-button.png) no-repeat; 
+width: 82px; 
+height: 31px; 
+border: 0;
+padding: 0 0 0 0px; 
+color: #000000;
+margin-left:90px;
+}
+
+#reset_button:hover {
+background: url(images/reset1.png) no-repeat; 
+cursor:pointer;
+}
+
+.drop_box {
+position:relative;
+top:-4px;
+width: 199px; 
+height: 32px; 
+border: 0;
+color: #000000;
+margin-top:-20px;
+margin-left:90px;
+outline-color:#c99900;
+border-radius:8px;
+}
+
+.sell_form {
+margin-top:20px;
+}
+.txt_box {
+    position:relative;
+    top:-20px;
+    left:100px;
+    width:170px;
+  
+    padding: 0 0 0 0px; 
+    color: #000;
+}
+
+.txt_bx {
+position:relative;
+top:-20px;
+left:250px;
+width:170px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+.txt_bx_1 {
+position:relative;
+top:-20px;
+left:250px;
+width:200px;
+
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.drp_bx  {
+position:relative;
+top:-20px;
+left:250px;
+width:170px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.drp_bx option {
+position:relative;
+top:-20px;
+left:250px;
+width:170px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.select_box {
+position:relative;
+top:-20px;
+left:250px;
+width: 150px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.sub_button {
+position:relative;
+top:5px;
+left:350px;
+cursor:pointer;
+}
+
+.rst_button {
+position:relative;
+top:6px;
+left:380px;
+cursor:pointer;
+}
+
+.input_box {
+position:relative;
+top:5px;
+left:230px;
+width: 450px;
+height:200px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+.input_boxbv {
+position:relative;
+top:5px;
+left:230px;
+width: 350px;
+height:200px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+text area {
+-webkit-appearence:text area;
+background-color:#fff;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+-webkit-box-orient: vertical;
+resize: auto;
+cursor: auto;
+padding: 2px;
+white-space: pre-wrap;
+word-wrap: break-word;
+}
+
+.t180 {
+position:relative;
+top:-20px;
+left:70px;
+color:#ff0000;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+}
+
+.serv img {
+margin:80px 0 0 200px;
+float:left;
+}
+
+.list img {
+position:relative;
+top:10px;
+left:50px;
+width:640px;
+height:480px;
+}
+
+h1 {
+position:relative;
+left:60px;
+float:left;
+margin-right:120px;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+}
+
+h2 {
+position:relative;
+top:5px;
+left:5px;
+float:left;
+margin-right:10px;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+}
+
+.list_id {
+position:relative;
+left:60px;
+top:10px;
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+font-weight:bold;
+}
+.list_price {
+position:relative;
+left:85px;
+top:10px;
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+font-weight:bold;
+}
+
+.list_id1 {
+position:relative;
+left:140px;
+top:-22px;
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+font-weight:bold;
+}
+.list_price1 {
+position:relative;
+left:-15px;
+top:8px;
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+font-weight:bold;
+}
+
+.list_loc {
+position:relative;
+float:left;
+top:8px;
+left:-35px;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+font-weight:bold;
+}
+
+.content001 {
+float:left;
+margin-left:130px;
+margin-right:130px;
+border:1px solid #9a9b9d;
+
+}
+
+.content002 {
+float:left;
+margin-left:120px;
+}
+
+.content003 {
+float:left;
+width:785px;
+
+}
+
+.content004 {
+float:left;
+width: 820px;
+margin-top:30px;
+background-color: #eff5fe;
+}
+.content_error {
+float:left;
+width: 820px;
+margin-top:30px;
+
+}
+
+.content_lt {
+float:left;
+}
+
+.content_lt1{
+float:left;
+width:380px;
+}
+
+.content_rt {
+float:left;
+margin-left:50px;
+}
+
+.list_form {
+margin-top:40px;
+}
+
+.list_form1 {
+margin:30px 0 0 10px;
+}
+
+.txt_bx1 {
+position:relative;
+top:-20px;
+left:200px;
+width:170px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.drp_bx1  {
+position:relative;
+top:-20px;
+left:200px;
+width:170px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.drp_bx1 option {
+position:relative;
+top:-20px;
+left:200px;
+width:170px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.select_box1 {
+position:relative;
+top:-20px;
+left:200px;
+width: 150px;
+border:#000000 solid 1px; 
+padding: 0 0 0 0px; 
+color: #000;
+}
+
+.sub_button1 {
+position:relative;
+top:55px;
+left:-20px;
+cursor:pointer;
+}
+
+.rst_button1 {
+position:relative;
+top:55px;
+left:5px;
+cursor:pointer;
+}
+
+.pages {
+position:relative;
+top:-10px;
+left:350px;
+}
+
+.pages1 {
+position:relative;
+top:-10px;
+left:300px;
+}
+
+.srch_rslt {
+position:relative;
+top:10px;
+left:50px;
+}
+
+.pages01 {
+position:relative;
+top:-5px;
+left:75px;
+}
+
+.my_list {
+position:relative;
+
+top:5px;
+left:5px;
+}
+
+.my_list1{
+margin:10px  0 0 10px;
+}
+
+.list_title {
+float:left;
+font-size:12px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#426988;
+font-weight:bold;
+margin:-3px 0 0 5px;
+}
+
+.list_title1 {
+float:left;
+font-size:11px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#fefefe;
+font-weight:bold;
+margin:-347px 0 0 180px;
+}
+
+#map {
+width: 470px;
+height: 480px;
+position: relative;
+background-color: #E5E3DF;
+position: absolute;
+left: 0px;
+top: 0px;
+overflow: hidden;
+width: 100%;
+height: 100%;
+}
+
+.gmnoprint {
+z-index: 0;
+position: absolute;
+left: 2px;
+bottom: 2px;
+z-index: 0;
+position: absolute;
+right: 3px;
+bottom: 2px;
+color: black;
+font-family:Franklin Gothic Book, sans-serif;
+font-size: 11px;
+white-space: nowrap;
+text-align: right;
+width: 59px;
+height: 288px;
+z-index: 0;
+position: absolute;
+left: 7px;
+top: 7px;
+overflow: hidden;
+text-align: left;
+}
+
+
+.t18 {
+padding:10px 0 0 10px;
+font-size:14px;
+font-family:Franklin Gothic Book, sans-serif;
+color:#000000;
+text-align:justify;
+margin-right:20px;
+}
+
+
+.list2 ul li {
+background-image:url(images/list-arrow.png);
+background-repeat:no-repeat;
+background-position:0 5px; 
+padding-left:15px;
+font-family:Franklin Gothic Book, sans-serif;
+font-size:15px;
+color:#012f60;
+margin-right:20px;
+text-align:justify;
+}
+
+
+.content8{
+float:left;
+width:1280px;
+height:5500px;
+}
+
+.form8 {
+float:left;
+margin-left:130px;
+width:785px;
+height:5500px;
+}
+
+.button{
+margin:0 5px 0 0;
+padding:3px 5px 3px 5px;
+border:1px solid #b5b5b5;
+background-color:#fff;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* IE10+ */
+background: linear-gradient(top,  #ffffff 0%,#efefef 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+.button_image{
+margin:0 5px 0 0;
+padding:3px 5px 3px 5px;
+border:1px solid #b5b5b5;
+background-color:#6687a8;
+color:#fff;
+font-size:15px;
+font-family:Franklin Gothic Book, sans-serif;
+font-weight: bold;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+height: 30px;
+}
+.shadowbutton{
+margin:0 5px 0 0;
+padding:3px 5px 3px 5px;
+border:1px solid #b5b5b5;
+background-color:#fff;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* IE10+ */
+background: linear-gradient(top,  #ffffff 0%,#efefef 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+.mylist_lst {
+ float:left;
+}
+
+ol#pagination{overflow:hidden;}
+ol#pagination li{
+    float:left;
+    list-style:none;
+    cursor:pointer;
+    margin:0 0 0 .5em;
+    font: 1em Helvetica, Arial, Sans-Serif;
+    line-height: 1.5em;
+    color: #333;
+}
+ol#pagination li.current{color:#f00;font-weight:bold;}
+
+
+#newform{
+    
+    
+}
+#newform .label{
+  
+    text-align: right;
+}
+#newform .text{
+   
+    margin-left:60px;
+   
+}
+dl {
+	margin-bottom:50px;
+}
+
+dl dt {	
+	color:#000;
+	float:left; 
+	font-weight:bold; 
+	font:Arial, Helvetica, sans-serif;
+	text-align:right;
+	font-size:12px;	
+	margin-right:0px; 
+	padding:5px 0px;  
+	width:125px; 
+}
+
+dl dd {
+	margin:2px 0; 
+	padding:5px 0;
+}
+dd input {
+	border:solid 1px #cfcfcf;
+	min-height:25px;
+	margin-left:10px;
+}

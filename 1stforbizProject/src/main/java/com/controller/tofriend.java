@@ -5,7 +5,6 @@
 package com.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 
 /**
  *
@@ -20,59 +19,44 @@ public class tofriend extends ActionSupport {
     private Emailfunction sendMail;
     private String subject;
     private String content;
+    private spDAO myDao;
 
     @Override
     public String execute() throws Exception {
         try {
-             System.out.println("------------you are in tell to friend form----");
-             System.out.println("----------your name"+f_name);
-             System.out.println("----------your mail"+y_email);
-             System.out.println("----------friend mail"+f_email);
-             //sending mail to friend mail address(f_email)
-            subject = "Information from Your Friend";
+            //sending mail to friend mail address(f_email)
+            setSubject("Information from Your Friend " + f_name);
             //content="---------------hello";
-            content = ("<html><body><table size=fixed border=10><th><div id=header style=background-color:lightblue;>Information from your Friend ...</div></th>"
-                    + "<tr><td align=middle>Your friend requested you to visit the following site and refere property with referenceId= <br><br><br>" + referenceId + " <br> link is"
-                    + "<td><a STYLE=text-decoration:none href=www.1stforbiz.com>www.1stforbiz.com</a></td> ");
+            setContent("Your friend \t\t" + f_name + "\t\t,Email address \t\t"+y_email+" \t\trequested you to visit the following site and refer property with referenceId\t\t" + getReferenceId() + "\t\t\t www.1stforbiz.com");
 
-            System.out.println("---------------email=="+getF_email());
-            System.out.println("----------------"+getSubject());
-            System.out.println("----------------"+getContent());
-            
-           
-             sendMail.test(f_email, getSubject(), getContent());
-            System.out.println("----------------mail sended to your friend successfully");
+            getSendMail().test(getF_email(), getSubject(), getContent());
+            addActionMessage("Mail Send to your Friend Successfully..");
 
+            return "success";
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            addActionError("Server Error Please Try Again Later");
+            return "error";
 
+        }
 
+    }
+
+    @Override
+    public void validate() {
+        try {
+            if (getF_name().isEmpty() && getY_email().isEmpty() && getF_email().isEmpty()) {
+                addActionError("Please Recheck All the fields and submit again.....");
+            }
 
 
         } catch (Exception e) {
             e.printStackTrace();
-            return "error";
+
 
         }
-        addActionMessage("A mail sent to your friend" );
-        return "success";
 
-    }
-    
-    
-     @Override
-    public void validate() {
-        try {
-             if(f_name.isEmpty() || f_name==null){
-             addActionMessage("your form submition failed check the fields and submit again.....");            
-            }
-             
-             
-              } catch (Exception e) {
-            e.printStackTrace();
-            
-             
-        }
-       
     }
 
     /**
@@ -85,7 +69,6 @@ public class tofriend extends ActionSupport {
     /**
      * @param f_name the f_name to set
      */
-   @RequiredStringValidator(message="first name required")
     public void setF_name(String f_name) {
         this.f_name = f_name;
     }
@@ -100,7 +83,6 @@ public class tofriend extends ActionSupport {
     /**
      * @param y_email the y_email to set
      */
-   @RequiredStringValidator(message="email address required")
     public void setY_email(String y_email) {
         this.y_email = y_email;
     }
@@ -115,7 +97,6 @@ public class tofriend extends ActionSupport {
     /**
      * @param f_email the f_email to set
      */
-  @RequiredStringValidator(message="email address required")
     public void setF_email(String f_email) {
         this.f_email = f_email;
     }
@@ -130,7 +111,6 @@ public class tofriend extends ActionSupport {
     /**
      * @param referenceId the referenceId to set
      */
-    
     public void setReferenceId(String referenceId) {
         this.referenceId = referenceId;
     }
@@ -175,5 +155,19 @@ public class tofriend extends ActionSupport {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return the myDao
+     */
+    public spDAO getMyDao() {
+        return myDao;
+    }
+
+    /**
+     * @param myDao the myDao to set
+     */
+    public void setMyDao(spDAO myDao) {
+        this.myDao = myDao;
     }
 }

@@ -36,7 +36,7 @@ public class valuationlist extends ActionSupport implements SessionAware{
             
              } catch (Exception e) {
             e.printStackTrace();
-            
+            addActionError("Server Error Please Try Again Later");
             return "error";
         }
         return "success";

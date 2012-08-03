@@ -1,5 +1,5 @@
 package com.model;
-// Generated Jul 21, 2012 4:41:27 PM by Hibernate Tools 3.2.1.GA
+// Generated Jul 27, 2012 5:21:52 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -47,15 +47,11 @@ public class BusinessValuation  implements java.io.Serializable {
     }
 
 	
-    public BusinessValuation(String CTitle, String CFirstName, String CSurname, String CCompName, String CHouseNo, String CRoad, String CTown, String CCountry, String CEmail, String BSector, String BTradeType, String BLocaTown, String BLocaCountry, Date createddate) {
+    public BusinessValuation(String CTitle, String CFirstName, String CSurname, String CCompName, String CEmail, String BSector, String BTradeType, String BLocaTown, String BLocaCountry, Date createddate) {
         this.CTitle = CTitle;
         this.CFirstName = CFirstName;
         this.CSurname = CSurname;
         this.CCompName = CCompName;
-        this.CHouseNo = CHouseNo;
-        this.CRoad = CRoad;
-        this.CTown = CTown;
-        this.CCountry = CCountry;
         this.CEmail = CEmail;
         this.BSector = BSector;
         this.BTradeType = BTradeType;

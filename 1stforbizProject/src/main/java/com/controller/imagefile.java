@@ -14,75 +14,87 @@ import java.io.FileInputStream;
  * @author Naren
  */
 public class imagefile extends ActionSupport {
-    
+
     private spDAO myDao;
     private File userImage1;
     private File userImage2;
     private File userImage3;
     private File userImage4;
     private File userImage5;
-    private String imagename;
-    
+   
+    private Long referenceNo;
+    private String referenceId;
+
     @Override
     public String execute() throws Exception {
-        
         try {
-            String s = getImagename().substring(1, getImagename().length() - 1);
-            long s1 = Integer.parseInt(s);
-            System.out.println("-------" + s1);
+          
+          
             //generating byte code for images....
-            Imagesfile img = new Imagesfile();
-            byte[] aFile = new byte[(int) userImage1.length()];            
-            byte[] bFile = new byte[(int) userImage2.length()];            
-            byte[] cFile = new byte[(int) userImage3.length()];            
-            byte[] dFile = new byte[(int) userImage4.length()];            
-            byte[] eFile = new byte[(int) userImage5.length()];            
-            FileInputStream fileInputStream = new FileInputStream(userImage1);
-            
-                       
-            System.out.println("----" + aFile);
-            System.out.println("-------" + fileInputStream);
-            //convert file into array of bytes
-            fileInputStream.read(aFile);            
-            img.setId(s1);
-            img.setImg1(aFile);
-            
-            fileInputStream.close();
-            FileInputStream fileInputStream1 = new FileInputStream(userImage2);
-            fileInputStream1.read(bFile);
-            img.setImg2(bFile);
-            fileInputStream1.close();
-            
-            FileInputStream fileInputStream2 = new FileInputStream(userImage3);
-            fileInputStream2.read(cFile);
-            img.setImg3(cFile);
-            fileInputStream2.close();
-            
-            FileInputStream fileInputStream3 = new FileInputStream(userImage4);
-            fileInputStream3.read(dFile);
-            img.setImg4(dFile);
-            fileInputStream3.close();
-            
-            FileInputStream fileInputStream4 = new FileInputStream(userImage5);
-            fileInputStream4.read(eFile);
-            img.setImg5(eFile);
-            fileInputStream4.close();
-            
-            getMyDao().getDbsession().save(img);
-            
-            
-            
-            
-            
-            
+            Imagesfile  img = (Imagesfile)myDao.getDbsession().get(Imagesfile.class, getReferenceNo());
+            if (userImage1 != null) {
+                FileInputStream fileInputStream = new FileInputStream(userImage1);
+
+                byte[] aFile = new byte[(int) userImage1.length()];
+                System.out.println("----" + aFile);
+                System.out.println("-------" + fileInputStream);
+                //convert file into array of bytes
+                fileInputStream.read(aFile);
+
+                img.setImg1(aFile);
+
+                fileInputStream.close();
+            }
+            if (userImage2 != null) {
+                FileInputStream fileInputStream1 = new FileInputStream(userImage2);
+                byte[] bFile = new byte[(int) userImage2.length()];
+                fileInputStream1.read(bFile);
+
+                img.setImg2(bFile);
+
+                fileInputStream1.close();
+            }
+            if (userImage3 != null) {
+                FileInputStream fileInputStream2 = new FileInputStream(userImage3);
+                byte[] cFile = new byte[(int) userImage3.length()];
+                fileInputStream2.read(cFile);
+
+                img.setImg3(cFile);
+
+                fileInputStream2.close();
+            }
+            if (userImage4 != null) {
+                FileInputStream fileInputStream3 = new FileInputStream(userImage4);
+                byte[] dFile = new byte[(int) userImage4.length()];
+                fileInputStream3.read(dFile);
+
+                img.setImg4(dFile);
+
+                fileInputStream3.close();
+            }
+            if (userImage5 != null) {
+                FileInputStream fileInputStream4 = new FileInputStream(userImage5);
+                byte[] eFile = new byte[(int) userImage5.length()];
+                fileInputStream4.read(eFile);
+
+                img.setImg5(eFile);
+
+                fileInputStream4.close();
+            }
+
+            img.setId(referenceNo);
+            getMyDao().getDbsession().update(img);
+            addActionMessage("Your New Business Successfully Uploaded");
+            return "success";
+
+
         } catch (Exception e) {
             e.printStackTrace();
-            
+            addActionError("Server Error Please Try Again Later");
             return "error";
-            
+
         }
-        return "success";
-        
+
     }
 
     /**
@@ -113,19 +125,7 @@ public class imagefile extends ActionSupport {
         this.userImage1 = userImage1;
     }
 
-    /**
-     * @return the imagename
-     */
-    public String getImagename() {
-        return imagename;
-    }
-
-    /**
-     * @param imagename the imagename to set
-     */
-    public void setImagename(String imagename) {
-        this.imagename = imagename;
-    }
+   
 
     /**
      * @return the userImage2
@@ -181,5 +181,33 @@ public class imagefile extends ActionSupport {
      */
     public void setUserImage5(File userImage5) {
         this.userImage5 = userImage5;
+    }
+
+    /**
+     * @return the referenceNo
+     */
+    public Long getReferenceNo() {
+        return referenceNo;
+    }
+
+    /**
+     * @param referenceNo the referenceNo to set
+     */
+    public void setReferenceNo(Long referenceNo) {
+        this.referenceNo = referenceNo;
+    }
+
+    /**
+     * @return the referenceId
+     */
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    /**
+     * @param referenceId the referenceId to set
+     */
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
     }
 }

@@ -5,8 +5,11 @@
 package com.controller;
 
 import com.model.Mylists;
+import com.model.RequestinfoTable;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import java.net.UnknownHostException;
+import java.util.Date;
 
 /**
  *
@@ -28,7 +31,7 @@ public class mylists extends ActionSupport {
     private String LRoad;
     private String LTown;
     private String LCountry;
-    private Long LPostalcode;
+    private String LPostalcode;
     private String LRefList;
     private String LStatus;
     private Emailfunction sendMail;
@@ -39,43 +42,51 @@ public class mylists extends ActionSupport {
     public String execute() throws Exception {
         try {
 
-            //inserting data into DB Table
 
-            Mylists ml = new Mylists(getLTitle(), getLFirstName(), getLSurName(), getLCompanyName(), getLEmail(), getLTelephone(), getLWorkPhone(), getLFax(),
-                    getLMobile(), getLHouseNo(), getLRoad(), getLTown(), getLCountry(), getLPostalcode(), getLRefList(), "status");
-            //saving data
-            myDao.getDbsession().save(ml);
+
+            RequestinfoTable rinfo = new RequestinfoTable(new Date(), LTitle, LFirstName, LSurName, LEmail, LRefList);
+            rinfo.setWTelephone(LWorkPhone);
+            rinfo.setTelephone(LTelephone);
+            rinfo.setFax(LFax);
+            rinfo.setHouseNo(LHouseNo);
+            rinfo.setRoad(LRoad);
+            rinfo.setCountry(LCountry);
+            rinfo.setTown(LTown);
+            rinfo.setPostcode(LPostalcode);
+            myDao.getDbsession().save(rinfo);
+
             //sending confirmation mail
-            subject = "Request Responce from 1stforbiz";
-            content = "Hi" + LFirstName + "" + "your request regaurding property details is received. Our representative will contact you soon" + "/n" + "Thank you";
+            subject = "Response from 1stforbiz.com";
+            content = "Hi &nbsp; <b>" + LFirstName + "</b><br/>" + "Your request regarding property details is received<br/>.Our representative will contact you soon.<br/>" 
+                     + "Thanks and Regards<br/>"
+                    + "1stforbiz.com";
 
             sendMail.test(getLEmail(), getSubject(), getContent());
             System.out.println("-----------------Responce mail sended successfully ");
+            addActionMessage("Your Request Received Successfully.We will respond to you soon");
+            return "success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            addActionError("Server Error Please Try Again Later");
+            return "success";
+        }
+       
+    }
+
+    @Override
+    public void validate() {
+        try {
+            if (LFirstName.isEmpty() || LFirstName == null) {
+                addActionError("Please Recheck All the fields and submit again.....");
+            }
+
 
         } catch (Exception e) {
             e.printStackTrace();
-            addActionError(e.getMessage());
-            return "error";
+
 
         }
-        return "success";
 
-    }
-    
-     @Override
-    public void validate() {
-        try {
-             if(LFirstName.isEmpty() || LFirstName==null){
-             addActionMessage("your form submition failed check the fields and submit again.....");            
-            }
-             
-             
-              } catch (Exception e) {
-            e.printStackTrace();
-            
-             
-        }
-       
     }
 
     /**
@@ -116,7 +127,7 @@ public class mylists extends ActionSupport {
     /**
      * @param LFirstName the LFirstName to set
      */
-    @RequiredStringValidator(message="first required")
+    @RequiredStringValidator(message = "first required")
     public void setLFirstName(String LFirstName) {
         this.LFirstName = LFirstName;
     }
@@ -276,20 +287,6 @@ public class mylists extends ActionSupport {
     }
 
     /**
-     * @return the LPostalcode
-     */
-    public Long getLPostalcode() {
-        return LPostalcode;
-    }
-
-    /**
-     * @param LPostalcode the LPostalcode to set
-     */
-    public void setLPostalcode(Long LPostalcode) {
-        this.LPostalcode = LPostalcode;
-    }
-
-    /**
      * @return the LRefList
      */
     public String getLRefList() {
@@ -357,5 +354,19 @@ public class mylists extends ActionSupport {
      */
     public void setContent(String content) {
         this.content = content;
+    }
+
+    /**
+     * @return the LPostalcode
+     */
+    public String getLPostalcode() {
+        return LPostalcode;
+    }
+
+    /**
+     * @param LPostalcode the LPostalcode to set
+     */
+    public void setLPostalcode(String LPostalcode) {
+        this.LPostalcode = LPostalcode;
     }
 }

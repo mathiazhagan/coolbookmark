@@ -17,7 +17,10 @@
 
         <title> 1stforbiz </title>
 
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
 
     </head>
 
@@ -26,14 +29,13 @@
         <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
+
+                    <!--navigation start -->
+                    <div class="navigation">
 
                 <ul>
 
@@ -46,44 +48,37 @@
 
                 </ul>		
 
-<!--                <div class="t9">11</div>			-->
+               <form method="post" action="searchbyref.action" >
 
-                <form method="post" action="searchbyref.action">
+                            <div class="search_header">
 
-                    <p class="search-header">
+                                <input type="text" class="search_input" value="" name="referenceId" placeholder="Our ref"/> 
 
-                        <input type="text" class="search-input" value="" name="searchterm" placeholder="Our ref" />
+                                <input type="submit" name="submit" class="search_submit" value="" title="Search"/>
 
-                        <input type="submit" name="submit" class="search-submit" value="" title="Search"/>
+                            </div>
 
-                    </p>
+                        </form>
 
-                </form>
+                    </div>
+
+                    <!--navigation end -->
+
+                </div>
 
             </div>
-            <!--navigation end -->
-
-            <div class="green">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!--banner start -->
-
-            <div class="banner1"> </div>
-
-            <!--banner end -->
 
             <!--content start -->
-            <div class="content">
+            <div class="content" style="border:1px solid #9a9b9d;">
 
                 <!-- left side start -->
-                <div class="left">
+                <div class="left" style="float:none">
 
                     <div class="t1"> Business and Vacant Commercial Properties for Sale </div> <br />
 
                     <img src="images/left-hr.png"/>			
 
-                    <div style="width:470px; background-color:#fff; height:480px; float:left; margin:20px 0 0 40px; border:#000;">
+                    <div style="float:none; width:470px; background-color:#fff; height:480px; float:left; margin:20px 0 0 40px; border:#000;">
                         <div style="width: 470px"><iframe width="470" height="480" src="http://regiohelden.de/google-maps/map.php?width=470&amp;height=480&amp;hl=de&amp;q=London+(Pegasus)&amp;ie=UTF8&amp;t=&amp;z=8&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a style="font-size: 9px;" href="http://www.regiohelden.de/g/zahnarzt-marketing/">Zahnarzt Marketing</a> - <a href="http://www.regiohelden.de/">RegioHelden</a></iframe><br /><span style="font-size: 9px;"><a style="font-size: 9px;" href="http://www.regiohelden.de/g/zahnarzt-marketing/">Zahnarzt Marketing</a> - <a href="http://www.regiohelden.de/" style="font-size: 9px;">RegioHelden</a></span></div>
                     </div>
                 </div>
@@ -91,15 +86,15 @@
                 <!-- left side end -->	
 
                 <!-- middle content start -->	
-                <div class="middle">
+                    <div class="middle" style="float:none; margin:-61px 0 0 570px;">
 
-                    <div class="t2"> Search Category </div> <br />
+                        <div class="t2"> Search Category </div> <br />
 
-                    <img src="images/middle-hr.png"/>	
+                        <img src="images/middle-hr.png"  width="215"/>	
 
-                    <div class="list">
-                        <ul>
-                            <li><s:url id="url" action="categorysearch">
+                        <div class="list">
+                            <ul>
+                                <li><s:url id="url" action="categorysearch">
                                     <s:param name="category" value="%{'A'}"/>
                                 </s:url>
                                 <s:a href="%{url}">Freehold Businesses</s:a>  </li>
@@ -209,33 +204,26 @@
                         </ul>
                     </div>
 
-                </div>
+                </div><br /><br /><br />
                 <!-- middle content end -->
 
                 <!-- right content start -->		
-                <div class="right">
+                <div class="right" style="margin:-620px 0 0 850px">
 
                     <div class="right1">
-                        <a href="#"> <img src="images/savemoney.gif" width="223" height="245"/></a>	
+                        <a href="#"> <img src="images/savemoney.gif" width="200" height="245"/></a>	
                     </div>
 
                     <div class="right2">
-                        <a href="search_map.jsp"> <img src="images/map.gif" width="217" height="292"/></a>
-                        <a href="search_map.jsp"> <img src="images/map-bottom.png"/></a>
+                        <a href="search_map.jsp"> <img src="images/map.gif" width="200" height="292"/></a>
+                        <a href="search_map.jsp"> <img src="images/map-bottom.png" width="200"/></a>
                     </div>
 
-                </div>
-                <!-- right content end -->		
+                </div><br />
+                <!-- right content end -->            
 
-            </div>
-            <!-- content end -->
-
-            <div class="green1">
-                <img src="images/green-line.png"/>	
-            </div>
-
-            <!-- footer start -->
-            <div id="footer">			
+           <!-- footer start -->
+            <div id="footer" style="width:1100px">		
                 <div class="bottom_link">
                     <ul>
                         <li><a href="index2.jsp">Home</a></li>
@@ -249,9 +237,12 @@
                     </ul>				
                 </div>
 
-                <div class="rights"> copyright &copy; 2008  Pegasus Business Sales All rights reserved. </div>
+                 <div class="rights" style="margin:20px 0 0 256px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
             </div>		
             <!-- footer end -->	
+            
+            </div>
+            <!-- content end -->
 
         </div>
         <!--container end -->

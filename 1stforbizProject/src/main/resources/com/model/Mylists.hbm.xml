@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jul 27, 2012 5:21:56 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.model.Mylists" table="mylists" catalog="a_1stforbiz">
         <id name="LId" type="java.lang.Long">
@@ -36,25 +36,28 @@
             <column name="l_mobile" />
         </property>
         <property name="LHouseNo" type="string">
-            <column name="l_houseNo" length="50" not-null="true" />
+            <column name="l_houseNo" length="50" />
         </property>
         <property name="LRoad" type="string">
-            <column name="l_road" length="50" not-null="true" />
+            <column name="l_road" length="50" />
         </property>
         <property name="LTown" type="string">
-            <column name="l_town" length="50" not-null="true" />
+            <column name="l_town" length="50" />
         </property>
         <property name="LCountry" type="string">
-            <column name="l_country" length="50" not-null="true" />
+            <column name="l_country" length="50" />
         </property>
-        <property name="LPostalcode" type="java.lang.Long">
-            <column name="l_postalcode" />
+        <property name="LPostalcode" type="string">
+            <column name="l_postalcode" length="20" />
         </property>
         <property name="LRefList" type="string">
             <column name="l_ref_list" length="100" not-null="true" />
         </property>
         <property name="LStatus" type="string">
             <column name="l_status" length="20" not-null="true" />
+        </property>
+        <property name="creationTime" type="timestamp">
+            <column name="creation_time" length="19" />
         </property>
     </class>
 </hibernate-mapping>

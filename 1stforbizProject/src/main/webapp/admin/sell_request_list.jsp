@@ -10,9 +10,11 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
-        <link rel="stylesheet" type="text/css" href="style/table.css" />
-
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="table.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
         <title>Admin</title>
         <!-- for pagination script start-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -52,91 +54,82 @@
         <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
 
+                    <!--navigation start -->
+                    <div class="navigation">
                 <ul>
 
                     <li><a href="adminpage.jsp">Home</a></li>
                     <li><a href="logout.action">Logout</a></li> 
                 </ul>
 
-
-
-
             </div>
-            <!--navigation end -->
-
-            <div class="green">
-                <img src="images/green-line.png"/>	
+                    
+                </div>
             </div>
+            <!--navigation end -->    
 
-           
+
             <div class="t1" align="center" style="margin-top:60px" >Sell Request List View </div> <br/>
 
 
-                <div id="containerbox">
-                    <div class="tableheader" >
-                        <span class="Compaign">First Name</span>
-                        <span class="Budget_1">Sur Name</span>
-                        <span class="CPC">Company</span>
-                        <span class="Impressions">Telephone</span>
-                        <span class="CTR_1">Email</span>
-                        <span class="Created">Description</span>
-                        <span class="Cost">Delete</span>
-                        <span class="response">Send Mail</span>
-                        <span class="Clicks">Posting Time</span>
-                    </div>
-
-                    <div class="clear"></div>
-
-                    <div id="table1">
-                        <s:iterator value="list">
-                            <div class="tabletext">
-                                <span class="name"><s:property value="RFirstName"/></span>
-                                <span class="Budget_1"><s:property value="RSurname"/></span>
-                                <span class="CPC"><s:property value="RCompName"/></span>
-                                <span class="Impressions"><s:property value="RPhone"/></span>
-                                <span class="CTR_1"><s:property value="REmail"/></span>
-                                <span class="Created"><s:property value="RContactOptions"/></span>
-                                <s:url id="url" action="admin/deletesellcontact">
-                                    <s:param name="RId" value="RId"/>
-                                </s:url>
-                                <span class="Cost"> <s:a href="%{url}"><img src="images/trash.png" alt="Delete"  /></s:a></span>
-                                <span class="response"><a href="mailto:<s:property value="REmail"/>"><img src="images/mailicon.png" alt="Mail" height="20" width="20" /></a></span>
-                                <span class="Clicks"><s:property value="RPostTime"/></span>
-                            </div>
-
-                        </s:iterator>
-                    </div>
-
-                    <div class="tabletext1"></div>
-
-
-
-                    <div class="clear"></div>
+            <div id="containerbox">
+                <div class="tableheader" >
+                    <span class="Compaign">First Name</span>
+                    <span class="Budget_1">Sur Name</span>
+                    <span class="CPC">Company</span>
+                    <span class="Impression8">Telephone</span>
+                    <span class="Created">Email</span>
+                    <span class="Created">Description</span>
+                    <span class="Cost">Delete</span>
+                    <span class="response">Send Mail</span>
+                    <span class="Clickn">Posting Time</span>
                 </div>
 
+                <div class="clear"></div>
 
-                <div class="green1">
-                    <img src="images/green-line.png"/>	
+                <div id="table1">
+                    <s:iterator value="list">
+                        <div class="tabletext">
+                            <span class="name"><s:property value="RFirstName"/></span>
+                            <span class="Budget_1"><s:property value="RSurname"/></span>
+                            <span class="CPC"><s:property value="RCompName"/></span>
+                            <span class="Impression8"><s:property value="RPhone"/></span>
+                            <span class="Created"><s:property value="REmail"/></span>
+                            <span class="Created"><s:property value="RContactOptions"/></span>
+                            <s:url id="url" action="admin/deletesellcontact">
+                                <s:param name="RId" value="RId"/>
+                            </s:url>
+                            <span class="Cost"> <s:a href="%{url}"><img src="images/trash.png" alt="Delete"  /></s:a></span>
+                            <span class="response"><a href="mailto:<s:property value="REmail"/>"><img src="images/mailicon.png" alt="Mail" height="20" width="20" /></a></span>
+                            <span class="Clickn"><s:property value="RPostTime"/></span>
+                        </div>
+
+                    </s:iterator>
                 </div>
+
+                <div class="tabletext1"></div>
+
                 <!-- footer start -->
-                <div id="footer">			
+                <div id="footer" style="width:1250px; margin-left:auto;margin-right:auto;">			
                     <div class="bottom_link">
 
                     </div>
 
-                    <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
+                    <div class="rights" style="margin:20px 0 0 450px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
                 </div>		
-                <!-- footer end -->	
+                <!-- footer end -->
+
+                <div class="clear"></div>
             </div>
-       
+
+
+
+        </div>
+
     </body>
 </html>

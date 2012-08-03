@@ -1,5 +1,5 @@
 package com.model;
-// Generated Jul 21, 2012 4:41:27 PM by Hibernate Tools 3.2.1.GA
+// Generated Jul 27, 2012 5:21:52 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -19,7 +19,7 @@ public class ContactForSell  implements java.io.Serializable {
      private String RRoad;
      private String RTown;
      private String RCountry;
-     private Long RPostalCode;
+     private String RPostalCode;
      private Long RPhone;
      private Long RWorkPhone;
      private Long RMobile;
@@ -32,19 +32,13 @@ public class ContactForSell  implements java.io.Serializable {
     }
 
 	
-    public ContactForSell(String RTitle, String RFirstName, String RSurname, String RCompName, String RCompNo, String RRoad, String RTown, String RCountry, String REmail, String RContactOptions) {
+    public ContactForSell(String RTitle, String RFirstName, String RSurname, String REmail) {
         this.RTitle = RTitle;
         this.RFirstName = RFirstName;
         this.RSurname = RSurname;
-        this.RCompName = RCompName;
-        this.RCompNo = RCompNo;
-        this.RRoad = RRoad;
-        this.RTown = RTown;
-        this.RCountry = RCountry;
         this.REmail = REmail;
-        this.RContactOptions = RContactOptions;
     }
-    public ContactForSell(String RTitle, String RFirstName, String RSurname, String RCompName, String RCompNo, String RRoad, String RTown, String RCountry, Long RPostalCode, Long RPhone, Long RWorkPhone, Long RMobile, Long RFax, String REmail, String RContactOptions, Date RPostTime) {
+    public ContactForSell(String RTitle, String RFirstName, String RSurname, String RCompName, String RCompNo, String RRoad, String RTown, String RCountry, String RPostalCode, Long RPhone, Long RWorkPhone, Long RMobile, Long RFax, String REmail, String RContactOptions, Date RPostTime) {
        this.RTitle = RTitle;
        this.RFirstName = RFirstName;
        this.RSurname = RSurname;
@@ -126,11 +120,11 @@ public class ContactForSell  implements java.io.Serializable {
     public void setRCountry(String RCountry) {
         this.RCountry = RCountry;
     }
-    public Long getRPostalCode() {
+    public String getRPostalCode() {
         return this.RPostalCode;
     }
     
-    public void setRPostalCode(Long RPostalCode) {
+    public void setRPostalCode(String RPostalCode) {
         this.RPostalCode = RPostalCode;
     }
     public Long getRPhone() {

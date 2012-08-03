@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jul 27, 2012 5:21:56 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.model.RequestinfoTable" table="requestinfo_table" catalog="a_1stforbiz">
         <id name="RId" type="java.lang.Long">
@@ -23,32 +23,32 @@
         <property name="email" type="string">
             <column name="email" length="50" not-null="true" />
         </property>
-        <property name="telephone" type="string">
-            <column name="telephone" length="20" not-null="true" />
+        <property name="telephone" type="java.lang.Long">
+            <column name="telephone" />
         </property>
-        <property name="WTelephone" type="string">
-            <column name="w_telephone" length="20" />
+        <property name="WTelephone" type="java.lang.Long">
+            <column name="w_telephone" />
         </property>
-        <property name="fax" type="string">
-            <column name="fax" length="20" />
+        <property name="fax" type="java.lang.Long">
+            <column name="fax" />
         </property>
         <property name="houseNo" type="string">
-            <column name="house_no" length="20" not-null="true" />
+            <column name="house_no" length="20" />
         </property>
         <property name="road" type="string">
-            <column name="road" length="50" not-null="true" />
+            <column name="road" length="50" />
         </property>
         <property name="town" type="string">
-            <column name="town" length="50" not-null="true" />
+            <column name="town" length="50" />
         </property>
         <property name="country" type="string">
-            <column name="country" length="50" not-null="true" />
+            <column name="country" length="50" />
         </property>
         <property name="postcode" type="string">
-            <column name="postcode" length="50" not-null="true" />
+            <column name="postcode" length="50" />
         </property>
         <property name="referenceId" type="string">
-            <column name="referenceId" length="50" not-null="true" />
+            <column name="referenceId" length="100" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

@@ -34,7 +34,7 @@ public class request_info_list extends ActionSupport implements SessionAware {
 
         } catch (Exception e) {
             e.printStackTrace();
-            addActionError(e.getMessage());
+            addActionError("Server Error Please Try Again Later");
 
             return "error";
         }

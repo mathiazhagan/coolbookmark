@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jul 27, 2012 5:21:56 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.model.ContactForSell" table="contact_for_sell" catalog="a_1stforbiz">
         <id name="RId" type="java.lang.Long">
@@ -18,22 +18,22 @@
             <column name="r_surname" length="50" not-null="true" />
         </property>
         <property name="RCompName" type="string">
-            <column name="r_comp_name" length="50" not-null="true" />
+            <column name="r_comp_name" length="50" />
         </property>
         <property name="RCompNo" type="string">
-            <column name="r_comp_no" length="50" not-null="true" />
+            <column name="r_comp_no" length="50" />
         </property>
         <property name="RRoad" type="string">
-            <column name="r_road" length="50" not-null="true" />
+            <column name="r_road" length="50" />
         </property>
         <property name="RTown" type="string">
-            <column name="r_town" length="50" not-null="true" />
+            <column name="r_town" length="50" />
         </property>
         <property name="RCountry" type="string">
-            <column name="r_country" length="50" not-null="true" />
+            <column name="r_country" length="50" />
         </property>
-        <property name="RPostalCode" type="java.lang.Long">
-            <column name="r_postal_code" />
+        <property name="RPostalCode" type="string">
+            <column name="r_postal_code" length="10" />
         </property>
         <property name="RPhone" type="java.lang.Long">
             <column name="r_phone" />
@@ -51,7 +51,7 @@
             <column name="r_email" length="50" not-null="true" />
         </property>
         <property name="RContactOptions" type="string">
-            <column name="r_contact_options" length="250" not-null="true" />
+            <column name="r_contact_options" length="250" />
         </property>
         <property name="RPostTime" type="timestamp">
             <column name="r_post_time" length="19" />

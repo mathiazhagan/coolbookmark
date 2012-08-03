@@ -16,28 +16,26 @@ import org.hibernate.criterion.Order;
  *
  * @author Naren
  */
-public class Immediate_sell_list extends ActionSupport implements SessionAware{
-    
-    
+public class Immediate_sell_list extends ActionSupport implements SessionAware {
+
     private Map session;
     private spDAO myDao;
     private List<Sell> list;
-    
-    
-     @Override
+
+    @Override
     public String execute() {
         try {
             //generating list of data to display in table(Immediate_sell_list) in desc order based on date/time
-            Criteria crit=getMyDao().getDbsession().createCriteria(Sell.class);
+            Criteria crit = getMyDao().getDbsession().createCriteria(Sell.class);
             System.out.println("----------------you are in---");
             crit.addOrder(Order.desc("createdDate"));
             crit.setMaxResults(20);
-            list=(List<Sell>)crit.list();
+            list = (List<Sell>) crit.list();
             System.out.println("---------------list is created....");
-            
-             } catch (Exception e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
-            
+            addActionError("Server Error Please Try Again Later");
             return "error";
         }
         return "success";
@@ -84,5 +82,4 @@ public class Immediate_sell_list extends ActionSupport implements SessionAware{
     public void setList(List<Sell> list) {
         this.list = list;
     }
-    
 }

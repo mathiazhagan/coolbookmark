@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.criterion.Restrictions;
 
 /**
@@ -28,27 +29,32 @@ public class login extends ActionSupport implements SessionAware {
         try {
 
             Criteria crit = myDao.getDbsession().createCriteria(Adminlog.class);
-            System.out.println("--------------" + crit.list().size());
-            crit.add(Restrictions.eq("username", username));
-            System.out.println("-----------" + crit.list().size());
+
+            crit.add(Restrictions.and(Restrictions.eq("username", username), Restrictions.eq("password", password)));
+            crit.setMaxResults(1);
             Adminlog user = (Adminlog) crit.list().get(0);
-            if(user!=null){
-            System.out.println("---------" + user);
-            session.put("user", user);
-            System.out.println("------" + user);
-            }
-            else{
-            addActionError("Invalid User Name");
+            if (crit.list() != null) {
+
+                session.put("user", user);
+                return "success";
+            } else {
+                addActionError("Invalid User Name or Password");
+                return "error";
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-
+        } catch (HibernateException he) {
+            he.printStackTrace();
+            addActionError("Unable to Logining you...  Error occurs  ..Try After Some times");
             return "error";
+        } catch (Exception se) {
 
+            se.getMessage();
+            addActionError("Unable to Logining you...  Error occurs ..Try After Some times");
+            return "error";
         }
 
-        return "success";
+
+
 
     }
 
@@ -58,15 +64,15 @@ public class login extends ActionSupport implements SessionAware {
         if (username.isEmpty()) {
 
             addActionError("Please Enter User Name");
-        } 
-     if (password.isEmpty()) {
+        }
+        if (password.isEmpty()) {
 
             addActionError("Please Enter Password");
         } else {
             Criteria crit = getMyDao().getDbsession().createCriteria(Adminlog.class);
             crit.add(Restrictions.eq("username", getUsername()));
             Adminlog user = (Adminlog) crit.list().get(0);
-            if (user != null) {
+            if (crit.list() != null) {
 
                 if (user.getPassword().equals(password)) {
                 } else {

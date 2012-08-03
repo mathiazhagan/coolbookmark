@@ -33,7 +33,7 @@ public class ajaxcall extends ActionSupport {
             crit.add(Restrictions.eq("status", "Active"));
             //crit.addOrder(Order.desc("createdDate"));
             crit.add(Restrictions.sqlRestriction("1=1 order by rand()"));
-            //  crit.setMaxResults(3);
+            crit.setMaxResults(8);
             // generator.nextInt(sresult.size());
             //sresult1=getSresult().subList(1,4);
             sresult1 = (List<Sell>) crit.list();

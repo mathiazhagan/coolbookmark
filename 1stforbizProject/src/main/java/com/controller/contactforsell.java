@@ -6,7 +6,6 @@ package com.controller;
 
 import com.model.ContactForSell;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import java.util.Date;
 
 /**
@@ -14,9 +13,8 @@ import java.util.Date;
  * @author Naren
  */
 public class contactforsell extends ActionSupport {
-    
-    private spDAO myDao;    
-    private Long RId;
+
+    private spDAO myDao;
     private String RTitle;
     private String RFirstName;
     private String RSurname;
@@ -25,65 +23,65 @@ public class contactforsell extends ActionSupport {
     private String RRoad;
     private String RTown;
     private String RCountry;
-    private Long RPostalCode;
+    private String RPostalCode;
     private Long RPhone;
     private Long RWorkPhone;
     private Long RMobile;
     private Long RFax;
     private String REmail;
-    private String RContactOptions;
+    private String RContact;
     private Emailfunction sendMail;
     private String subject;
     private String content;
-    
+  @Override
+    public void validate() {
+
+        if (getRFirstName().isEmpty() && getRSurname().isEmpty() && getREmail().isEmpty()) {
+            addActionError("Please Recheck All the fields and submit again.....");
+
+        }
+
+    }
     @Override
     public String execute() throws Exception {
         try {
             Date d = new Date();
             //inserting data into ContactForSell table
-            ContactForSell cs = new ContactForSell(getRTitle(), getRFirstName(), getRSurname(), getRCompName(), getRCompNo(), getRRoad(), getRTown(), getRCountry(), getREmail(), getRContactOptions());            
-            cs.setRMobile(RMobile);
-            cs.setRFax(RFax);
-            cs.setRWorkPhone(RWorkPhone);
+            ContactForSell cs = new ContactForSell(getRTitle(), getRFirstName(), getRSurname(), getREmail());
+            cs.setRCompName(getRCompName());
+            cs.setRCompNo(getRCompNo());
+            cs.setRCountry(getRCountry());
+            cs.setRMobile(getRMobile());
+            cs.setRFax(getRFax());
+            cs.setRWorkPhone(getRWorkPhone());
+            cs.setRPhone(getRPhone());
+            cs.setRRoad(getRRoad());
+            cs.setRTown(getRTown());
             cs.setRPostTime(d);
-            
-            myDao.getDbsession().save(cs);
-            
+            cs.setRContactOptions(getRContact());
+            cs.setRPostalCode(getRPostalCode());
+            getMyDao().getDbsession().save(cs);
             System.out.println("-------------data saved-------");
 
             //sending response mail
-            subject = "Responce for your request";
-            content = "Thank you for your request.Our employee will contact you soon";
-            
-            sendMail.test(REmail, subject, content);
-            
+            setSubject("Response From 1stforbiz.com");
+            setContent("Thank you for your request<br/>.Our employee will contact you soon<br/>"
+                    + "Thanks and Regards<br/>"
+                    + "1stforbiz.com");
+
+            getSendMail().test(getREmail(), getSubject(), getContent());
+
             System.out.println("---------mail sended");
-            
-            
-            
+
+            addActionMessage("Your Request Received.We will respond to you soon");
+            return "success";
         } catch (Exception e) {
             e.printStackTrace();
+            addActionError("Server Error Please Try Again Later");
             return "error";
-            
+
         }
-        addActionMessage("A mail sent to your friend");
-        return "success";
-        
-    }
-    
-    @Override
-    public void validate() {
-        try {
-            if (RFirstName.isEmpty() || RFirstName == null) {
-                addActionMessage("your form submition failed check the fields and submit again.....");                
-            }
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-            
-            
-        }
-        
+
     }
 
     /**
@@ -98,20 +96,6 @@ public class contactforsell extends ActionSupport {
      */
     public void setMyDao(spDAO myDao) {
         this.myDao = myDao;
-    }
-
-    /**
-     * @return the RId
-     */
-    public Long getRId() {
-        return RId;
-    }
-
-    /**
-     * @param RId the RId to set
-     */
-    public void setRId(Long RId) {
-        this.RId = RId;
     }
 
     /**
@@ -138,7 +122,6 @@ public class contactforsell extends ActionSupport {
     /**
      * @param RFirstName the RFirstName to set
      */
-    @RequiredStringValidator(message = "First name is required")
     public void setRFirstName(String RFirstName) {
         this.RFirstName = RFirstName;
     }
@@ -153,7 +136,6 @@ public class contactforsell extends ActionSupport {
     /**
      * @param RSurname the RSurname to set
      */
-    @RequiredStringValidator(message = "Sur name is required")
     public void setRSurname(String RSurname) {
         this.RSurname = RSurname;
     }
@@ -168,7 +150,6 @@ public class contactforsell extends ActionSupport {
     /**
      * @param RCompName the RCompName to set
      */
-    @RequiredStringValidator(message = "Company name is required")
     public void setRCompName(String RCompName) {
         this.RCompName = RCompName;
     }
@@ -183,7 +164,6 @@ public class contactforsell extends ActionSupport {
     /**
      * @param RCompNo the RCompNo to set
      */
-    @RequiredStringValidator(message = "House no is required")
     public void setRCompNo(String RCompNo) {
         this.RCompNo = RCompNo;
     }
@@ -198,7 +178,6 @@ public class contactforsell extends ActionSupport {
     /**
      * @param RRoad the RRoad to set
      */
-    @RequiredStringValidator(message = "Road name is required")
     public void setRRoad(String RRoad) {
         this.RRoad = RRoad;
     }
@@ -213,7 +192,6 @@ public class contactforsell extends ActionSupport {
     /**
      * @param RTown the RTown to set
      */
-    @RequiredStringValidator(message = "Town name is required")
     public void setRTown(String RTown) {
         this.RTown = RTown;
     }
@@ -228,9 +206,36 @@ public class contactforsell extends ActionSupport {
     /**
      * @param RCountry the RCountry to set
      */
-    @RequiredStringValidator(message = "Country name is required")
     public void setRCountry(String RCountry) {
         this.RCountry = RCountry;
+    }
+
+    /**
+     * @return the RPostalCode
+     */
+    public String getRPostalCode() {
+        return RPostalCode;
+    }
+
+    /**
+     * @param RPostalCode the RPostalCode to set
+     */
+    public void setRPostalCode(String RPostalCode) {
+        this.RPostalCode = RPostalCode;
+    }
+
+    /**
+     * @return the RPhone
+     */
+    public Long getRPhone() {
+        return RPhone;
+    }
+
+    /**
+     * @param RPhone the RPhone to set
+     */
+    public void setRPhone(Long RPhone) {
+        this.RPhone = RPhone;
     }
 
     /**
@@ -285,26 +290,11 @@ public class contactforsell extends ActionSupport {
     /**
      * @param REmail the REmail to set
      */
-    @RequiredStringValidator(message = "Email address is required")
     public void setREmail(String REmail) {
         this.REmail = REmail;
     }
 
-    /**
-     * @return the RContactOptions
-     */
-    public String getRContactOptions() {
-        return RContactOptions;
-    }
-
-    /**
-     * @param RContactOptions the RContactOptions to set
-     */
-    @RequiredStringValidator(message = "Contact option is required")
-    public void setRContactOptions(String RContactOptions) {
-        this.RContactOptions = RContactOptions;
-    }
-
+   
     /**
      * @return the sendMail
      */
@@ -348,30 +338,16 @@ public class contactforsell extends ActionSupport {
     }
 
     /**
-     * @return the RPostalCode
+     * @return the RContact
      */
-    public Long getRPostalCode() {
-        return RPostalCode;
+    public String getRContact() {
+        return RContact;
     }
 
     /**
-     * @param RPostalCode the RPostalCode to set
+     * @param RContact the RContact to set
      */
-    public void setRPostalCode(Long RPostalCode) {
-        this.RPostalCode = RPostalCode;
-    }
-
-    /**
-     * @return the RPhone
-     */
-    public Long getRPhone() {
-        return RPhone;
-    }
-
-    /**
-     * @param RPhone the RPhone to set
-     */
-    public void setRPhone(Long RPhone) {
-        this.RPhone = RPhone;
+    public void setRContact(String RContact) {
+        this.RContact = RContact;
     }
 }

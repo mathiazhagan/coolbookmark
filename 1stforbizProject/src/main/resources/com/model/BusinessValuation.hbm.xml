@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Jul 21, 2012 4:41:29 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jul 27, 2012 5:21:56 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.model.BusinessValuation" table="business_valuation" catalog="a_1stforbiz">
         <id name="bvId" type="java.lang.Long">
@@ -21,16 +21,16 @@
             <column name="c_comp_name" length="50" not-null="true" />
         </property>
         <property name="CHouseNo" type="string">
-            <column name="c_house_no" length="50" not-null="true" />
+            <column name="c_house_no" length="50" />
         </property>
         <property name="CRoad" type="string">
-            <column name="c_road" length="50" not-null="true" />
+            <column name="c_road" length="50" />
         </property>
         <property name="CTown" type="string">
-            <column name="c_town" length="50" not-null="true" />
+            <column name="c_town" length="50" />
         </property>
         <property name="CCountry" type="string">
-            <column name="c_country" length="50" not-null="true" />
+            <column name="c_country" length="50" />
         </property>
         <property name="CPostalcode" type="java.lang.Long">
             <column name="c_postalcode" />

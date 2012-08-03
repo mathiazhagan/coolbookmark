@@ -10,9 +10,11 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style/style.css" />
-        <link rel="stylesheet" type="text/css" href="style/table.css" />
-       
+         <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="table.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/gif" href="images/favicon.gif" />
         <title>Admin</title>
 
         <script type = "text/javascript">
@@ -33,7 +35,7 @@
                 }
             }</script>
 
- <!-- for pagination script start-->
+        <!-- for pagination script start-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 
         <script type="text/javascript" src="js/easypaginate.js"></script>
@@ -49,8 +51,8 @@
             });    
     
         </script>
-         <!-- for pagination script end-->
-          <s:head/>
+        <!-- for pagination script end-->
+        <s:head/>
     </head>
     <body>
 
@@ -60,127 +62,107 @@
 
 
             if (obj == null) {
-                 response.sendRedirect(request.getContextPath()+"/admin/sessionError.action");
+                response.sendRedirect(request.getContextPath() + "/admin/sessionError.action");
             }
 
         %>
 
 
-        <!--container start -->
+      
+         <!--container start -->
         <div id="container">
 
-            <!--header start -->
             <div class="header">
-                <img src="images/header-bg.png" />	
-            </div>
-            <!--header end -->	
 
-            <!--navigation start -->
-            <div class="navigation">
+                <div class="logo">
+                    <img src="images/logo.gif" width="195" height="81" />	
 
+                    <!--navigation start -->
+                    <div class="navigation">
                 <ul>
 
-                   <li><a href="adminpage.jsp">Home</a></li>
+                    <li><a href="adminpage.jsp">Home</a></li>
                     <li><a href="logout.action">Logout</a></li> 
                 </ul>
 
-
-
-
+            </div>
+                    
+                </div>
             </div>
             <!--navigation end -->
+           
+            <div class="content100">
 
-            <div class="green">
-                <img src="images/green-line.png"/>	
-            </div>
+                <div class="t1" align="center" > Immediate Sales List View  </div> 
 
-            <div class="content1">
-          
-            <div class="t1" align="center" > Immediate Sales List View  </div> 
 
-          
-            <div id="containerbox">
+                <div id="containerbox">
 
-                <div class="tableheader" >
-                    <span class="checkbox"><input type="checkbox" id="checkbox" onclick ="SelectAllChk();"/></span>
-                    <span class="Compaign">First Name</span>
-                    <span class="Created">Advertisement Heading</span>
-                    <span class="Budget">Country</span>
-                    <span class="CPC">Trading Hours</span>
-                    <span class="Impressions">Ref id</span>
-                    <span class="Cost">Delete</span>
-                    <span class="response">Send Mail</span>
-                    <span class="change_1">Change Status</span>
-                    <span class="Clicks_1">Posting Time</span>
-                </div>
-
-                <div class="clear"></div>
-                <form name="form">
-                    <div id="table1">
-                        <s:iterator value="list">
-                            <div class="tabletext">
-                                <span class="checkbox"><input type="checkbox" id="checkbox" name="check"  value="<s:property value="referenceId"/> "/></span>
-                                <span class="name"><s:property value="BFirstName"/></span>
-                                <span class="Created"><s:property value="BAdverHeading"/></span>
-                                <span class="Budget"><s:property value="BCountry"/></span>
-                                <span class="CPC"><s:property value="BTradingHours"/></span>
-                                <span class="Impressions"><s:property value="referenceId"/></span>
-                               
-                                <s:url id="url" action="admin/deleteonesell">
-                                    <s:param name="referenceId" value="referenceId"/>
-                                </s:url>
-                                <span class="Cost"><s:a href="%{url}"><img src="images/trash.png" alt="Delete"  /></s:a></span>
-                                <span class="response"><a href="mailto:<s:property value="BEmail"/>"><img src="images/mailicon.png" alt="Mail" height="20" width="20" /></a></span>
-                                <s:url id="url" action="admin/changestatus">
-                                    <s:param name="referenceId" value="referenceId"/>
-                                    <s:param name="status" value="status"/>
-                                </s:url>
-                                <span class="change_1"><s:a href="%{url}"><s:property value="status"/></s:a></span>
-                                <span class="Clicks_1"><s:property value="createdDate"/></span>
-                            </div>
-                            
-                        </s:iterator>
+                    <div class="tableheader" >
+                        <span class="checkbox"><input type="checkbox" id="checkbox" onclick ="SelectAllChk();"/></span>
+                        <span class="Compaign">First Name</span>
+                        <span class="Compaign">Sur Name</span>
+                        <span class="Created">Advertisement Heading</span>
+                        <span class="CPC">Trading Hours</span>
+                        <span class="Impressions">Ref id</span>
+                        <span class="Cost">Delete</span>
+                        <span class="response">Send Mail</span>
+                        <span class="change_1">Change Status</span>
+                        <span class="Clicks_1">Posting Time</span>
                     </div>
 
                     <div class="clear"></div>
-                    <div class="tabletext1"></div>
-                          <div class="t1" align="center" > 
-                    <input type="submit" name="submit" value="Delete" onclick="form.action='multiplerowdelete';" class="button_image" ></input>
-                    <input type="submit" name="submit" value="Change Status" onclick="form.action='mutiplestatuschange';" class="button_image" ></input>
-               </div> <br/>      
-                </form>
+                    <form name="form">
+                        <div id="table1">
+                            <s:iterator value="list">
+                                <div class="tabletext">
+                                    <span class="checkbox"><input type="checkbox" id="checkbox" name="check"  value="<s:property value="referenceId"/> "/></span>
+                                    <span class="name"><s:property value="BFirstName"/></span>
+                                    <span class="name"><s:property value="BSurname"/></span>
+                                    <span class="Created"><s:property value="BAdverHeading"/></span>
+                                    <span class="CPC"><s:property value="BTradingHours"/></span>
+                                    <span class="Impressions"><s:property value="referenceId"/></span>
 
-                <div class="clear"></div>
-            </div>
-
-
-
-
-
-
-
-            <div class="green1">
-                <img src="images/green-line.png"/>	
-            </div>
-            <!-- footer start -->
-            <div id="footer">			
-                         <div class="bottom_link">
-                                       <!--    <ul>
-                                        <li><a href="index2.jsp">Home</a></li>
-                                        <li><a href="sell.jsp">Sell</a></li>
-                                        <li><a href="services.jsp">Service</a></li>
-                                        <li><a href="aboutus.jsp">About us</a></li>
-                                        <li><a href="contactus.jsp">Contact us</a></li>
-                                        <li><a href="mylist.jsp">My list</a></li>
-                                        <li><a href="faqs.jsp">FAQ's</a></li>
-                                        <li><a href="tandc.jsp">Terms and Conditions</a></li>
-                                    </ul>	-->			
+                                    <s:url id="url" action="admin/deleteonesell">
+                                        <s:param name="referenceId" value="referenceId"/>
+                                    </s:url>
+                                    <span class="Cost"><s:a href="%{url}"><img src="images/trash.png" alt="Delete"  /></s:a></span>
+                                    <span class="response"><a href="mailto:<s:property value="BEmail"/>"><img src="images/mailicon.png" alt="Mail" height="20" width="20" /></a></span>
+                                    <s:url id="url" action="admin/changestatus">
+                                        <s:param name="referenceId" value="referenceId"/>
+                                        <s:param name="status" value="status"/>
+                                    </s:url>
+                                    <span class="change_1"><s:a href="%{url}"><s:property value="status"/></s:a></span>
+                                    <span class="Clicks_1"><s:property value="createdDate"/></span>
                                 </div>
 
-                <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
-            </div>		
-            <!-- footer end -->	
-        </div>
+                            </s:iterator>
+                        </div>
+
+                        <div class="clear"></div>
+                        <div class="tabletext1"></div>
+                        <div class="t1" align="center" > 
+                            <input type="submit" name="submit" value="Delete" onclick="form.action='multiplerowdelete';" class="button_image" ></input>
+                            <input type="submit" name="submit" value="Change Status" onclick="form.action='multiplestatuschange';" class="button_image" ></input>
+                        </div> <br/>      
+                    </form>
+                    
+                    
+                    <!-- footer start -->
+                <div id="footer" style="width:1250px; margin-left:auto;margin-right:auto;">			
+                    <div class="bottom_link">
+
+                    </div>
+
+                    <div class="rights" style="margin:20px 0 0 450px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+                </div>		
+                <!-- footer end -->
+
+                    <div class="clear"></div>
+                </div>
+
+	
+            </div>
         </div>
     </body>
 </html>
