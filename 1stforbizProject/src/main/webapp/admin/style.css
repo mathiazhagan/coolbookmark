@@ -50,11 +50,12 @@ margin:auto;
 	display:inline;
 	float:left;
 	list-style:none;
-	font-size:18px;
+	font-size:14px;
+	font-weight:bold;
 	}
 .navigation ul li a {
 	float:left;
-	font-family:Franklin Gothic Book, sans-serif;
+	 
 	color:#fff;
 	text-decoration:none;
 	text-align:left;
@@ -63,13 +64,13 @@ margin:auto;
 }
 .navigation ul li a:hover {
 	color:#fff;
-	background-color:#ff0000;
+	background-color:#77b800;
 	border-radius:5px;
 }
 .navigation ul li a.active {
 	float:left;
 	color:#fff;
-	background-color:#ff0000;
+	background-color:#77b800;
 	border-radius:5px;
 	padding:0 5px;
 	text-align:center;

@@ -85,7 +85,7 @@
 
                     <h5 style="text-align:center"> <a href="http://www.startinbusiness.co.uk/sellbiz/members/submit.htm"> Our offer (unmatched or beaten by any other agent in UK) </a> </h5>
 
-                    <div class="list02" style="margin-right:150px;">
+                    <div class="list02" style="margin-right:170px;">
 
                         <ul>
                             <li> A professional service from start to finish </li>
@@ -175,7 +175,7 @@
                     <a href="#">business brokers uk</a>
                 </div>
 
-               <div class="right_01" style="margin:-2200px 0 0 600px;">
+               <div class="right_01" style="margin:-2200px 0 0 560px;">
 
                     <div class="t1"> You may like this </div> <br />
 
@@ -204,7 +204,7 @@
                         </ul>				
                     </div>
 
-                    <div class="rights"> copyright &copy;2008  Pegasus Business Sales All rights reserved. </div>
+                    <div class="rights" style="margin:20px 0 0 256px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
                 </div>		
                 <!-- footer end -->	
             </div>

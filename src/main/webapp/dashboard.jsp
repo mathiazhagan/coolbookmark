@@ -95,7 +95,7 @@
                     <%List<Scribbles> feed;
                         feed = (List<Scribbles>) request.getAttribute("feedlist");
                     %>
-                    <%out.print(feed.size());%> Results Found
+                    <%out.print(feed.size());%> Results Found<br/>    <s:text name="message.disp"/>
                 </div>
                 <div class="clear"></div>
                 <div id="formcontainer">

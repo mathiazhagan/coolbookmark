@@ -332,11 +332,11 @@
                 <div class="index_right">
 
                     <div class="index_right1">
-                        <img src="images/savemoney.gif" width="150" height="293"/>	
+                        <img src="images/savemoney.gif" width="150" height="258"/>	
                     </div>
 
                     <div class="index_right2">
-                        <a href="search_map.jsp"><img src="images/map.gif" width="150" height="260"/></a>
+                        <a href="search_map.jsp"><img src="images/map.gif" width="150" height="228"/></a>
                         <a href="search_map.jsp"> <img src="images/map-bottom.png" height="30" width="150" /></a>
                     </div>				
 
@@ -350,7 +350,7 @@
 
                 </div>
                 <!-- footer start -->
-                <div id="footer" style="width:1090px">			
+                <div id="footer" style="width:1115px">			
                     <div class="bottom_link">
                         <ul>
                             <li><a href="index2.jsp">Home</a></li>

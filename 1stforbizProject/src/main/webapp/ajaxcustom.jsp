@@ -11,7 +11,7 @@
 
     <div class="leftnw1">
 
-        <img src="images/left-content-top.png" width="400" height="32" />	
+        <img src="images/left-content-top.png" width="465" height="32" />	
         <div class="t10"> <s:property value="BAdverHeading"/> </div>
         <s:url id="url" action="fulldetails">
             <s:param name="referenceId" value="referenceId"/>

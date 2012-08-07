@@ -143,7 +143,7 @@
 
                 <!-- right content start -->		
                 <!-- right content start -->		
-                <div class="right_01" style="margin:-1145px 0 0 600px;">
+                <div class="right_01" style="margin:-1100px 0 0 560px;">
 
                     <div class="t1"> You may like this </div> <br />
 

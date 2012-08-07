@@ -129,7 +129,7 @@
 
 
                 <!-- right content start -->		
-                <div class="right" style="margin:-1000px 0 0 850px">
+                <div class="right" style="margin:-980px 0 0 850px">
 
                     <div class="right1">
                         <a href="#"> <img src="images/savemoney.gif" width="200" height="245"/></a>	

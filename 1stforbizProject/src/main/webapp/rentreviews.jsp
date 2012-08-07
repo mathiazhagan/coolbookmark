@@ -355,7 +355,7 @@
                 <!-- left side end -->	
 
                 <!-- right content start -->		
-                <div class="right" style="margin:-3200px 0 0 860px">
+                <div class="right" style="margin:-2900px 0 0 860px">
 
                     <div class="right1">
                         <a href="#"> <img src="images/savemoney.gif" width="200" height="245"/></a>	

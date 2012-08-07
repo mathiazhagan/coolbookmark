@@ -1,0 +1,3 @@
+12:34:35:000 - WARN - Jlogsam - Sample warn message
+12:34:35:031 - ERROR - Jlogsam - Sample error message
+12:34:35:031 - FATAL - Jlogsam - Sample fatal message

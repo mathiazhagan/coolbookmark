@@ -5,8 +5,10 @@ a{ text-decoration:none;}
 
 body {
 margin:0px;
-font-family:Franklin Gothic Book, sans-serif;
-color:#6687a8;
+font-family:Arial,sans-serif;
+font-size:13px;
+color:#222222;
+line-height:18px;
 }
 
 .clear{clear:both;} 
@@ -38,7 +40,7 @@ margin:auto;
 }
 
 .navigation {
-margin:auto;
+margin:0 auto;
 }
 .navigation ul {
 	display:block;
@@ -48,14 +50,15 @@ margin:auto;
 }
 .navigation ul li {
 	margin:8px 0 0 15px;
-	display:inline;
+        display:inline;
 	float:left;
 	list-style:none;
-	font-size:18px;
+	font-size:14px;
+	font-weight:bold;
 	}
 .navigation ul li a {
 	float:left;
-	font-family:Franklin Gothic Book, sans-serif;
+	 
 	color:#fff;
 	text-decoration:none;
 	text-align:left;
@@ -64,14 +67,16 @@ margin:auto;
 }
 .navigation ul li a:hover {
 	color:#fff;
-	background-color:#ff0000;
+	background-color:#77b800;
 	border-radius:5px;
+        -webkit-border-radius:5px;
 }
 .navigation ul li a.active {
 	float:left;
 	color:#fff;
-	background-color:#ff0000;
+	background-color:#77b800;
 	border-radius:5px;
+        -webkit-border-radius:5px;
 	padding:0 5px;
 	text-align:center;
 	text-decoration:none;
@@ -85,9 +90,10 @@ margin:2px 0 0 110px;
 
 .search_header{
 float:left;
-margin:4px 0 0 360px;
+margin:4px 0 0 400px;
 border:1px solid #000;
-border-radius:10px;
+border-radius:5px;
+-webkit-border-radius:5px;
 background:#fff;
 width:225px;
 height:31px;
@@ -97,7 +103,7 @@ height:31px;
 
 color:#707070;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 margin-top:5px;
 margin-left:10px;
 border:1px solid #fff;
@@ -122,8 +128,10 @@ cursor:pointer;
 float:left;
 width:311px;
 height:304px;
-background:url(images/refine-bg.png);
 margin:10px 0 0 10px;
+background-color:#ffd948;
+border-radius:8px;
+-webkit-border-radius:8px;
 }
 
 .box1 {
@@ -229,13 +237,10 @@ float:left;
 
 .leftnw1 {
 float:left;
-width:400px;
-height:240px;
-margin-top:36px;
+margin-top:15px;
 margin-left:55px;
-border-left:1px solid #9a9b9d;
-border-right:1px solid #9a9b9d;
-border-bottom:1px solid #9a9b9d;
+border:1px solid #9a9b9d;
+padding:5px;
 }
 
 .leftnw1 img {
@@ -259,12 +264,9 @@ float:left;
 
 .left2{
 float:left;
-margin-top:35px;
-width:540px;
-height:220px;
-border-left:1px solid #9a9b9d;
-border-right:1px solid #9a9b9d;
-border-bottom:1px solid #9a9b9d;
+margin-top:20px;
+padding:5px;
+border:1px solid #9a9b9d;
 }
 
 .left2 img {
@@ -288,7 +290,7 @@ float:left;
 .rig1{
 float:left;
 margin-left:5px;
-margin-top:-229px;
+margin-top:-295px;
 width:540px;
 }
 
@@ -298,14 +300,10 @@ float:left;
 
 .rig2{
 float:left;
-margin-left:5px;
-margin-top:-35px;
-margin-bottom: 44px;
-width:540px;
-height:220px;
-border-left:1px solid #9a9b9d;
-border-right:1px solid #9a9b9d;
-border-bottom:1px solid #9a9b9d;
+margin-left:15px;
+margin-bottom:20px;
+padding:5px;
+border:1px solid #9a9b9d;
 }
 
 .rig2 img {
@@ -313,35 +311,44 @@ float:left;
 }
 
 .view_more {
-width:101px;
-height:30px;
+padding:5px; 
+text-align:center;
+margin-right:5px;
 float:left;
-background:url(images/view-more-info.png);
+-webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+border-radius:5px;
+-webkit-border-radius:5px;
+background-image: linear-gradient(top, #EB5367, #E04751 50%, #DE404A 50%, #D43638);
+border: 1px solid transparent;
+background-color:#144498;
 margin:8px 0 0 161px;
 }
 
 .view_more:hover{
-width:101px;
-height:30px;
 float:left;
-background:url(images/view-more-info2.png);
-margin:8px 0 0 161px;
+background-color:#2a6ebb;
 }
 
 .add_list {
-width:81px;
-height:30px;
+padding:5px; 
+text-align:center;
+color:#fff;
+margin-right:5px;
 float:left;
-background:url(images/add-to-list.png);
+-webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+border-radius:5px;
+-webkit-border-radius:5px;
+background-image: linear-gradient(top, #EB5367, #E04751 50%, #DE404A 50%, #D43638);
+border: 1px solid transparent;
+background-color:#144498;
 margin:10px 0 0 191px;
 }
 
 .add_list:hover {
-width:81px;
-height:30px;
 float:left;
-background:url(images/add-to-list1.png);
-margin:10px 0 0 191px;
+background-color:#2a6ebb;
 }
 
 .search-header{
@@ -351,6 +358,7 @@ left:911px;
 top:69px;
 border:1px solid #000;
 border-radius: 11px;
+-webkit-border-radius:11px;
 width:225px;
 height:31px;
 background:#fff url(images/navi.png) no-repeat 200px 6px;
@@ -395,7 +403,7 @@ right:3px;
 
 .middle {
 float:left;
-margin:0px 0 0 10px;
+margin:0px 0 0 20px;
 width:215px;
 height:auto;
 background-color:#d2dfef;
@@ -425,17 +433,18 @@ background-image:url(images/list-arrow.png);
 background-repeat:no-repeat;
 background-position:0 5px; 
 padding-left:15px;
+line-height:18px;
 }
 
 
 .list ul li a {
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:12px;
 color:#012f60;
 text-decoration:none;
 }
 .list ul li a:hover {
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:12px;
 color:#6e99d4;
 text-decoration:underline;
@@ -443,7 +452,7 @@ text-decoration:underline;
 
 .index_right {
 float:left;
-margin:20px 0 0 10px;
+margin:15px 0 0 10px;
 width:300px;
 height:565px;
 }
@@ -456,7 +465,7 @@ margin:0px;
 .index_right2 {
 float:left;
 margin-left:160px;
-margin-top:-290px;
+margin-top:-257px;
 }
 
 .right {
@@ -468,7 +477,7 @@ margin-left:785px;
 
 .right_01 {
 float:left;
-margin-left:530px;
+width:530px;
 margin-top:-815px;
 }
 
@@ -516,8 +525,7 @@ float:left;
 }
 
 .bottom_link a{
-	padding:0 5px;
-	font-family:Franklin Gothic Book, sans-serif;
+	padding:0 5px;	 
 	float:left;
 	color:#afafaf;
 	text-decoration:none;
@@ -525,8 +533,7 @@ float:left;
 }
 
 .bottom_link a:hover{
-	padding:0 5px;
-	font-family:Franklin Gothic Book, sans-serif;
+	padding:0 5px;	 
 	float:left;
 	color:#fff;
 	text-decoration:none;
@@ -539,12 +546,13 @@ margin-top:8px;
 margin-left:410px;
 color:#afafaf;
 font-size:11px;
-font-family:Franklin Gothic Book, sans-serif;
+padding-right:5px;
+ 
 }
 
 .t01 {
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#012f60;
 margin: 20px 0 0 75px;
 }
@@ -567,7 +575,7 @@ text-decoration:underline;
 
 .t1 {
 font-size:15px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#012f60;
 margin: 40px 0 0 75px;
 font-weight:bold;
@@ -575,7 +583,7 @@ font-weight:bold;
 
 .t101 {
 font-size:13px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#012f60;
 margin: 40px 0 0 75px;
 font-weight:bold;
@@ -583,7 +591,7 @@ font-weight:bold;
 
 .t2 {
 font-size:15px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#012f60;
 margin: 20px 0 0 45px;
 font-weight:bold;
@@ -595,7 +603,7 @@ text-decoration:underline;
 
 .t3 {
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#698092;
 padding:6px 0 0 15px;
 font-style:italic;
@@ -603,7 +611,7 @@ font-style:italic;
 
 .t4 {
 font-size:17px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#010101;
 margin: 25px 0 0 65px;
 font-weight:bold
@@ -611,7 +619,7 @@ font-weight:bold
 
 .t5 {
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#010101;
 margin: 18px 0 0 15px;
 font-weight:bold;
@@ -619,14 +627,14 @@ font-weight:bold;
 
 .t6 {
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#698092;
 padding:8px 0 0 15px;
 }
 
 .t7{
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#fff;
 padding:6px 0 0 18px;
 font-weight:bold;
@@ -634,14 +642,14 @@ font-weight:bold;
 
 .t7 a {
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#fff;
 font-weight:bold;
 }
 
 .t8 {
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000;
 padding:5px 0 0 20px;
 font-weight:bold;
@@ -652,7 +660,7 @@ background:url(images/cart-count2.png) no-repeat;
 width:27px;
 height:24px;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#fff;
 margin:2px 0 0 598px;
 padding:5px 0 0 4px;
@@ -667,8 +675,8 @@ left:226px;
 
 .t10 {
 float:left;
-font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+font-size:14px;
+ 
 color:#fff;
 position:relative;
 margin-top:-26px;
@@ -679,7 +687,7 @@ font-weight:bold;
 .t1000 {
 float:left;
 font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#ffffff;
 position:relative;
 top:-45px;
@@ -690,7 +698,7 @@ font-weight:bold;
 .t11 {
 float:left;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#fff;
 position:relative;
 margin:-26px 0 0 345px;
@@ -701,7 +709,7 @@ font-weight:bold;
 .t12 {
 float:left;
 font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#426988;
 font-weight:bold;
 margin: 5px 0 0 290px;
@@ -710,7 +718,7 @@ margin: 5px 0 0 290px;
 .t121 {
 float:left;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#426988;
 font-weight:bold;
 margin:-4px 0 0 -140px;
@@ -719,7 +727,7 @@ margin:-4px 0 0 -140px;
 .t120 {
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#ffffff;
 font-weight:bold;
 margin:30px 0 0 -535px;
@@ -735,7 +743,7 @@ left:-150px;
 .t021 {
 float:left;
 font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#426988;
 font-weight:bold;
 margin:-20px 0 0 100px;
@@ -744,7 +752,7 @@ margin:-20px 0 0 100px;
 .t13 {
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+text-align: justify;
 color:#000;
 position:relative;
 margin:-95px 0 0 165px;
@@ -752,36 +760,31 @@ margin:-95px 0 0 165px;
 
 .t14 {
 float:left;
-font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+font-size:16px; 
 color:#000000;
 font-weight:bold;
-margin: -15px 0 0 425px;
+margin: -15px 0 0 440px;
 }
 
 .t15 {
-font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+font-size:12px; 
 color:#ffffff;
-padding:5px 0 0 8px;
 }
 
 .t15 a {
-font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+font-size:14px; 
 color:#ffffff;
 }
 
 .t151 {
-font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+font-size:14px; 
 color:#ffffff;
-margin:5px 0 0 33px;
+padding:0 10px 0 10px;
 }
 
 .t151 a {
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#ffffff;
 }
 
@@ -790,7 +793,7 @@ color:#ffffff;
 float:left;
 position:relative;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#123e6d;
 margin:-25px 0 0 275px;
 }
@@ -799,7 +802,7 @@ margin:-25px 0 0 275px;
 float:left;
 position:relative;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#123e6d;
 }
 
@@ -807,7 +810,7 @@ color:#123e6d;
 float:left;
 position:relative;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#91a1be;
 }
 
@@ -816,7 +819,7 @@ position:relative;
 top:30px;
 margin:20px 0 0 70px;
 font-size:15px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color: #6687a8;
 font-weight: bold;
 }
@@ -958,7 +961,7 @@ width:765px;
 .t17 {
 padding:10px 0 0 10px;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 }
 
@@ -974,7 +977,7 @@ margin:10px 20px 20px 20px;
 .t18 {
 padding:10px 0 0 10px;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 text-align:justify;
 margin-right:20px;
@@ -992,7 +995,7 @@ margin:0 20px 0 20px;
 .t181 {
 padding:10px 0 0 10px;
 font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 }
 
@@ -1002,7 +1005,7 @@ text-decoration:underline;
 
 .t19 {
 font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#ffffff;
 position:relative;
 top:-27px;
@@ -1026,7 +1029,7 @@ background-repeat:no-repeat;
 background-position:0 5px; 
 padding-left:15px;
 padding-right:400px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:15px;
 color:#012f60;
 margin-right:20px;
@@ -1035,13 +1038,13 @@ text-align:justify;
 
 
 .list2 ul li a {
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:15px;
 color:#012f60;
 text-decoration:none;
 }
 .list2 ul li a:hover {
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:15px;
 color:#6e99d4;
 text-decoration:underline;
@@ -1061,7 +1064,7 @@ background-image:url(images/list-arrow.png);
 background-repeat:no-repeat;
 background-position:0 5px; 
 padding-left:15px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:15px;
 color:#012f60;
 margin-right:20px;
@@ -1069,13 +1072,13 @@ text-align:justify;
 }
 
 .list02 ul li a {
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:15px;
 color:#012f60;
 text-decoration:none;
 }
 .list02 ul li a:hover {
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:15px;
 color:#6e99d4;
 text-decoration:underline;
@@ -1083,13 +1086,13 @@ text-decoration:underline;
 
 .t21 {
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 margin:10px 0 0 20px;
 }
 
 .t22 {
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#6c6f70;
 margin:10px 0 0 20px;
 font-weight:bold;
@@ -1102,7 +1105,7 @@ text-decoration:underline;
 .t23 {
 float:left;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#6c6f70;
 margin:20px 0 0 10px;
 text-align:justify;
@@ -1113,7 +1116,7 @@ font-weight:bold;
 .t231 {
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#6c6f70;
 margin:20px 0 0 10px;
 padding-right:150px;
@@ -1123,7 +1126,7 @@ font-weight:bold;
 .t023 {
 float:left;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#6c6f70;
 margin:20px 0 0 10px;
 padding-right:150px;
@@ -1133,7 +1136,7 @@ padding-right:150px;
 float:left;
 margin:40px 0 0 400px;
 font-size:16px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#6c6f70;
 text-align:center;
 }
@@ -1227,65 +1230,71 @@ text-decoration:underline;
 
 
 form input#text_box {
-width: 199px; 
-height: 32px; 
+width: 190px; 
+height: 20px; 
+padding:5px;
 border: 0;
 color: #000;
 margin:-26px 0 0 90px;
 outline-color:#c99900;
-border-radius:8px;
+border-radius:5px;
+-webkit-border-radius:5px;
 }
 
 #search_button {
-position:relative;
-background: url(images/refine-seach-button.png) no-repeat; 
-width: 84px; 
-height: 33px; 
-border: 0;
-padding: 0 0 0 0px; 
+padding:5px 9px 5px 9px;  
+margin-right:5px;
+float:left;
+-webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+border-radius:5px;
+-webkit-border-radius:5px;
+background-image: linear-gradient(top, #EB5367, #E04751 50%, #DE404A 50%, #D43638);
+border: 1px solid transparent;
+background-color:#144498;
 color: #ffffff;
-margin:27px 0 0 30px;
+margin:20px 0 0 30px;
 }
 
 #search_button:hover {
-position:relative;
-background: url(images/search1.png) no-repeat; 
-width: 84px; 
-height: 33px; 
-border: 0;
-padding: 0 0 0 0px; 
-color: #ffffff;
-margin:27px 0 0 30px;
+float:left;
+background-color:#2a6ebb;
 cursor:pointer;
 }
 
 #reset_button {
-position:relative;
-background: url(images/refine-reset-button.png) no-repeat; 
-width: 82px; 
-height: 31px; 
-border: 0;
-padding: 0 0 0 0px; 
-color: #000000;
-margin-left:90px;
+padding:5px 10px 5px 10px; 
+margin-right:5px;
+float:left;
+-webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+box-shadow: 0 1px rgba(255, 255, 255, 0.8), inset 0 1px rgba(255, 255, 255, 0.35);
+border-radius:5px;
+-webkit-border-radius:5px;
+background-image: linear-gradient(top, #EB5367, #E04751 50%, #DE404A 50%, #D43638);
+border: 1px solid transparent;
+background-color:#fff;
+margin:20px 0 0 90px;
 }
 
 #reset_button:hover {
-background: url(images/reset1.png) no-repeat; 
+float:left;
+background-color:#f3f7f7;
 cursor:pointer;
 }
 
 .drop_box {
 position:relative;
 top:-4px;
-width: 199px; 
+width: 200px; 
 height: 32px; 
 border: 0;
 color: #000000;
 margin-top:-20px;
 margin-left:90px;
 outline-color:#c99900;
-border-radius:8px;
+border-radius:5px;
+-webkit-border-radius:5px;
+padding-left:5px;
 }
 
 .sell_form {
@@ -1390,7 +1399,7 @@ top:-20px;
 left:70px;
 color:#ff0000;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 }
 
 .serv img {
@@ -1411,7 +1420,7 @@ left:60px;
 float:left;
 margin-right:120px;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 }
 
@@ -1422,7 +1431,7 @@ left:5px;
 float:left;
 margin-right:10px;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 }
 
@@ -1432,7 +1441,7 @@ left:60px;
 top:10px;
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 font-weight:bold;
 }
@@ -1442,7 +1451,7 @@ left:85px;
 top:10px;
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 font-weight:bold;
 }
@@ -1453,7 +1462,7 @@ left:140px;
 top:-22px;
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 font-weight:bold;
 }
@@ -1463,7 +1472,7 @@ left:-15px;
 top:8px;
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 font-weight:bold;
 }
@@ -1474,7 +1483,7 @@ float:left;
 top:8px;
 left:-35px;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 font-weight:bold;
 }
@@ -1624,7 +1633,7 @@ margin:10px  0 0 10px;
 .list_title {
 float:left;
 font-size:12px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#426988;
 font-weight:bold;
 margin:-3px 0 0 5px;
@@ -1633,7 +1642,7 @@ margin:-3px 0 0 5px;
 .list_title1 {
 float:left;
 font-size:11px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#fefefe;
 font-weight:bold;
 margin:-347px 0 0 180px;
@@ -1662,7 +1671,7 @@ position: absolute;
 right: 3px;
 bottom: 2px;
 color: black;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size: 11px;
 white-space: nowrap;
 text-align: right;
@@ -1680,7 +1689,7 @@ text-align: left;
 .t18 {
 padding:10px 0 0 10px;
 font-size:14px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 color:#000000;
 text-align:justify;
 margin-right:20px;
@@ -1692,7 +1701,7 @@ background-image:url(images/list-arrow.png);
 background-repeat:no-repeat;
 background-position:0 5px; 
 padding-left:15px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-size:15px;
 color:#012f60;
 margin-right:20px;
@@ -1721,6 +1730,7 @@ background-color:#fff;
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
+-webkit-border-radius:4px;
 background: #ffffff; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
@@ -1737,9 +1747,10 @@ border:1px solid #b5b5b5;
 background-color:#6687a8;
 color:#fff;
 font-size:15px;
-font-family:Franklin Gothic Book, sans-serif;
+ 
 font-weight: bold;
 border-radius: 4px;
+-webkit-border-radius:4px;
 height: 30px;
 }
 .shadowbutton{
@@ -1748,6 +1759,7 @@ padding:3px 5px 3px 5px;
 border:1px solid #b5b5b5;
 background-color:#fff;
 border-radius: 4px;
+-webkit-border-radius:4px;
 box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.3);
 background: #ffffff; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */

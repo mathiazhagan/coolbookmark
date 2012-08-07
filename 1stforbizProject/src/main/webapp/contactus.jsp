@@ -111,14 +111,12 @@
                         </a>
 
                     </div>
-
-<br /><br /><br /><br /><br /><br /><br /><br /><br />
-                </div>	
+               </div>	
                 <!-- left side end -->	
 
-
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
                 <!-- right content start -->		
-                <div class="right_01" style="margin:-655px 0 0 600px;">
+                <div class="right_01" style="margin:-625px 0 0 560px;">
 
                     <div class="t1"> You may like this </div> <br />
 

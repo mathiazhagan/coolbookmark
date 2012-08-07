@@ -27,17 +27,20 @@ public class selectivesearch extends ActionSupport {
     @Override
     public String execute() throws Exception {
         try {
-            System.out.println("-----------" + getPrice());
+            System.out.println("-----------" + price);
             System.out.println("-----------" + category);
             System.out.println("-----------" + region);
             System.out.println("-----------" + word);
             Criteria crit = getMyDao().getDbsession().createCriteria(Sell.class);
+            crit.add(Restrictions.or(Restrictions.like("BCategory", category), Restrictions.like("BTown", "%" + region + "%")));
+            if (!word.isEmpty()) {
+                crit.add(Restrictions.like("BAdverHeading", "%" + word + "%"));
 
-            crit.add(Restrictions.like("BCategory", category));
-            crit.add(Restrictions.like("BTown", "%" + region + "%"));
-            crit.add(Restrictions.lt("BSalePrice", getPrice()));
-            crit.add(Restrictions.like("BAdverHeading", "%" + word + "%"));
-            //crit.setMaxResults(3);
+            }
+            if (price != null) {
+                crit.add(Restrictions.lt("BSalePrice", price));
+            }
+            crit.setMaxResults(50);
             sresult = (List<Sell>) crit.list();
             System.out.println("=---------" + sresult.size());
 

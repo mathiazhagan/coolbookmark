@@ -249,7 +249,7 @@ The important thing is to allow sufficient time to complete each stage of the in
 
 
                 <!-- right content start -->		
-               <div class="right" style="margin:-5310px 0 0 850px">
+               <div class="right" style="margin:-4900px 0 0 850px">
 
                     <div class="right1">
                         <a href="#"> <img src="images/savemoney.gif" width="223" height="245"/></a>	
