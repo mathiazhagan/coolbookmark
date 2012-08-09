@@ -45,7 +45,7 @@
     </logger>
     <logger name="org.hibernate">
         <level value="DEBUG" />
-      </logger>
+    </logger>
    <!-- for all other loggers log only info and above log messages -->
     <root>
         <priority value="DEBUG"/> 
