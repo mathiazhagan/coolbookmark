@@ -34,14 +34,14 @@ SendMailUsingAuthentication authProg = new SendMailUsingAuthentication();
 public class SendMailUsingAuthentication {
 
     private static final String SMTP_HOST_NAME = "smtp.gmail.com";
-    private static final String SMTP_AUTH_USER = "mentor@edubiz.org";
-    private static final String SMTP_AUTH_PWD = "EduBiz_888";
+    private static final String SMTP_AUTH_USER = "edubiztech@gmail.com";
+    private static final String SMTP_AUTH_PWD = "newEduBiz";
     private static final int SMTP_HOST_PORT = 465;
     private static final String emailMsgTxt = "Online Order Confirmation Message. Also include the Tracking Number.";
     private static final String emailSubjectTxt = "Order Confirmation Subject";
     private static final String emailFromAddress = "er.mathi@gmail.com";
     // Add List of Email address to who email needs to be sent to
-    private static final String[] emailList = {"er.mathi@gmail.com", "er.mathi@yahoo.com"};
+    private static final String[] emailList = {"er.mathi@gmail.com", "mathi@edubiz.org"};
 
     public static void main(String args[]) throws Exception {
         SendMailUsingAuthentication smtpMailSender = new SendMailUsingAuthentication();
