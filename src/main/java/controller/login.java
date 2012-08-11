@@ -35,10 +35,12 @@ public class login extends ActionSupport {
 
         if (getEmail().isEmpty()) {
 
-            addActionError("Please Enter Email Address");
-        } else if (getPassword().isEmpty()) {
+           // addActionError("Please Enter Email Address");
+            addActionError(getText("username.required"));
+        }  if (getPassword().isEmpty()) {
 
-            addActionError("Please Enter Password");
+            //addActionError("Please Enter Password");
+              addActionError(getText("password.required"));
         } else {
             Criteria ucri = getMyDao().getDbsession().createCriteria(User.class);
             ucri.add(Restrictions.eq("emailId", email));

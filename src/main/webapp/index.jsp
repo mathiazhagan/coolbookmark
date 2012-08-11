@@ -88,6 +88,7 @@
                 </div>
 
                 <s:text name="message.disp"/>
+                <s:text name="username.disp"/>
 
                 <div class="clear"></div>
 

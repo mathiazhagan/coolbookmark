@@ -5,10 +5,12 @@
 
 
 <struts>
-    <include file="ajax.xml"/>
-    <!-- contains ajax actions. -->
+   
+    <include file="ajax.xml"/>  <!-- contains ajax actions. -->
+
+    <constant name="struts.custom.i18n.resources" value="clickpad" />  <!-- Used to define the default properties file to be loaded on startup -->
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.devMode" value="true" />
+    <constant name="struts.devMode" value="true" />  <!-- Used to enable the dev mode and see the error report on browser -->
     <package name="default" extends="struts-default">
         <action name="signup" class="controller.signup">
             <result name="success" >index.jsp</result>
