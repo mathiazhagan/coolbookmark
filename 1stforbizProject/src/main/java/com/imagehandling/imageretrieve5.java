@@ -17,7 +17,6 @@ import java.io.InputStream;
 public class imageretrieve5 extends ActionSupport {
 
     private spDAO myDao;
-    //  private long id=6667;
     private long referenceId;
     private InputStream shimg5;
 
@@ -26,9 +25,6 @@ public class imageretrieve5 extends ActionSupport {
 
         try {
             System.out.println("--------referenceid==" + getReferenceId());
-//            String s = referenceId.substring(1, referenceId.length() - 1);
-//            long id = Integer.parseInt(s);
-//            System.out.println("-------hello"+id);
 
             Imagesfile pimg = (Imagesfile) getMyDao().getDbsession().get(Imagesfile.class, getReferenceId());
 

@@ -8,22 +8,16 @@
             <param name="ConversionPattern" value="%d %-5p %c.%M:%L - %m%n"/> 
         </layout> 
     </appender>
-    <appender name="FA" class="org.apache.log4j.FileAppender">
-        <param name="File" value="src/main/webapp/logs/userlog.html"/>
-        <param name="Threshold" value="DEBUG"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
-        </layout>
-    </appender>
+
     <appender name="CA" class="org.apache.log4j.FileAppender">
-        <param name="File" value="D:/myapp/clickpad.txt"/>
+        <param name="File" value="C:/myapp/1stforbiz.txt"/>
         <param name="Threshold" value="DEBUG"/>
         <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
+            <param name="ConversionPattern" value="%d %-5p %c.%M:%L - %m%n"/> 
         </layout>
     </appender>
     <appender name="DE" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="src/main/webapp/logs/daily"/>
+        <param name="File" value="C:/myapp/1stforbiz_daily"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <param name="Append" value="true"/>
         <param name="Threshold" value="DEBUG"/>
@@ -46,17 +40,17 @@
     <logger name="org.hibernate">
         <level value="INFO" />
     </logger>
-     <logger name="freemarker.cache">
+    <logger name="freemarker.cache">
         <level value="OFF" />
     </logger>
     <logger name="freemarker.beans">
         <level value="OFF" />
     </logger>
+
    <!-- for all other loggers log only info and above log messages -->
     <root>
         <priority value="DEBUG"/> 
         <appender-ref ref="STDOUT" /> 
-        <appender-ref ref="FA" /> 
         <appender-ref ref="CA" /> 
         <appender-ref ref="DE" /> 
     </root> 

@@ -14,7 +14,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" />
- <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
         <link rel="icon" type="image/png" href="images/favicon.png" />
         <link rel="icon" type="image/gif" href="images/favicon.gif" />
         <sx:head />
@@ -47,14 +47,14 @@
 
                     <!--navigation start -->
                     <div class="navigation">
-                <ul>
+                        <ul>
 
-                    <li><a href="adminpage.jsp" class="active">Home</a></li>
-                    <li><a href="logout.action">Logout</a></li> 
-                </ul>
+                            <li><a href="adminpage.jsp" class="active">Home</a></li>
+                            <li><a href="logout.action">Logout</a></li> 
+                        </ul>
 
-            </div>
-                    
+                    </div>
+
                 </div>
             </div>
             <!--navigation end -->    
@@ -76,7 +76,7 @@
                         <ul>
                             <li><a href="valuationlist.action"> Valuation Request List </a></li>
                             <li><a href="sell_request_list.action"> Sell Request List </a></li>
-                          <!--  <li><a href="mylist_request_list.action"> List of Requests </a></li>-->
+                            <!--  <li><a href="mylist_request_list.action"> List of Requests </a></li>-->
                             <li><a href="Immediate_sell_list.action"> Immediate Sale List </a></li>
                             <li><a href="request_info_list.action"> Request Info List </a></li>
                             <li><a href="uploaddata.jsp"> New Property Upload </a></li>					
@@ -107,15 +107,15 @@
                 </div>	
                 <!-- left side end -->         
 
-            <!-- footer start -->
-            <div id="footer" style="width:1100px">		
-                <div class="bottom_link">
-                  	
-                </div>
+                <!-- footer start -->
+                <div id="footer" style="width:1100px">		
+                    <div class="bottom_link">
 
-                <div class="rights" style="margin:20px 0 0 380px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
-            </div>		
-            <!-- footer end -->	
+                    </div>
+
+                    <div class="rights" style="margin:20px 0 0 380px;">copyright &copy; 2008 Pegasus Business Sales All rights reserved</div>
+                </div>		
+                <!-- footer end -->	
 
             </div>
             <!-- content end -->
