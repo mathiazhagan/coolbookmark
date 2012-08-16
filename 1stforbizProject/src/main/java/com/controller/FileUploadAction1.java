@@ -40,7 +40,7 @@ public class FileUploadAction1 extends ActionSupport implements
             Iterator iterator = items.iterator();
             while (iterator.hasNext()) {
                 FileItem item = (FileItem) iterator.next();
-                String filePath = "C:/Documents and Settings/Naren/My Documents/NetBeansProjects/1stforbizProject/src/main/webapp/MyFolder/" + imagename;
+                String filePath = "C:/Documents and Settings/D.Mathiazhagan/My Documents/NetBeansProjects/1stforbizProject/src/main/webapp/MyFolder/" + imagename;
                 // String filePath = servletRequest.getRealPath(path);
                 File uploadDir = new File(filePath);
                 //if the folder does not exits, creating it

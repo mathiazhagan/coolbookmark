@@ -9,7 +9,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class sampleform extends ActionSupport{
     private String username;

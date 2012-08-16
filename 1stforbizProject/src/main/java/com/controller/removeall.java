@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class removeall extends ActionSupport {
     

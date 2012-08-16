@@ -8,7 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class moreinfo extends ActionSupport{
     

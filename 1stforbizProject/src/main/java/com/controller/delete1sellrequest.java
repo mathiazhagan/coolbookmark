@@ -14,7 +14,7 @@ import org.hibernate.criterion.Order;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class delete1sellrequest extends ActionSupport implements SessionAware {
 

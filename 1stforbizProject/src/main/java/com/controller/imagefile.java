@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class imagefile extends ActionSupport {
 

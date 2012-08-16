@@ -6,7 +6,7 @@ package com.controller;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 import com.model.HibernateUtil;
 import org.hibernate.Session;

@@ -1,7 +1,7 @@
 <%-- 
     Document   : adminpage
     Created on : Jun 30, 2012, 10:42:51 AM
-    Author     : Naren
+    Author     : D.Mathiazhagan
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>

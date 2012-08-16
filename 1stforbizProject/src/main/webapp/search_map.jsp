@@ -1,7 +1,7 @@
 <%-- 
     Document   : search_map
     Created on : Jul 10, 2012, 12:09:25 PM
-    Author     : Naren
+    Author     : D.Mathiazhagan
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>

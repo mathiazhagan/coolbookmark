@@ -12,7 +12,7 @@ import java.io.InputStream;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class imageretrieve5 extends ActionSupport {
 

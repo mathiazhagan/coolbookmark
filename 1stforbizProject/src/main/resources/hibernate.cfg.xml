@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://ec2-50-19-213-178.compute-1.amazonaws.com:3306/a_1stforbiz</property>
-    <property name="hibernate.connection.username">1stforbiz</property>
-    <property name="hibernate.connection.password">1stforbiz</property>
-    <mapping resource="com/model/Imagesfile.hbm.xml"/>
-    <mapping resource="com/model/Adminlog.hbm.xml"/>
-    <mapping resource="com/model/Mylists.hbm.xml"/>
-    <mapping resource="com/model/SampleMylist.hbm.xml"/>
-    <mapping resource="com/model/BusinessValuation.hbm.xml"/>
-    <mapping resource="com/model/Sell.hbm.xml"/>
-    <mapping resource="com/model/ContactForSell.hbm.xml"/>
-    <mapping resource="com/model/Listings.hbm.xml"/>
-    <mapping resource="com/model/RequestinfoTable.hbm.xml"/>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://ec2-50-19-213-178.compute-1.amazonaws.com:3306/a_1stforbiz</property>
+        <property name="hibernate.connection.username">1stforbiz</property>
+        <property name="hibernate.connection.password">1stforbiz</property>
+    
+        <!--     hibernate c3p0 settings   -->
+        <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.acquire_increment">3</property>
+        <property name="hibernate.c3p0.idle_test_period">10</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">75</property>
+        <property name="hibernate.c3p0.max_statements">0</property>
+        <property name="hibernate.c3p0.timeout">25200</property>
+        <property name="hibernate.c3p0.preferredTestQuery">select 1</property>
+        <property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+        <!--  hibernate cache settings   -->
+        <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+        <property name="hibernate.generate_statistics">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+    
+        <mapping resource="com/model/Imagesfile.hbm.xml"/>
+        <mapping resource="com/model/Adminlog.hbm.xml"/>
+        <mapping resource="com/model/Mylists.hbm.xml"/>
+        <mapping resource="com/model/SampleMylist.hbm.xml"/>
+        <mapping resource="com/model/BusinessValuation.hbm.xml"/>
+        <mapping resource="com/model/Sell.hbm.xml"/>
+        <mapping resource="com/model/ContactForSell.hbm.xml"/>
+        <mapping resource="com/model/Listings.hbm.xml"/>
+        <mapping resource="com/model/RequestinfoTable.hbm.xml"/>
+    </session-factory>
 </hibernate-configuration>

@@ -15,7 +15,7 @@ import org.hibernate.criterion.Order;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class deletevaluation extends ActionSupport implements SessionAware {
     

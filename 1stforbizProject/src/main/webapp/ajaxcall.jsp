@@ -1,7 +1,7 @@
 <%-- 
     Document   : ajaxcall
     Created on : Jun 30, 2012, 5:05:28 PM
-    Author     : Naren
+    Author     : D.Mathiazhagan
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>

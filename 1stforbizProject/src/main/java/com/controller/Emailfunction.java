@@ -13,7 +13,7 @@ import javax.mail.internet.MimeMessage;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class Emailfunction {
     

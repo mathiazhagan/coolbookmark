@@ -11,7 +11,7 @@ import java.io.InputStream;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class imageretrieve extends ActionSupport {
 

@@ -14,7 +14,7 @@ import org.hibernate.criterion.Order;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class Immediate_sell_list extends ActionSupport implements SessionAware {
 

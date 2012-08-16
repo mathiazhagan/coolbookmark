@@ -47,7 +47,7 @@
 
 
                 //specify corresponding links
-                //var slidelinks=new Array("http://1stforbiz.naren.cloudbees.net/","http://1stforbiz.naren.cloudbees.net/","http://1stforbiz.naren.cloudbees.net/","http://1stforbiz.naren.cloudbees.net/ ","http://1stforbiz.naren.cloudbees.net/ ")
+                //var slidelinks=new Array("http://1stforbiz.D.Mathiazhagan.cloudbees.net/","http://1stforbiz.D.Mathiazhagan.cloudbees.net/","http://1stforbiz.D.Mathiazhagan.cloudbees.net/","http://1stforbiz.D.Mathiazhagan.cloudbees.net/ ","http://1stforbiz.D.Mathiazhagan.cloudbees.net/ ")
 
                 var imageholder=new Array()
                 var ie55=window.createPopup

@@ -1,7 +1,7 @@
 <%-- 
     Document   : mailsend
     Created on : Jul 3, 2012, 8:31:05 AM
-    Author     : Naren
+    Author     : D.Mathiazhagan
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>

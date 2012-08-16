@@ -14,7 +14,7 @@ import org.hibernate.criterion.Restrictions;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class fulldetails extends ActionSupport {
 
@@ -37,9 +37,9 @@ public class fulldetails extends ActionSupport {
 
             session.put("onesell", onesell);
 //            List<File> results = new ArrayList<File>();
-//            File[] files = new File("C:/Documents and Settings/Naren/My Documents/NetBeansProjects/1stforbizProject/src/main/webapp/MyFolder/").listFiles();
+//            File[] files = new File("C:/Documents and Settings/D.Mathiazhagan/My Documents/NetBeansProjects/1stforbizProject/src/main/webapp/MyFolder/").listFiles();
 
-//            File folder = new File("C:/Documents and Settings/Naren/My Documents/NetBeansProjects/1stforbizProject/src/main/webapp/MyFolder/" + referenceId);
+//            File folder = new File("C:/Documents and Settings/D.Mathiazhagan/My Documents/NetBeansProjects/1stforbizProject/src/main/webapp/MyFolder/" + referenceId);
 //            File[] listOfFiles = folder.listFiles();
 //            List<String> l1 = new ArrayList<String>();
 //

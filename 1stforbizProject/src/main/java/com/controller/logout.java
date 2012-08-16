@@ -10,7 +10,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class logout extends ActionSupport implements SessionAware {
 

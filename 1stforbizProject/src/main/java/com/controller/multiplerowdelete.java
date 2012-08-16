@@ -13,7 +13,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class multiplerowdelete extends ActionSupport implements SessionAware {
 

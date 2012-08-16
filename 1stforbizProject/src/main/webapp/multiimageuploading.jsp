@@ -1,7 +1,7 @@
 <%-- 
     Document   : multiimageuploading
     Created on : Jun 22, 2012, 6:10:51 PM
-    Author     : Naren
+    Author     : D.Mathiazhagan
 
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>

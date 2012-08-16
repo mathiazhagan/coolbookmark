@@ -1,7 +1,7 @@
 <%-- 
     Document   : newdisplay
     Created on : Jul 16, 2012, 1:10:19 PM
-    Author     : Naren
+    Author     : D.Mathiazhagan
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>

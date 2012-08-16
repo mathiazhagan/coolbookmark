@@ -14,7 +14,7 @@ import org.hibernate.criterion.Order;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class deletemultilist extends ActionSupport implements SessionAware {
 

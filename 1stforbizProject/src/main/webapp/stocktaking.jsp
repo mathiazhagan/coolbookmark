@@ -1,7 +1,7 @@
 <%-- 
     Document   : stocktaking
     Created on : Jun 30, 2012, 8:58:22 PM
-    Author     : Naren
+    Author     : D.Mathiazhagan
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1252"%>

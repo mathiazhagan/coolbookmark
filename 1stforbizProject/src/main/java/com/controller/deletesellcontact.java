@@ -14,7 +14,7 @@ import org.hibernate.criterion.Order;
 
 /**
  *
- * @author Naren
+ * @author D.Mathiazhagan
  */
 public class deletesellcontact extends ActionSupport implements SessionAware {
 
