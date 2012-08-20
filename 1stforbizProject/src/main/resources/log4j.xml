@@ -46,10 +46,10 @@
     <logger name="freemarker.beans">
         <level value="OFF" />
     </logger>
-  <!--  <logger name="com.mchange">
+   <!--  <logger name="com.mchange">
         <level value="INFO"/>
     </logger>
-    <logger name="net.sf.ehcache">
+   <logger name="net.sf.ehcache">
         <level value="INFO"/>
     </logger>-->
 
