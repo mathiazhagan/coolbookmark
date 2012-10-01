@@ -22,11 +22,9 @@
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-      
-
     <session-config>
         <session-timeout>
-           50
+            50
         </session-timeout>
     </session-config>
     <welcome-file-list>
